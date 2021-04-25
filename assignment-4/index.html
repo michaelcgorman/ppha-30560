@@ -120,7 +120,133 @@
         console.log("Farming data loaded:")
         console.log(farming_data)
 
+        let margin = { top: 10, right: 10, bottom: 10, left: 30 };
+
+        let sel_cols = [
+            "Other",
+            "White Collar",
+            "Service",
+            "Blue Collar",
+            "Farming"]
+
+        let sel_colors = [
+            "#cccccc",  // "Other"
+            "#dd488f", // "White Collar"
+            "#dfd060", // "Service"
+            "#178fe8", // "Blue Collar"
+            "#29a97e", // "Farming"
+        ]
+
+        farming_data.forEach(function(row) {
+            sel_cols.forEach(function (col) {
+                row[col] = +row[col]
+            })
+
+            row.year = +row.year
+        })
+
+        let farming_series = d3.stack().keys(sel_cols)(farming_data)
+        console.log({farming_series})
+
+        let color = d3.scaleOrdinal()
+            .domain(sel_cols)
+            .range(sel_colors)
+
+        let x = d3.scaleLinear()
+            .domain(d3.extent(farming_data.map(function (d) { return d.year })))
+            .range([margin.left, width])
+
+        let y = d3.scaleLinear()
+            .domain(d3.extent(
+                function (data, column_names) {
+                    var result = []
+                    data.forEach(function (row) {
+                        var date_sum = 0
+                        column_names.forEach(function (name) {
+                            result[result.length] = row[name]
+                            date_sum = date_sum + row[name]
+                        })
+                        result[result.length] = date_sum
+                    })
+                    return(result)
+                }(farming_data, sel_cols)
+            ))
+            .range([height - margin.bottom, margin.top])
+
+        let area = d3.area()
+            .x(d => x(d.data.year))
+            .y0(d => y(d[0]))
+            .y1(d => y(d[1]))
+
+        let xAxisSettings = d3.axisBottom(x)
+            .tickSize(6)
+            .tickPadding(6)
+            .tickValues([1850, 1860, 1870, 1880, 1890, 1900, 1910, 1920, 1930, 1940, 1950, 1960, 1970, 1980, 1990, 2000, 2010])
+            .tickFormat(d3.format(".0f"))
+
+        let xAxis = svg.append("g")
+            .attr("class", "x axis")
+            .call(xAxisSettings)
+            .call(g => g.selectAll(".domain").remove())
+            .attr("transform", `translate(0,${height - margin.bottom})`)
+
+
+        let yAxisSettings = d3.axisLeft(y)
+            .ticks(10)
+            .tickSize(6)
+            .tickPadding(4)
+            .tickFormat(d3.format(",.0f"))
+
+        let yAxis = svg
+            .append("g")
+            .attr("class", "y axis")
+            .call(yAxisSettings)
+            .call(g => g.selectAll(".domain").remove())
         
+        svg.append("g")
+            .selectAll("path")
+            .data(farming_series)
+            .join("path")
+            .attr("class", d => {
+                console.log(d)
+                return d.key
+            })
+            .attr("d", area)
+            .attr("fill", d => color(d.key))
+            .attr("fill-opacity", 0.8)
+
+        let labels = svg.append("g")
+            .attr("class", "category-labels")
+
+        labels.append("text")
+            .attr("class", "label")
+            .attr("x", x(1982))
+            .attr("y", y(1000000))
+            .text("Other")
+
+        labels.append("text")
+            .attr("class", "label")
+            .attr("x", x(1982))
+            .attr("y", y(20000000))
+            .text("White Collar")
+
+        labels.append("text")
+            .attr("class", "label")
+            .attr("x", x(1982))
+            .attr("y", y(70000000))
+            .text("Services")
+
+        labels.append("text")
+            .attr("class", "label")
+            .attr("x", x(1982))
+            .attr("y", y(93000000))
+            .text("Blue Collar")
+
+        labels.append("text")
+            .attr("class", "label")
+            .attr("x", x(1890))
+            .attr("y", y(20000000))
+            .text("Farming")
     })
 
     // end farming chart code
