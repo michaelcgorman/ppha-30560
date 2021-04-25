@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        .chart-container {
+            max-width: 1050px;
+            /*border: 3px solid red;*/
+            margin: 0 auto;
+            /* auto centers the div */
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        svg {
+            /*border: 2px solid purple;*/
+            overflow: visible;
+        }
+
+
+        svg + h1 {
+            margin-top: 4em;
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <div class="chart-container">
+        <h1 class="headline">
+            Unemployment Chart Headline
+        </h1>
+
+        <svg width="945px" height="756px" id="unemployment_chart">
+
+        </svg>
+
+        <h1 class="headline">
+            New Delhi Chart Headline
+        </h1>
+        <svg width="525px" height="500px" id="new_delhi_chart">
+
+        </svg>
+        <h1 class="headline">
+            Farming Chart Headline
+        </h1>
+
+        <svg width="763px" height="573px" id="farming_chart">
+
+        </svg>
+
+        <h1 class="headline">
+            College Chart Headline
+        </h1>
+        <svg width="1050px" height="400px" id="college_chart">
+
+        </svg>
+    </div>
+</body>
+
+<!-- add your script blocks at the end -->
+<script src="https://d3js.org/d3.v6.min.js"></script>
+<!-- we're using d3 version 6 (the latest version) for all our work -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-annotation/2.5.1/d3-annotation.min.js"></script>
+
+<script>
+    console.log(d3)
+    
+    // start unemployment chart code
+
+    d3.csv("nat.csv").then(function (unemployment_data) {
+        let svg = d3.select("#unemployment_chart")
+        let width = 945;
+        let height = 756;
+        console.log(unemployment_data)
+
+        
+    })
+
+    // end unemployment chart code
+
+
+
+
+
+
+
+    // start new delhi chart code
+
+    d3.csv("India-NCT-Delhi-daily.csv").then(function (new_delhi_data) {
+        let svg = d3.select("#new_delhi_chart")
+        let width = 525;
+        let height = 500;
+        console.log(new_delhi_data)
+
+        
+    })
+
+    // end new delhi chart code
+
+
+
+
+
+
+
+    // start farming chart code
+
+    d3.csv("firstjob_major_d3_3.csv").then(function (farming_data) {
+        let svg = d3.select("#farming_chart")
+        let width = 763;
+        let height = 573;
+        console.log(farming_data)
+
+        
+    })
+
+    // end farming chart code
+
+
+
+
+
+
+
+    // start college chart code
+
+    d3.csv("college-selection-by-income-group-01-13.csv").then(function (college_data) {
+        let svg = d3.select("#college_chart")
+        let width = 1050;
+        let height = 400;
+        console.log(college_data)
+
+        
+    })
+
+    // end college chart code
+
+</script>
