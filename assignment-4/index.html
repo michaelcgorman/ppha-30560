@@ -69,11 +69,13 @@
     console.log(d3)
     
     // start unemployment chart code
+    // based on first graph from: https://www.nytimes.com/interactive/2020/03/26/upshot/coronavirus-millions-unemployment-claims.html
 
     d3.csv("nat.csv").then(function (unemployment_data) {
         let svg = d3.select("#unemployment_chart")
         let width = 945;
         let height = 756;
+        console.log("Unemployment data loaded:")
         console.log(unemployment_data)
 
         
@@ -88,11 +90,13 @@
 
 
     // start new delhi chart code
+    // based on second graph from the bottom of: https://www.nytimes.com/interactive/2019/12/02/climate/air-pollution-compare-ar-ul.html
 
     d3.csv("India-NCT-Delhi-daily.csv").then(function (new_delhi_data) {
         let svg = d3.select("#new_delhi_chart")
         let width = 525;
         let height = 500;
+        console.log("New Delhi data loaded:")
         console.log(new_delhi_data)
 
         
@@ -107,11 +111,13 @@
 
 
     // start farming chart code
+    // based on first graph from: https://www.npr.org/sections/money/2015/05/18/404991483/how-machines-destroy-and-create-jobs-in-4-graphs
 
     d3.csv("firstjob_major_d3_3.csv").then(function (farming_data) {
         let svg = d3.select("#farming_chart")
         let width = 763;
         let height = 573;
+        console.log("Farming data loaded:")
         console.log(farming_data)
 
         
@@ -126,11 +132,13 @@
 
 
     // start college chart code
+    // based on second graph from: https://www.nytimes.com/interactive/2017/01/18/upshot/some-colleges-have-more-students-from-the-top-1-percent-than-the-bottom-60.html
 
     d3.csv("college-selection-by-income-group-01-13.csv").then(function (college_data) {
         let svg = d3.select("#college_chart")
         let width = 1050;
         let height = 400;
+        console.log("College data loaded:")
         console.log(college_data)
 
         
