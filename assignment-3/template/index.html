@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        .chart-container {
+            max-width: 1050px;
+            border: 3px solid red;
+            margin: 0 auto;
+            /* auto centers the div */
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        svg {
+            border: 2px solid purple;
+            overflow: visible;
+        }
+
+
+        h1 {
+            border: 2px solid green;
+        }
+
+     
+    </style>
+</head>
+
+<body>
+    <div class="chart-container">
+        <h1 class="headline">
+            D3 starter template
+        </h1>
+
+        <svg width="1050px" height="500px">
+
+        </svg>
+    </div>
+</body>
+
+<!-- add your script blocks at the end -->
+<script src="https://d3js.org/d3.v6.min.js"></script>
+<!-- we're using d3 version 6 (the latest version) for all out work -->
+
+<script>
+    console.log(d3)
+    let width = 1050;
+    let height = 500;
+
+    let svg = d3.select("body").select("svg")
+
+    //console.log
+
+    //arrays
+    //objects
+    //functions
+
+
+
+    d3.csv("temp.csv").then(function (data) {
+        console.log("loaded")
+        console.log(data)
+
+
+
+
+
+
+
+    })
+
+</script>

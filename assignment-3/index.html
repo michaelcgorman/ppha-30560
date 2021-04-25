@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        .chart-container {
+            max-width: 1050px;
+            /*border: 3px solid red;*/
+            margin: 0 auto;
+            /* auto centers the div */
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        svg {
+            /*border: 2px solid purple;*/
+            overflow: visible;
+        }
+
+
+        svg + h1 {
+            margin-top: 4em;
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <div class="chart-container">
+        <h1 class="headline">
+            Test Scores for Third Graders in 2,000 Large School Districts
+        </h1>
+
+        <svg width="1050px" height="500px" id="schools_svg">
+
+        </svg>
+
+        <h1 class="headline">
+            Dance Music Cuts Across Generations
+        </h1>
+        <svg width="1050px" height="500px" id="music_svg">
+
+        </svg>
+    </div>
+</body>
+
+<!-- add your script blocks at the end -->
+<script src="https://d3js.org/d3.v6.min.js"></script>
+<!-- we're using d3 version 6 (the latest version) for all out work -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-annotation/2.5.1/d3-annotation.min.js"></script>
+
+<script>
+    console.log(d3)
+    let width = 1050;
+    let height = 500;
+
+
+
+    d3.tsv("largest_districts.tsv").then(function (data) {
+        let svg = d3.select("#schools_svg")
+
+        data.forEach(function(row) {
+            row.grade3Score = +row.mnav3poolgcs
+            delete row.mnav3poolgcs
+
+            row.grade3Difference = row.grade3Score - 3
+
+            row.grade8Score = +row.mnav8poolgcs
+            delete row.mnav8poolgcs
+
+            row.grade8Difference = row.grade8Score - 8
+
+            row.socioeconomicStatus = +row.ses
+            delete row.ses
+
+            row.subgroupGrowthPercentile = +row.growth_pctile_for_subgroup
+            delete row.growth_pctile_for_subgroup
+
+            row.stateFIPS = row.stfips
+            delete row.stfips
+
+            row.countyFIPS = row.countyid
+            delete row.countyid
+
+            row.districtFIPS = row.leaidC
+            delete row.leaidC
+
+            row.districtName = row.newname
+            delete row.newname
+
+            row.stateName = row.nyt_abbrev
+            delete row.nyt_abbrev
+
+            row.latitude = +row.lat
+            delete row.lat
+
+            row.longitude = +row.lon
+            delete row.lon
+
+            row.tbdinc50allString = row.inc50all
+            row.tbdinc50allNumber = +row.inc50all
+            delete row.inc50all
+
+            row.tbdtotavgString = row.totavg
+            row.tbdtotavgNumber = +row.totavg
+            delete row.totavg
+
+            row.tbdmngrdpoolgcsString = row.mngrdpoolgcs
+            row.tbdmngrdpoolgcsNumber = +row.mngrdpoolgcs
+            delete row.mngrdpoolgcs
+
+            row.circleSize = row.tbdtotavgNumber
+            
+            if(row.districtName == "City of Chicago") {
+                row.highlight = true
+                row.districtName = "Chicago"
+            } else if(row.districtName == "Milwaukee School District") {
+                row.highlight = true
+                row.districtName = "Milwaukee"
+            } else if(row.districtName == "Anne Arundel County Public Schools") {
+                row.highlight = true
+                row.districtName = "Anne Arundel County"
+            } else {
+                row.highlight = false
+            }
+
+        })
+
+        /* console.log(data) */
+
+        const max = d3.max(data, function (d) { return Math.abs(d.value) });
+
+        function formatGradeDifference (y) {
+            if (y > 1) {
+                return y + " years ahead"
+            } else if (y == 1) {
+                return "1 year ahead"
+            } else if (y < -1) {
+                return (y * -1) + " years behind"
+            } else if (y == -1) {
+                return "1 year behind"
+            } else {
+                return "Average"
+            }
+        }
+
+        let margin = { top: 30, right: 10, bottom: 50, left: 30 };
+
+
+        let x = d3.scaleLinear()
+            .domain(d3.extent(data.map(function (d) { return d.socioeconomicStatus }))) //d3 extent will look at all of the date values and pick the smallest and largest
+            .range([margin.left, width - margin.right])
+
+        let y = d3.scaleLinear()
+            .domain(d3.extent(data.map(function (d) { return d.grade3Difference })))
+            .range([height - margin.bottom, margin.top])
+
+        let size = d3.scaleSqrt()
+            .domain(d3.extent(data.map(function (d) { return d.circleSize})))
+            .range([2, 34])
+
+
+
+        let xAxisSettings = d3.axisBottom(x)
+            .ticks(5)
+            .tickSize(10)
+            .tickPadding(10)
+
+        let yAxisSettings = d3.axisLeft(y) //set axis to the left
+            //.ticks(5) //approx how many ticks, the function will not necesarily give you that number
+            .tickValues([3, 2, 1, 0, -1, -2])
+            .tickSize(width)
+            .tickFormat(formatGradeDifference) //what format do you want https://github.com/d3/d3-format 
+            .tickPadding(10) //distance from tick labels to tick marks
+
+
+
+        /* let xAxisTicks = svg.append("g")
+            .attr("class", "x axis") //give each axis a class
+            .call(xAxisSettings)
+            .attr("transform", `translate(0,${height - margin.bottom})`) */
+
+        let yAxisTicks = svg.append("g")
+            .attr("class", "y axis")
+            .call(yAxisSettings)
+            .attr("transform", `translate(${width},0)`)
+            .style("color", "#777777")
+
+
+
+        let yAxisTickLabels = svg.selectAll(".y.axis .tick text")
+            .attr("dy", -7)
+            .attr("dx", -5)
+            .attr("x", 0)
+            .style("text-anchor", "end")
+        
+        let yAxisBaselineTick = svg.selectAll(".y.axis .tick:nth-of-type(4)")
+            .attr("stroke-width", 2)
+            .attr("color", "black")
+        
+        let yAxisBaselineTickText = yAxisBaselineTick.selectAll("text")
+            .attr("style", "font-weight: bold")
+            
+        let yAxisLine = svg.selectAll(".y.axis .domain")
+            .attr("stroke-width", 0)
+
+        
+
+
+        let points = svg.append("g") //Add a grouping element. It's useful to organize svg elements. https://developer.mozilla.org/en-US/docs/Web/SVG/Element/g
+            .selectAll(".points") //Look for all elements that exist with class. At this point there should be none, so it matters less. But you need to remember to do it. In the future, this feature will make it helpful for animation. 
+            .data(data) //attach data to the svg
+            .join("circle") //Add elements according to the number of rows in the data. In this case we have 1679 rows, so 1679 circles.
+            .attr("class", "points") // Give circles a class name.
+            .attr("cx", function (d) { return x(d.socioeconomicStatus) }) //callback to access the data, position according to x axis
+            .attr("cy", function (d) { return y(d.grade3Difference) })  //callback to access the data, position according to y axis
+            .attr("r", function (d) { return size(d.circleSize) })
+            .style("stroke", "#444")
+            .style("stroke-width", .2)
+            .style("fill", "#c0cad8")
+
+        let highlightPoints = svg.append("g")
+            .selectAll(".highlightPoints")
+            .data(data)
+            .join("circle")
+            .filter(function (d) { return d.highlight })
+            .attr("class", "highlightPoints")
+            .attr("cx", function (d) { return x(d.socioeconomicStatus) }) //callback to access the data, position according to x axis
+            .attr("cy", function (d) { return y(d.grade3Difference) })  //callback to access the data, position according to y axis
+            .attr("r", function (d) { return size(d.circleSize) })
+            .style("stroke", "#444")
+            .style("stroke-width", 2)
+            .style("fill", "gold")
+
+        // labels code adapted from https://observablehq.com/@keller-mark/scatterplot-label-repel-with-force-layout
+        let highlightLabels = svg.append("g")
+            .selectAll(".highlightLabels")
+            .data(data)
+            .join("text")
+            .filter(function (d) { return d.highlight })
+            .attr("class", "highlightLabels")
+            .attr("x", function (d) { return x(d.socioeconomicStatus) })
+            .attr("y", function (d) { return y(d.grade3Difference) - size(d.circleSize) - 5 })
+            .style("text-anchor", "middle")
+            .style("text-shadow", "-1px -1px 2px white")
+            .style("font-size", "17px")
+            .text(d => d.districtName)
+
+
+        // use d3-annotation from https://d3-annotation.susielu.com/
+        const annotations = [
+            {
+                note: {
+                    label: "Larger circles represent districts with more students.",
+                    align: "right"
+                },
+                x: 380,
+                y: 365,
+                dx: -165,
+                dy: -165,
+                type: d3.annotationLabel
+            },
+            {
+                note: {
+                    label: "Richer school districts →",
+                    align: "right",
+                    wrap: "none"
+                },
+                x: width - 25,
+                y: height - 35,
+                type: d3.annotationLabel
+            },
+            {
+                note: {
+                    label: "← Poorer school districts",
+                    align: "left",
+                    wrap: "none"
+                },
+                x: 0,
+                y: height - 35,
+                type: d3.annotationLabel
+            },
+            {
+                note: {
+                    label: "Source: New York Times, December 5, 2017",
+                    align: "right",
+                    wrap: "none"
+                },
+                x: width + 40,
+                y: height,
+                type: d3.annotationLabel
+            },
+            {
+                note: {
+                    label: "Richer districts tend to have higher scores.",
+                    wrap: "none",
+                    align: "right"
+                },
+                x: 800,
+                y: y(2.75),
+                dx: -50,
+                dy: -30,
+                type: d3.annotationLabel
+            }
+        ]
+        
+        svg.append("g")
+            .attr("class", "annotation-group")
+            .call(d3.annotation().annotations(annotations))
+
+        /* svg.selectAll(".annotation-group .annotation:nth-of-type(1) text")
+            .style("font-size", "10pt")
+            .attr("fill", "#999999") */
+
+        svg.selectAll(".annotation-group .annotation:nth-of-type(2) text, .annotation-group .annotation:nth-of-type(3) text")
+            .style("font-size", "14pt")
+            .attr("fill", "black")
+
+        svg.selectAll(".annotation-group .annotation:nth-of-type(4) text")
+            .style("font-size", "10pt")
+            .attr("fill", "#BCBCBC")
+
+        
+    })
+
+
+
+
+
+
+
+    d3.csv("song_years_july_13.csv").then(function (year_data) {
+        console.log(year_data)
+
+        const getYearByArtistSong = function (artistSong) {
+            /* console.log(artistSong) */
+            row = year_data.find(row => row.artist_song.trim() == artistSong)
+            /* console.log(row) */
+            if(row) {
+                return +row.year
+            } else {
+                return NaN
+            }
+        }
+
+        d3.csv("time_series_90s_d3_13_15_averaged_july_22.csv").then(function (data) {
+            let svg = d3.select("#music_svg")
+
+            data.forEach(function(row) {
+                [row.artist, row.song] = row.artist_song.split("|||")
+                row.release_year = getYearByArtistSong(row.artist_song)
+                row.generation = +row.generation
+                row.birth_year = row.release_year + row.generation
+                row.recognition = +row.recognition
+            })
+
+            /* console.log(data) */
+
+            let margin = { top: 30, right: 10, bottom: 10, left: 30 };
+
+            function formatRecognition (y) {
+                if (y == 1) {
+                    return y*100 + "% recognition"
+                } else {
+                    return y*100 + "%"
+                }
+            }
+
+            filtered_data = data.filter(row => (row.artist_song == "Los Del Rio|||Macarena"             ||
+                                                row.artist_song == "Lou Bega|||Mambo No. 5"             ||
+                                                row.artist_song == "Whitney Houston|||Heartbreak Hotel" ||
+                                                row.artist_song == "Sarah McLachlan|||Angel"            ) &&
+                                               (row.recognition > 0))
+
+            console.log(filtered_data)
+
+            let x = d3.scaleTime()
+                .domain(d3.extent(filtered_data.map(function (d) { return d.birth_year })))
+                .range([margin.left, width - margin.right])
+
+            let y = d3.scaleLinear()
+                .domain(d3.extent(data.map(function (d) { return d.recognition })))
+                .range([height - margin.bottom, margin.top])
+
+            let line = d3.line()
+                .x(function (d) { return x(d.birth_year) })
+                .y(function (d) { return y(d.recognition) })
+
+            let grouped_data = d3.group(filtered_data, d => d.artist_song)
+
+            let yAxisSettings = d3.axisLeft(y)
+                .ticks(5)
+                .tickSize(-width)
+                .tickFormat(formatRecognition)
+                .tickPadding(10)
+
+            let xAxisSettings = d3.axisBottom(x)
+                .ticks(10)
+                .tickSize(10)
+                .tickFormat(d3.format("0"))
+                .tickPadding(10)
+
+            let xAxisTicks = svg.append("g")
+                .attr("class", "x axis")
+                .call(xAxisSettings)
+                .attr("transform", `translate(0,${height - margin.bottom})`)
+                .style("color", "#999999")
+            
+            svg.selectAll(".x.axis .domain")
+                .style("display", "none")
+
+            let yAxisTicks = svg.append("g")
+                .attr("class", "y axis")
+                .call(yAxisSettings)
+                .attr("transform", `translate(${margin.left},0)`)
+                .style("color", "#CCCCCC")
+
+            let yAxisTickLabels = svg.selectAll(".y.axis .tick text")
+                .attr("dy", -7)
+                .attr("dx", -5)
+                .attr("x", width)
+                .style("text-anchor", "end")
+                .style("color", "#666666")
+            
+            let yAxisLine = svg.selectAll(".y.axis .domain")
+                .attr("stroke-width", 0)
+
+            let songs = Array.from(grouped_data.keys())
+
+            let line_path = svg.append("g")
+                .selectAll(".line")
+                .data(grouped_data)
+                .join("path")
+                .attr("class", function(d) {
+                    return "line " +  d[0]
+                })
+                .attr("d", function(d) {
+                    console.log(d)
+                    return line(d[1])
+                })
+                .style("fill", "none")
+                .style("stroke", d => {
+                    if(d[0] == "Los Del Rio|||Macarena") {
+                        return "red"
+                    } else if (d[0] == "Lou Bega|||Mambo No. 5") {
+                        return "orange"
+                    } else if (d[0] == "Whitney Houston|||Heartbreak Hotel") {
+                        return "blue"
+                    } else if (d[0] == "Sarah McLachlan|||Angel") {
+                        return "teal"
+                    } else {
+                        return "#999"
+                    }
+                })
+                .style("stroke-width", "3px")
+
+                // use d3-annotation from https://d3-annotation.susielu.com/
+                const annotations = [
+                    {
+                        note: {
+                            title: "Macarena (1996), Los Del Rio",
+                            label: "Recognized by 100% of people born in 1984",
+                            align: "left",
+                            wrap: "none"
+                        },
+                        x: x(1984),
+                        y: y(filtered_data.find(row => row.artist_song == "Los Del Rio|||Macarena" && row.birth_year == 1984).recognition),
+                        dx: 60,
+                        dy: 60,
+                        type: d3.annotationCalloutElbow,
+                        /* connector: { end: "arrow" } */
+                    },
+                    {
+                        note: {
+                            title: "Mambo No. 5 (1999), Lou Bega",
+                            label: "Recognized by 96% of people born in 1999",
+                            align: "right",
+                            wrap: "none"
+                        },
+                        x: x(1999),
+                        y: y(filtered_data.find(row => row.artist_song == "Lou Bega|||Mambo No. 5" && row.birth_year == row.release_year).recognition),
+                        dx: -40,
+                        dy: -25,
+                        type: d3.annotationCalloutElbow,
+                        /* connector: { end: "arrow" } */
+                    },
+                    {
+                        note: {
+                            title: "Heartbreak Hotel (1999), Whitney Houston",
+                            label: "Recognized by 3% of people born in 1999",
+                            align: "right",
+                            wrap: "none"
+                        },
+                        x: x(1999),
+                        y: y(filtered_data.find(row => row.artist_song == "Whitney Houston|||Heartbreak Hotel" && row.birth_year == row.release_year).recognition),
+                        dx: 325,
+                        dy: -1,
+                        type: d3.annotationCalloutElbow,
+                        /* connector: { end: "arrow" } */
+                    },
+                    {
+                        note: {
+                            title: "Angel (1999), Sarah McLachlan",
+                            label: "Recognized by 56% of people born in 1987",
+                            align: "left",
+                            wrap: "none"
+                        },
+                        x: x(1987),
+                        y: y(filtered_data.find(row => row.artist_song == "Sarah McLachlan|||Angel" && row.birth_year == 1987).recognition),
+                        dx: 25,
+                        dy: -25,
+                        type: d3.annotationCalloutElbow,
+                        /* connector: { end: "arrow" } */
+                    },
+                    {
+                        note: {
+                            label: "Birth Year"
+                        },
+                        x: x(1992),
+                        y: height + 30,
+                        type: d3.annotationLabel
+                    },
+                    {
+                        note: {
+                            label: "Source: The Pudding, https://pudding.cool/2020/07/song-decay/",
+                            align: "right",
+                            wrap: "none"
+                        },
+                        x: width + 75,
+                        y: height + 30,
+                        type: d3.annotationLabel
+                    }
+                ]
+                
+                svg.append("g")
+                    .attr("class", "annotation-group")
+                    .call(d3.annotation().annotations(annotations))
+                    .selectAll("text")
+                    .attr("fill", "black")
+
+                svg.selectAll(".annotation.label:nth-of-type(6) text")
+                    .attr("fill", "#999999")
+                    .attr("style", "font-size: 10pt")
+        })
+    })
+
+</script>

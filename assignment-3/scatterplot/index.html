@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <!-- set styles on the top -->
+    <style>
+        .chart-container {
+            max-width: 1050px;
+            /* border: 2px solid red; */
+            margin: 0 auto;
+            /* auto centers the div */
+
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+        }
+
+        svg {
+            /* border: 2px solid purple; */
+            overflow: visible;
+        }
+
+
+        h1 {
+            /* border: 2px solid green; */
+        }
+
+        .x .tick line {
+            stroke: rgba(0, 0, 0, .2);
+        }
+
+        .y .tick line {
+            stroke: rgba(0, 0, 0, .2);
+        }
+
+        .x .domain {
+            display: none;
+        }
+
+        .y .domain {
+            display: none;
+        }
+
+        .y .tick text {
+            font-size: 14px;
+            fill: #333;
+        }
+
+        .x .tick text {
+            font-size: 14px;
+            fill: #333;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="chart-container">
+        <h1 class="headline">
+            Global Temperature Trends
+        </h1>
+
+        <svg width="1050px" height="1000px">
+        </svg>
+    </div>
+</body>
+
+<script src="https://d3js.org/d3.v6.min.js"></script>
+<!-- we're using d3 version 6 (the latest version) for all out work -->
+
+<script>
+    console.log({ d3 })
+
+    //https://observablehq.com/@mbostock/global-temperature-trends
+
+
+    //cool tricks for javascript arrays
+    //objects
+    //look up tables
+    //looping, or for each
+
+    let width = 800;
+    let height = 500;
+
+    let svg = d3.select("body")
+        .select("svg")
+
+    console.log(svg.node())
+
+
+    //console.log
+
+    //arrays
+    //objects
+    //functions
+
+    d3.csv("temp.csv").then(function (data) {
+        
+        //when temp is loaded, then pass data into this block
+        //all references to the data need to be in this block
+        
+        //d3.csv is part of a suite of other functions that can do json, xml, tsv too.  
+        //https://github.com/d3/d3-fetch
+
+
+        data.forEach(function(row) {
+            row.date = new Date(row.date)
+            row.value = +row.value
+        })
+
+        console.log(data)
+
+        const max = d3.max(data, function (d) { return Math.abs(d.value) });
+        // //take "data", then finds the max
+
+        const color = d3.scaleSequential(d3.interpolateRdBu).domain([max, -max]);
+        //scaleSequential takes any domain and normalizes it to [0,1]
+
+        //https://observablehq.com/@d3/margin-convention
+        // //https://pandaqitutorials.com/Website/svg-coordinates-viewports
+
+        let margin = { top: 30, right: 10, bottom: 10, left: 30 };
+
+        // //d3 scales for the x and y axis
+        // //domain takes the data we have and maps them into SVG space
+        // //in this case we need to use scaleTime because we're dealin time data
+        let x = d3.scaleTime()
+            // .domain([new Date("1879-12-31"), new Date("2019-11-30")]) //d3 extent will look at all of the date values and pick the smallest and largest
+            .domain(d3.extent(data.map(function (d) { return d.date }))) //d3 extent will look at all of the date values and pick the smallest and largest
+            .range([margin.left, width - margin.right])
+
+        // console.log(d3.extent(data.map(function(d) { return d.date})))
+
+        // // //in this case we need to use scaleLinear because we're dealin linear data
+        let y = d3.scaleLinear()
+            .domain(d3.extent(data.map(function (d) { return d.value }))) 
+            .range([height - margin.bottom, margin.top])
+
+        // //see more here
+        // //https://observablehq.com/@d3/introduction-to-d3s-scales?collection=@d3/d3-scale
+        
+
+        // //define the settings for our axes
+        // //https://github.com/d3/d3-axis
+
+        let yAxisSettings = d3.axisLeft(y) //set axis to the left
+            .ticks(5) //approx how many ticks, the function will not necesarily give you that number
+            .tickSize(-10) //size of tick lines
+            .tickFormat(d3.format("+.0")) //what format do you want https://github.com/d3/d3-format 
+            .tickPadding(10) //distance from tick labels to tick marks
+
+
+        let xAxisSettings = d3.axisBottom(x)
+            .ticks(5)
+            .tickSize(10)
+            .tickPadding(10)
+
+        // //adding to the axes to our chart
+        let xAxisTicks = svg.append("g")
+            .attr("class", "x axis") //give each axis a class
+            .call(xAxisSettings)
+            .attr("transform", `translate(0,${height - margin.bottom})`)
+
+        let yAxisTicks = svg.append("g")
+            .attr("class", "y axis")
+            .call(yAxisSettings)
+            .attr("transform", `translate(${margin.left},0)`)
+
+        // //memorize this pattern
+        // //it's called the update pattern
+        // //we'll go into this pattern in more detail next class
+        
+        let points = svg.append("g") //Add a grouping element. It's useful to organize svg elements. https://developer.mozilla.org/en-US/docs/Web/SVG/Element/g
+            .selectAll(".points") //Look for all elements that exist with class. At this point there should be none, so it matters less. But you need to remember to do it. In the future, this feature will make it helpful for animation. 
+            .data(data) //attach data to the svg
+            .join("circle") //Add elements according to the number of rows in the data. In this case we have 1679 rows, so 1679 circles.
+            .attr("class", "points") // Give circles a class name.
+            .attr("cx", function (d) { return x(d.date) }) //callback to access the data, position according to x axis
+            .attr("cy", function (d) { return y(d.value) })  //callback to access the data, position according to y axis
+            .attr("r", 3)
+            .style("stroke", "#444")
+            .style("stroke-width", .2)
+            .style("fill", function (d) { return color(d.value) }) //callback to access the data, color according to value
+
+
+        let zeroline = svg.append("line") //we can add additional highlight lines
+            .attr("x1", margin.left)
+            .attr("x2", width)
+            .attr("y1", y(0))
+            .attr("y2", y(0))
+            .style("stroke", "#333")
+            .style("stroke-width", ".5")
+            .style("opacity", .5)
+
+        //see SVG basic shapes here: 
+        //https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Basic_Shapes
+
+
+    })
+
+</script>
