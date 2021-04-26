@@ -37,23 +37,10 @@
         </svg>
 
         <h1 class="headline">
-            New Delhi Chart Headline
-        </h1>
-        <svg width="525px" height="500px" id="new_delhi_chart">
-
-        </svg>
-        <h1 class="headline">
             Farming Chart Headline
         </h1>
 
         <svg width="763px" height="573px" id="farming_chart">
-
-        </svg>
-
-        <h1 class="headline">
-            College Chart Headline
-        </h1>
-        <svg width="1050px" height="400px" id="college_chart">
 
         </svg>
     </div>
@@ -144,27 +131,6 @@
     })
 
     // end unemployment chart code
-
-
-
-
-
-
-
-    // start new delhi chart code
-    // based on second graph from the bottom of: https://www.nytimes.com/interactive/2019/12/02/climate/air-pollution-compare-ar-ul.html
-
-    d3.csv("India-NCT-Delhi-daily.csv").then(function (new_delhi_data) {
-        let svg = d3.select("#new_delhi_chart")
-        let width = 525;
-        let height = 500;
-        console.log("New Delhi data loaded:")
-        console.log(new_delhi_data)
-
-        
-    })
-
-    // end new delhi chart code
 
 
 
@@ -309,26 +275,5 @@
     })
 
     // end farming chart code
-
-
-
-
-
-
-
-    // start college chart code
-    // based on second graph from: https://www.nytimes.com/interactive/2017/01/18/upshot/some-colleges-have-more-students-from-the-top-1-percent-than-the-bottom-60.html
-
-    d3.csv("college-selection-by-income-group-01-13.csv").then(function (college_data) {
-        let svg = d3.select("#college_chart")
-        let width = 1050;
-        let height = 400;
-        console.log("College data loaded:")
-        console.log(college_data)
-
-        
-    })
-
-    // end college chart code
 
 </script>
