@@ -75,10 +75,72 @@
         let svg = d3.select("#unemployment_chart")
         let width = 945;
         let height = 756;
+        let margin = { top: 10, right: 10, bottom: 10, left: 30 }
+        let recession_start = new Date("2007-12-01T00:00")
+        let recession_end = new Date("2009-06-30T00:00")
         console.log("Unemployment data loaded:")
         console.log(unemployment_data)
 
+        unemployment_data.forEach(function (row) {
+            row.end = new Date( row.end + "T00:00")
+            row.endNumber = row.end.valueOf()
+            row.value = +row.value
+        })
+
+        let x = d3.scaleTime()
+            .domain(d3.extent(unemployment_data.map(d => d.end)))
+            .range([margin.left, width - margin.right])
         
+        let y = d3.scaleLinear()
+            .domain(d3.extent(unemployment_data.map(d => d.value)))
+            .range([height - margin.bottom, margin.top])
+
+        let xAxisSettings = d3.axisBottom(x)
+            .tickSize(6)
+            .tickPadding(6)
+            .ticks(10)
+            .tickFormat(d3.timeFormat("%Y"))
+
+        let xAxis = svg.append("g")
+            .attr("class", "x axis")
+            .call(xAxisSettings)
+            .call(g => g.selectAll(".domain").remove())
+            .attr("transform", `translate(0,${height - margin.bottom})`)
+
+        let yAxisSettings = d3.axisLeft(y)
+            .ticks(6)
+            .tickSize(6)
+            .tickPadding(4)
+            .tickFormat(d3.format(",.0f"))
+
+        let yAxis = svg
+            .append("g")
+            .attr("class", "y axis")
+            .call(yAxisSettings)
+            .call(g => g.selectAll(".domain").remove())
+
+        let recession = svg.append("rect")
+            .attr("class", "recession-bg")
+            .attr("x", x(recession_start))
+            .attr("width", x(recession_end) - x(recession_start))
+            .attr("y", 0)
+            .attr("height", height)
+            .attr("fill", "#eee")
+
+        let bars = svg.append("g")
+            .attr("class", "bars")
+            .selectAll(".bar")
+            .data(unemployment_data)
+            .join("rect")
+            .attr("class", "bar")
+            .attr("x", d => x(d.end))
+            .attr("width", d => (d.value > 1500000 ? 3 : width / unemployment_data.length))
+            .attr("y", d => y(d.value))
+            .attr("height", d => height - y(d.value))
+            .attr("fill", "#f85c1e")
+
+        
+
     })
 
     // end unemployment chart code
@@ -153,8 +215,8 @@
             .range(sel_colors)
 
         let x = d3.scaleLinear()
-            .domain(d3.extent(farming_data.map(function (d) { return d.year })))
-            .range([margin.left, width])
+            .domain(d3.extent(farming_data.map( d => d.year )))
+            .range([margin.left, width - margin.right])
 
         let y = d3.scaleLinear()
             .domain(d3.extent(
@@ -207,10 +269,7 @@
             .selectAll("path")
             .data(farming_series)
             .join("path")
-            .attr("class", d => {
-                console.log(d)
-                return d.key
-            })
+            .attr("class", d => d.key )
             .attr("d", area)
             .attr("fill", d => color(d.key))
             .attr("fill-opacity", 0.8)
