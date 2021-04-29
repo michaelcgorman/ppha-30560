@@ -17,6 +17,33 @@
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         }
 
+        .chart-container.unemployment {
+            position: relative;
+            height: 800px;
+            width: 945px;
+        }
+
+        .chart-container.unemployment .drawover {
+            position: absolute;
+            top: 300px;
+            width: 700px;
+        }
+
+        .chart-container.unemployment .drawover p {
+            font-size: 24px;
+        }
+
+        .chart-container.unemployment svg {
+            position: absolute;
+            top: 0;
+        }
+        
+        .chart-container.unemployment p.source {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+
         svg {
             /*border: 2px solid purple;*/
             overflow: visible;
@@ -27,27 +54,52 @@
             margin-top: 4em;
         }
 
+        p.source {
+            font-size: 12px;
+            text-align: right;
+            color: #999;
+        }
+
+        p.source a {
+            color: inherit;
+        }
+
+        .chart-container.employment {
+            width: 763px;
+            padding-top: 3em;
+        }
+
         
     </style>
 </head>
 
 <body>
-    <div class="chart-container">
-        <h1 class="headline">
-            Unemployment Chart Headline
-        </h1>
-
+    <div class="chart-container unemployment">
+        <div class="drawover">
+            <h1 class="headline">
+                Weekly unemployment claims skyrocketed last week.
+            </h1>
+            <p>At the peak of the great recession, new claims topped out at 660,000. Last week, five times as many people submitted unemployment assistance applications.</p>
+        </div>
         <svg width="945px" height="756px" id="unemployment_chart">
 
         </svg>
-
+        <p class="source">
+            Source: Department of Labor, via <a href="https://www.nytimes.com/interactive/2020/03/26/upshot/coronavirus-millions-unemployment-claims.html">NY Times</a>
+        </p>
+    </div>
+    <div class="chart-container employment">
         <h1 class="headline">
-            Farming Chart Headline
+            Growth in white-collar employment defined the latter half of the 20th century.
         </h1>
+        <p>There are more white-collar jobs today than blue-collar, service industry, and farming jobs put together.</p>
 
         <svg width="763px" height="573px" id="farming_chart">
 
         </svg>
+        <p class="source">
+            Source: IPUMS-USA, University Of Minnesota, via <a href="https://www.npr.org/sections/money/2015/05/18/404991483/how-machines-destroy-and-create-jobs-in-4-graphs">Planet Money</a>
+        </p>
     </div>
 </body>
 
@@ -87,6 +139,14 @@
             .domain(d3.extent(unemployment_data.map(d => d.value)))
             .range([height - margin.bottom, margin.top])
 
+        let recession = svg.append("rect")
+            .attr("class", "recession-bg")
+            .attr("x", x(recession_start))
+            .attr("width", x(recession_end) - x(recession_start))
+            .attr("y", y(775000))
+            .attr("height", height - y(775000))
+            .attr("fill", "#eee")
+
         let xAxisSettings = d3.axisBottom(x)
             .tickSize(6)
             .tickPadding(6)
@@ -111,13 +171,15 @@
             .call(yAxisSettings)
             .call(g => g.selectAll(".domain").remove())
 
-        let recession = svg.append("rect")
-            .attr("class", "recession-bg")
-            .attr("x", x(recession_start))
-            .attr("width", x(recession_end) - x(recession_start))
-            .attr("y", 0)
-            .attr("height", height)
-            .attr("fill", "#eee")
+        yAxis.selectAll("line")
+            .attr("x1", width)
+            .attr("color", "#ccc")
+        
+        yAxis.selectAll(".tick:not(:first-child) text")
+            .attr("x", width - 30)
+        
+        yAxis.selectAll(".tick:not(:first-child) line")
+            .attr("x2", width - 25)
 
         let bars = svg.append("g")
             .attr("class", "bars")
@@ -236,6 +298,10 @@
             .call(yAxisSettings)
             .call(g => g.selectAll(".domain").remove())
         
+        yAxis.selectAll("line")
+            .attr("x1", width)
+            .attr("color", "#ccc")
+
         svg.append("g")
             .selectAll("path")
             .data(farming_series)
