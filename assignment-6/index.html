@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <!-- set styles on the top -->
+    <style>
+        .chart-container {
+            max-width: 1050px;
+            /* border: 2px solid red; */
+            margin: 0 auto;
+            /* auto centers the div */
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        svg {
+            /* border: 2px solid purple; */
+            overflow: visible;
+        }
+
+        h1 {
+            margin: 0 auto;
+        }
+
+        .x .tick line {
+            stroke: rgba(0, 0, 0, .2);
+        }
+
+        .y .tick line {
+            stroke: rgba(0, 0, 0, .2);
+        }
+
+        .x .domain {
+            display: none;
+        }
+
+        .y .domain {
+            display: none;
+        }
+
+        .y .tick text {
+            font-size: 14px;
+            fill: #333;
+
+        }
+
+        .x .tick text {
+            font-size: 14px;
+            fill: #333;
+        }
+
+        .labels text {
+            font-size: 20px;
+            font-weight: 200;
+            text-anchor: middle;
+        }
+        .labels text.Medicaid,
+        .labels text.Uninsured {
+            fill: white;
+        }
+
+        .axis-label {
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+
+        .source {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .highlight {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="chart-container">
+        <h1 class="headline">
+            Insurance rates by income percentile in <span class='highlight'>2020</span>
+        </h1>
+
+        <svg width="1050px" height="575px">
+        </svg>
+        <p class="source">Source: Current Population Survey, analysis by Matt Bruenig</p>
+
+    </div>
+</body>
+
+<script src="https://d3js.org/d3.v6.min.js"></script>
+<!-- we're using d3 version 6 (the latest version) for all out work -->
+<script src="polylabel.min.js"></script>
+<!-- label placement code adapted from https://bl.ocks.org/veltman/4d53741c724ad9261fe238045acd98c1 -->
+
+<script>
+    console.log({ d3 })
+
+    let width = 800;
+    let height = 500;
+
+    let svg = d3.select("body")
+        .select("svg")
+
+    let sel_var_state = 2020;
+
+    d3.csv("healthcare-disposable-inc.csv").then(function (data) {
+
+        console.log({data})
+
+        let margin = { top: 10, right: 10, bottom: 10, left: 30 };
+
+        let sel_cols = [
+            "Medicaid",
+            "Medicare",
+            "Medicare+Medicaid",
+            "Employer",
+            "Uninsured",
+            "Direct Purchase",
+            "Subsidized Exchange",
+            "CHIP",
+            "Military",
+            "Other"]
+
+        let sel_colors = [
+            "#f44336", // "Medicaid",
+            "#FF9800", // "Medicare",
+            "#FDD835", // "Medicare+Medicaid",
+            "#FFF8E1", // "Employer",
+            "#26A69A", // "Uninsured",
+            "#4DD0E1", // "Direct Purchase",
+            "#F06292", // "Subsidized Exchange",
+            "#5C6BC0", // "CHIP",
+            "#90A4AE", // "Military",
+            "#E0E0E0"  // "Other"
+        ]
+
+        data.forEach(function (row) {
+            row.year = +row.year
+        })
+
+        let d2020 = data.filter(d => d.year == 2020)
+        let d2009 = data.filter(d => d.year == 2009)
+
+    //     //https://github.com/d3/d3-shape#stacks
+        let series2020 = d3.stack().keys(sel_cols)(d2020);
+        let series2009 = d3.stack().keys(sel_cols)(d2009);
+
+    //     // https://github.com/d3/d3-scale#ordinal-scales
+        let color = d3.scaleOrdinal()
+            .domain(sel_cols)
+            .range(sel_colors)
+
+        let x = d3.scaleLinear()
+            .domain([0, 100])
+            .range([margin.left, width])
+
+        let y = d3.scaleLinear()
+            .domain([0, 1])
+            .range([height - margin.bottom, margin.top])
+
+    //     //https://github.com/d3/d3-shape#areas
+        let area = d3.area()
+            .x(d => x(d.data.Percentile))
+            .y0(d => y(d[0]))
+            .y1(d => y(d[1]))
+
+        let xAxisSettings = d3.axisBottom(x)
+            .tickSize(6)
+            .tickPadding(6)
+            .ticks(10)
+            .tickValues([5, 10, 20, 30, 40, 50, 60, 70, 80, 90, 95]) //
+            .tickFormat(d3.format(".0f"))
+
+        let xAxis = svg.append("g")
+            .attr("class", "x axis")
+            .call(xAxisSettings)
+            .call(g => g.selectAll(".domain").remove())
+            .attr("transform", `translate(0,${height - margin.bottom})`)
+
+
+        let yAxisSettings = d3.axisLeft(y)
+            .tickValues([.2, .4, .6, .8])
+            .tickSize(6)
+            .tickPadding(4)
+            .tickFormat(d3.format(".0%"))
+
+        let yAxis = svg
+            .append("g")
+            .attr("class", "y axis")
+            .call(yAxisSettings)
+            .call(g => g.selectAll(".domain").remove())
+
+        let areas = svg.append("g")
+            .attr("class", "areas")
+
+    //     //labelling 
+        areas
+            .selectAll("path")
+            .data(series2020, d => d.key)
+            .join("path")
+            .attr("class", d => d.key)
+            .attr("fill", d => color(d.key))
+            .attr("d", area)
+    //         .append("title")
+
+        var line = d3.line()
+            .curve(d3.curveMonotoneX);
+
+        let labels = svg.append("g")
+            .attr("class", "labels")
+
+        labels
+            .selectAll("text")
+            .data(getPositions(series2020), d => d.key)
+            .join("text")
+            .attr("class", d => d.key)
+            .classed("hidden", isHidden)
+            .attr("x", d => d.label[0])
+            .attr("y", d => d.label[1])
+            .text(d => d.key)
+
+        function getPositions(stacked) {
+            return stacked.map(function(area){
+
+                var top = area.map((f, j) => [x(j), y(f[1])]),
+                    bottom = area.map((f, j) => [x(j), y(f[0])]).reverse();
+
+                // Exclude the left- and right-most points from the polygon to avoid the edges a bit
+                return {
+                    area: area,
+                    label: polylabel([top.slice(1, area.length - 1).concat(bottom.slice(1, area.length - 1))]),
+                    path: line(top) + line(bottom).replace("M", "L") + "Z",
+                    key: area.key
+                };
+            });
+        }
+
+        // Does label fit in its assigned position?
+        function isHidden(d) {
+            return ![
+                "Uninsured",
+                "Employer",
+                "Medicare",
+                "Medicaid"
+            ].includes(d.key)
+        }
+
+        let hed = d3.select(".headline")
+
+        function update() {
+
+            if (sel_var_state == 2020) {
+                sel_var_state = 2009
+                dance(series2009)
+                hed.html("Insurance rates by income percentile in <span class='highlight'>2009</span>")
+
+            } else {
+                sel_var_state = 2020
+                dance(series2020)
+                hed.html("Insurance rates by income percentile in <span class='highlight'>2020</span>")
+            }
+
+        }
+
+        function dance(filtered_data) {
+            areas
+                .selectAll("path")
+                .data(filtered_data, d => d.key)
+                .join("path")
+                .transition()
+                .duration(500)
+                .attr("class", d => d.key)
+                .attr("fill", d => color(d.key))
+                .attr("d", area)
+            
+            labels
+                .selectAll("text")
+                .data(getPositions(filtered_data), d => d.key)
+                .join("text")
+                .transition()
+                .duration(500)
+                .attr("x", d => d.label[0])
+                .attr("y", d => d.label[1])
+                .text(d => d.key)
+        }
+
+        var timer = d3.interval(update, 2000) //in milliseconds
+    })
+
+</script>
