@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        .chart-container {
+            max-width: 1050px;
+            border: 3px solid red;
+            margin: 0 auto;
+            /* auto centers the div */
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        svg {
+            border: 2px solid purple;
+            overflow: visible;
+        }
+
+
+        h1 {
+            border: 2px solid green;
+        }
+
+        .filler {
+            height: 20rem;
+            text-align: center;
+        }
+
+        .filler h2 {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 54px;
+        }
+
+
+        .filler p {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 24px;
+            text-align: left;
+            margin: 20px auto;
+            line-height: 1.2;
+            max-width: 600px
+            
+        }
+
+        #scrolly-overlay .scrolly {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 24px;
+            max-width: 60rem;
+            margin: 3rem auto;
+            background-color: #f4f4f4;
+            padding: 1rem;
+            position: relative;
+
+        }
+
+        #scrolly-overlay .scrolly article {
+            padding: 0;
+            max-width: 30rem;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        #scrolly-overlay .scrolly article .step {
+            min-height: 1px;
+            margin-bottom: 1rem;
+        }
+
+        #scrolly-overlay .scrolly article .step:last-of-type {
+            margin-bottom: 0;
+        }
+
+        #scrolly-overlay .scrolly article .step.is-active p {
+            background-color: #008080;
+        }
+
+        #scrolly-overlay .scrolly article .step p {
+            margin: 0;
+            padding: 1rem;
+            text-align: center;
+            font-weight: 400;
+            background-color: #5b5b5b;
+            transition: background-color 250ms ease-in-out;
+            color: #f4f4f4;
+        }
+
+        #scrolly-overlay .scrolly figure.sticky {
+            /* this is the key style for the chart */
+            position: sticky;
+            width: 100%;
+            height: 50vh;
+            /* vh is the unit that divdes the viewport in units of 1/100 */
+            /* height is 50 vh = half the height of the viewport */
+            background: #969696;
+            margin: 0;
+            top: 25vh;
+            /* this is how high it should be from top */
+
+            left: 0;
+        }
+
+        #scrolly-overlay .scrolly figure.sticky .bar-outer {
+            position: absolute;
+            top: 50%;
+            left: 5%;
+            transform: translateY(-50%);
+            width: 90%;
+            height: 4rem;
+            background-color: #fff;
+        }
+
+        #scrolly-overlay .scrolly figure.sticky .bar-inner {
+            width: 10%;
+            height: 100%;
+            transition: width 1s ease-in-out;
+            background-color: #daa520;
+        }
+
+        .spacer {
+            height: 1500px;
+        }
+    </style>
+</head>
+
+<body>
+    <section class='filler'>
+
+        <h2>Start Scrolling!</h2>
+
+    </section>
+
+    <section id='scrolly-overlay'>
+
+        <div class='scrolly'>
+
+            <!--  sticky graphic   -->
+            <figure class='sticky'>
+                <!-- put your chart stuff here -->
+                <div class="chart-container">
+                    <h1 class="headline">
+                        US COVID Cases as of <span class='highlight'>January 22, 2020</span>
+                    </h1>
+            
+                    <svg width="1050px" height="575px">
+                    </svg>
+                <p class="source">Source: New York Times data</p>
+                <!-- <div class='bar-outer'>
+                    <div class='bar-inner'></div>
+                </div> -->
+            </figure>
+
+            <!--  step text   -->
+            <article>
+                <!-- <div class='step' data-width='10%' data-index='0'>
+                    <p>Bar is 10%</p>
+                </div>
+                <div class='step' data-width='90%' data-index='1'>
+                    <p>Bar is 90%</p>
+                </div>
+                <div class='step' data-width='50%' data-index='2'>
+                    <p>Bar is 50%</p>
+                </div> -->
+            </article>
+
+        </div>
+
+    </section>
+
+    <section class='filler'>
+        <h2>End. Keep scrolling!</h2>
+ 
+        <div class="spacer"></div>
+        <p>See? The article continued as normal.</p>
+        <p>
+            So basically the "sticky" positioned element is the figure. Article is relatively position element. When you scroll the through the article element, then the figure "element" unsticks.
+        </p>
+        <p>
+            This is all handled by CSS. The only Javascript is in checking which of the slides are in the viewport and then triggering a function when it is in view.
+        </p>
+        </br>
+        </br>
+    </section>
+</body>
+
+<!-- add your script blocks at the end -->
+<script src="https://d3js.org/d3.v6.min.js"></script>
+<script src="https://unpkg.com/enter-view@1.0.0/enter-view.min.js"></script>
+<!-- https://github.com/russellgoldenberg/enter-view -->
+
+
+<script>
+    
+</script>
+
+<!-- add your script blocks at the end -->
+
+<script>
+    console.log(d3)
+    let width = 1050;
+    let height = 575;
+    let margin = { top: 30, right: 10, bottom: 10, left: 30 };
+
+    d3.csv("time_series_covid19_confirmed_global.csv").then(function (data) {
+        let svg = d3.select("svg")
+        let scroll_steps = d3.select("article")
+
+        data = data.filter( row => row["Country/Region"] == "US")[0]
+
+        data = Object.keys(data).map(date => ({ date, cases: data[date] }))
+            .filter( row => !["Province/State", "Country/Region", "Lat", "Long"].includes(row.date) )
+
+        data.forEach(function(row) {
+            [month, day, year] = row.date.split("/")
+            month = +month
+            month = (month < 10 ? "0" + month : month)
+            day = +day
+            day = (day < 10 ? "0" + day : day)
+            row.dateString = "20" + year + "-" + month + "-" + day + "T00:00"
+            row.date = new Date( row.dateString )
+            row.cases = +row.cases
+            row.country = "usa"
+
+            scroll_steps.append("div")
+                .attr("class", "step")
+                .attr("data-date", row.dateString)
+        })
+
+        console.log(data)
+
+        let x = d3.scaleTime()
+            .domain(d3.extent(data.map( d => d.date )))
+            .range([margin.left, width - margin.right])
+
+        let y = d3.scaleLinear()
+            .domain(d3.extent(data.map( d => d.cases )))
+            .range([height - margin.bottom, margin.top])
+
+        let line = d3.line()
+            .x( d => x(d.date) )
+            .y( d => y(d.cases) )
+
+        //let grouped_data = d3.group(data, d => d.country)
+
+        let yAxisSettings = d3.axisLeft(y)
+            .ticks(5)
+            .tickSize(-width)
+            .tickPadding(10)
+
+        let xAxisSettings = d3.axisBottom(x)
+            .ticks(10)
+            .tickSize(10)
+            //.tickFormat(d3.format("0"))
+            .tickPadding(10)
+
+        let xAxisTicks = svg.append("g")
+            .attr("class", "x axis")
+            .call(xAxisSettings)
+            .attr("transform", `translate(0,${height - margin.bottom})`)
+            .style("color", "#999999")
+        
+        /* svg.selectAll(".x.axis .domain")
+            .style("display", "none") */
+
+        let yAxisTicks = svg.append("g")
+            .attr("class", "y axis")
+            .call(yAxisSettings)
+            .attr("transform", `translate(${margin.left},0)`)
+            .style("color", "#CCCCCC")
+
+        let yAxisTickLabels = svg.selectAll(".y.axis .tick text")
+            .attr("dy", -7)
+            .attr("dx", -5)
+            .attr("x", width)
+            .style("text-anchor", "end")
+            .style("color", "#666666")
+        
+        let line_path = svg.append("path")
+            .data([data.filter(function(d) { return d.cases == 1 })])
+            .attr("class", "case_count_line")
+            .attr("d", line)
+            .style("fill", "none")
+            .style("stroke-width", "3px")
+            .style("stroke", "black")
+
+        function update(max_date) {
+            console.log(max_date)
+            d3.selectAll(".case_count_line")
+                .data([data.filter(function(d) { 
+                    max_date = new Date(max_date)
+                    return d.date < max_date
+                })])
+                .attr("d", line)
+        }
+
+        const container = d3.select('#scrolly-overlay');
+        const stepSel = container.selectAll('.step'); //final all the step nodes
+
+        function updateChart(index) {
+            const sel = container.select(`[data-date='${index}']`);
+            const width = sel.attr('data-width');
+            stepSel.classed('is-active', (d, i) => i === index);
+            container.select('.bar-inner').style('width', width);
+            d3.select(".highlight").html(new Date(index).toLocaleDateString("en-US", {month: "long", day: "numeric", year: "numeric"}))
+        }
+
+        function init() {
+
+            enterView({ //our main view function
+                selector: stepSel.nodes(),
+                offset: 0.5, //when the slide is 50% away then trigger your chart
+                enter: el => { //what's supposed to happen when the slide enters?
+                    let index = d3.select(el).attr('data-date'); //extract the data-index attribute. this can be anything: a filter, a date, whatever.
+                    updateChart(index);
+                    update(index)
+                },
+                exit: el => { //what's supposed to happen when the slide exits?
+                    let index = d3.select(el).attr('data-date');
+                    updateChart(index);
+                    update(index)
+                }
+            });
+
+        }
+
+        init();
+        
+    })
+    
+
+</script>
