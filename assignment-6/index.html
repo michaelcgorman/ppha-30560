@@ -60,13 +60,17 @@
         }
 
         .axis-label {
-            font-size: 12px;
+            font-size: 14px;
             text-transform: uppercase;
+            text-align: center;
+            letter-spacing: 2px;
+            padding-top: 1em;;
         }
 
         .source {
             max-width: 1000px;
             margin: 0 auto;
+            color: #999;
         }
 
         .hidden {
@@ -75,6 +79,45 @@
 
         .highlight {
             text-decoration: underline;
+        }
+
+        #swatches {
+            text-align: right;
+            list-style: none;
+            margin-bottom: 0;
+        }
+
+        #swatches li {
+            display: inline-block;
+            padding-left: 2em;
+        }
+
+        #swatches li::before {
+            content: "\25A0";
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+            font-size: 24px;
+        }
+
+        #swatches li.meds::before {
+            color: #FDD835;
+        }
+
+        #swatches li.subs::before {
+            color: #F06292;
+        }
+
+        #swatches li.chip::before {
+            color: #5C6BC0;
+        }
+
+        #swatches li.mil::before {
+            color: #90A4AE;
+        }
+
+        #swatches li.other::before {
+            color: #E0E0E0;
         }
     </style>
 </head>
@@ -85,8 +128,16 @@
             Insurance rates by income percentile in <span class='highlight'>2020</span>
         </h1>
 
+        <ul id="swatches">
+            <li class="meds">Medicare and Medicaid</li>
+            <li class="subs">Subsidized Exchange</li>
+            <li class="chip">CHIP</li>
+            <li class="mil">Military</li>
+            <li class="other">Other</li>
+        </ul>
         <svg width="1050px" height="575px">
         </svg>
+        <p class="axis-label">INCOME PERCENTILE</p>
         <p class="source">Source: Current Population Survey, analysis by Matt Bruenig</p>
 
     </div>
@@ -100,8 +151,8 @@
 <script>
     console.log({ d3 })
 
-    let width = 800;
-    let height = 500;
+    let width = 1050;
+    let height = 575;
 
     let svg = d3.select("body")
         .select("svg")
@@ -112,7 +163,7 @@
 
         console.log({data})
 
-        let margin = { top: 10, right: 10, bottom: 10, left: 30 };
+        let margin = { top: 0, right: 0, bottom: 0, left: 0 };
 
         let sel_cols = [
             "Medicaid",
@@ -290,6 +341,22 @@
         }
 
         var timer = d3.interval(update, 2000) //in milliseconds
+        var timerActive = true;
+        console.log(timer)
+
+        function toggleTimer() {
+            if(timerActive) {
+                timerActive = false
+                timer.stop()
+            } else {
+                timerActive = true
+                update()
+                timer = d3.interval(update, 2000)
+            }
+        }
+
+        areas
+            .on("click", toggleTimer)
     })
 
 </script>
