@@ -6,21 +6,20 @@
     <style>
         .chart-container {
             max-width: 1050px;
-            border: 3px solid red;
             margin: 0 auto;
             /* auto centers the div */
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         }
 
+        .source {
+            margin: 2em auto;
+            color: #999;
+        }
+
         svg {
-            border: 2px solid purple;
             overflow: visible;
         }
 
-
-        h1 {
-            border: 2px solid green;
-        }
 
         .filler {
             height: 20rem;
@@ -48,7 +47,6 @@
             font-size: 24px;
             max-width: 60rem;
             margin: 3rem auto;
-            background-color: #f4f4f4;
             padding: 1rem;
             position: relative;
 
@@ -79,7 +77,6 @@
             padding: 1rem;
             text-align: center;
             font-weight: 400;
-            background-color: #5b5b5b;
             transition: background-color 250ms ease-in-out;
             color: #f4f4f4;
         }
@@ -91,7 +88,6 @@
             height: 50vh;
             /* vh is the unit that divdes the viewport in units of 1/100 */
             /* height is 50 vh = half the height of the viewport */
-            background: #969696;
             margin: 0;
             top: 25vh;
             /* this is how high it should be from top */
@@ -215,14 +211,17 @@
             month = (month < 10 ? "0" + month : month)
             day = +day
             day = (day < 10 ? "0" + day : day)
+            row.numericDate = +("20" + year + month + day)
             row.dateString = "20" + year + "-" + month + "-" + day + "T00:00"
             row.date = new Date( row.dateString )
+            row.prettyDate = row.date.toLocaleDateString("en-US", {month: "long", day: "numeric", year: "numeric"})
             row.cases = +row.cases
             row.country = "usa"
 
             scroll_steps.append("div")
                 .attr("class", "step")
-                .attr("data-date", row.dateString)
+                .attr("data-numeric-date", row.numericDate)
+                .attr("data-pretty-date", row.prettyDate)
         })
 
         console.log(data)
@@ -258,9 +257,6 @@
             .attr("transform", `translate(0,${height - margin.bottom})`)
             .style("color", "#999999")
         
-        /* svg.selectAll(".x.axis .domain")
-            .style("display", "none") */
-
         let yAxisTicks = svg.append("g")
             .attr("class", "y axis")
             .call(yAxisSettings)
@@ -274,6 +270,9 @@
             .style("text-anchor", "end")
             .style("color", "#666666")
         
+        svg.selectAll(".axis .domain")
+            .style("display", "none")
+
         let line_path = svg.append("path")
             .data([data.filter(function(d) { return d.cases == 1 })])
             .attr("class", "case_count_line")
@@ -282,26 +281,36 @@
             .style("stroke-width", "3px")
             .style("stroke", "black")
 
+        let case_count = svg.append("text")
+            .datum([data[1]])
+            .attr("class", "case_count_text")
+            .text(d => d[0].cases)
+            .attr("x", d => x(d[0].date))
+            .attr("y", d => y(d[0].cases))
+            .attr("dx", "5")
+            .attr("dy", "-10")
+            .attr("style", "text-shadow: 1px 1px 2px white")
+
+        let formatComma = d3.format(",")
+
         function update(max_date) {
-            console.log(max_date)
+            var filtered_data = data.filter(function(d) { 
+                return (d.numericDate <= max_date)
+            })
+
             d3.selectAll(".case_count_line")
-                .data([data.filter(function(d) { 
-                    max_date = new Date(max_date)
-                    return d.date < max_date
-                })])
+                .data([filtered_data])
                 .attr("d", line)
+            
+            d3.selectAll(".case_count_text")
+                .data([filtered_data[filtered_data.length - 1]])
+                .text(d => formatComma(d.cases))
+                .attr("x", d => x(d.date))
+                .attr("y", d => y(d.cases))
         }
 
         const container = d3.select('#scrolly-overlay');
-        const stepSel = container.selectAll('.step'); //final all the step nodes
-
-        function updateChart(index) {
-            const sel = container.select(`[data-date='${index}']`);
-            const width = sel.attr('data-width');
-            stepSel.classed('is-active', (d, i) => i === index);
-            container.select('.bar-inner').style('width', width);
-            d3.select(".highlight").html(new Date(index).toLocaleDateString("en-US", {month: "long", day: "numeric", year: "numeric"}))
-        }
+        const stepSel = container.selectAll('.step');
 
         function init() {
 
@@ -309,14 +318,12 @@
                 selector: stepSel.nodes(),
                 offset: 0.5, //when the slide is 50% away then trigger your chart
                 enter: el => { //what's supposed to happen when the slide enters?
-                    let index = d3.select(el).attr('data-date'); //extract the data-index attribute. this can be anything: a filter, a date, whatever.
-                    updateChart(index);
-                    update(index)
+                    d3.select(".highlight").html(d3.select(el).attr('data-pretty-date'))
+                    update(+d3.select(el).attr('data-numeric-date'))
                 },
                 exit: el => { //what's supposed to happen when the slide exits?
-                    let index = d3.select(el).attr('data-date');
-                    updateChart(index);
-                    update(index)
+                    d3.select(".highlight").html(d3.select(el).attr('data-pretty-date'))
+                    update(+d3.select(el).attr('data-numeric-date'))
                 }
             });
 
