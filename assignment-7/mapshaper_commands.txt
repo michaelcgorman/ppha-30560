@@ -2,9 +2,12 @@
 string-fields=Geo_FIPS
 
 # console commands after opening files
+## on county layer
 proj albersusa
 points
 join poverty_data keys=GEOID,Geo_FIPS
 style r=Math.sqrt(pop_18_in_poverty/300) fill=#f2a83b
 
+## on state layer
+proj albersusa
 style fill=#ecedee stroke=#000

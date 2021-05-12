@@ -6,22 +6,63 @@ output: pdf_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE, eval = FALSE)
 
 library("cowplot")
 library("magick")
 
 ```
 
+# Question 1
+
+Because the FIPS code in the CSV file was malformed (the leading zero was missing), I lightly processed the data in R before reading it into Mapshaper:
+
 ```{r}
 
-# source: https://stackoverflow.com/a/58705542
+read_csv("pop_18_poverty.csv", col_types = cols(Geo_FIPS = col_character(),
+                                                Geo_NAME = col_character(),
+                                                Geo_QName = col_character(),
+                                                pop_18_in_poverty = col_double())) %>%
+  mutate(Geo_FIPS = case_when(str_length(Geo_FIPS) == 4 ~ paste0("0", Geo_FIPS),
+                              TRUE ~ Geo_FIPS)) %>%
+  write_csv("poverty_data.csv")
 
-fig_svg<-cowplot::ggdraw()+cowplot::draw_image("output.svg")
+```
+
+When reading the files into Mapshaper, I used the `string-fields=Geo_FIPS` import option.
+
+Once the data were in Mapshaper, I ran the following commands on the county layer:
+
+```{bash}
+
+proj albersusa
+points
+join poverty_data keys=GEOID,Geo_FIPS
+style r=Math.sqrt(pop_18_in_poverty/300) fill=#f2a83b
+
+```
+
+I then ran the following commands on the state layer:
+
+```{bash}
+
+proj albersusa
+style fill=#ecedee stroke=#000
+
+```
+
+The resulting SVG is displayed below and available at https://michaelcgorman.github.io/ppha-30560/assignment-7/mapshaper-output/image.svg
+
+```{r echo = FALSE, eval = TRUE}
+
+# source: https://stackoverflow.com/a/58705542
+fig_svg<-cowplot::ggdraw()+cowplot::draw_image("mapshaper-output/image.svg")
 plot(fig_svg)
 
 ```
 
+# Question 2
 
+The D3 version is available at https://michaelcgorman.github.io/ppha-30560/assignment-7/
 
 

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        .chart-container {
+            max-width: 1050px;
+            border: 3px solid red;
+            margin: 0 auto;
+            /* auto centers the div */
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        svg {
+            border: 2px solid purple;
+            overflow: visible;
+        }
+
+
+        h1 {
+            border: 2px solid green;
+        }
+
+     
+    </style>
+</head>
+
+<body>
+    <div class="chart-container">
+        <h1 class="headline">
+            D3 starter template
+        </h1>
+
+        <svg width="1050px" height="500px">
+
+        </svg>
+    </div>
+</body>
+
+<!-- add your script blocks at the end -->
+<script src="https://d3js.org/d3.v6.min.js"></script>
+<!-- we're using d3 version 6 (the latest version) for all out work -->
+
+<!-- I used https://observablehq.com/@d3/spike-map?collection=@d3/d3-geo as a starting point. -->
+<script src="https://unpkg.com/topojson@3"></script>
+
+<script>
+    console.log({d3})
+    console.log({topojson})
+    let width = 1050;
+    let height = 500;
+
+    let svg = d3.select("body").select("svg")
+
+    d3.json("mapshaper-output/topojson.json").then(function (data) {
+        console.log({data})
+
+        let counties = topojson.feature(data, data.objects.county)
+        let states = topojson.feature(data, data.objects.cb_2018_us_state_20m)
+
+        console.log({counties})
+        console.log({states})
+
+        let projection = d3.geoIdentity()
+            .fitSize([width, height], states)
+            .reflectY(true)
+        let path = d3.geoPath(projection)
+
+        svg.append("g")
+            .attr("class", "states")
+            .selectAll("path")
+            .data(states.features)
+            .join("path")
+            .attr("d", path)
+            .attr("fill", "#ecedee")
+            .attr("stroke", "#000")
+
+        svg.append("g")
+            .attr("class", "counties")
+            .selectAll("circle")
+            .data(counties.features.filter(d => d.geometry != null))
+            .join("circle")
+            .attr("fill", "#f2a83b")
+            .attr("transform", d => `translate(${projection([d.geometry.coordinates[0], d.geometry.coordinates[1]])})`)
+            .attr("r", d => Math.sqrt(d.properties.pop_18_in_poverty / 300))
+
+
+
+    })
+
+</script>
