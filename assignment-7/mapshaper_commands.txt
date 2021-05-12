@@ -1,0 +1,10 @@
+# import options
+string-fields=Geo_FIPS
+
+# console commands after opening files
+proj albersusa
+points
+join poverty_data keys=GEOID,Geo_FIPS
+style r=Math.sqrt(pop_18_in_poverty/300) fill=#f2a83b
+
+style fill=#ecedee stroke=#000
