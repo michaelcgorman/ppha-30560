@@ -6,20 +6,29 @@
     <style>
         .chart-container {
             max-width: 1050px;
-            border: 3px solid red;
             margin: 0 auto;
             /* auto centers the div */
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         }
 
         svg {
-            border: 2px solid purple;
             overflow: visible;
         }
 
-
         h1 {
-            border: 2px solid green;
+            text-align: center;
+        }
+
+        .pop-up {
+            position: absolute; 
+            border: 1px solid black;
+            border-radius: 1px;
+            line-height: 1.2;
+            width: 200px;
+            pointer-events: none;
+            background-color: white;
+            padding: 10px;
+            opacity: 0;
         }
 
      
@@ -29,12 +38,12 @@
 <body>
     <div class="chart-container">
         <h1 class="headline">
-            D3 starter template
+            Children in Poverty
         </h1>
 
-        <svg width="1050px" height="500px">
+        <svg width="1050px" height="500px"></svg>
 
-        </svg>
+        <div class="pop-up"></div>
     </div>
 </body>
 
@@ -84,8 +93,24 @@
             .attr("fill", "#f2a83b")
             .attr("transform", d => `translate(${projection([d.geometry.coordinates[0], d.geometry.coordinates[1]])})`)
             .attr("r", d => Math.sqrt(d.properties.pop_18_in_poverty / 300))
+            
 
+        let county_circles = d3.selectAll(".counties circle")
+        let popup = d3.select(".pop-up")
+        let comma_format = d3.format(",")
 
+        county_circles.on("mouseover", (event, d) => {
+            popup
+                .style("opacity", 1)
+                .style("left", (event.x + 10) + "px")
+                .style("top", (event.y - 15) + "px")
+                .html("<b>" + d.properties.Geo_QName + "</b><br />" + comma_format(d.properties.pop_18_in_poverty) + " children in poverty")
+        })
+
+        county_circles.on("mouseout", (event, d) => {
+            popup
+                .style("opacity", 0)
+        })
 
     })
 
