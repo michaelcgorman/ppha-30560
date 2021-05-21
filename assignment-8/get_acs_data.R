@@ -16,8 +16,7 @@ county_commute_times <- get_acs(geography = "county",
                                 year = 2019,
                                 survey = "acs5",
                                 output = "wide",
-                                geometry = TRUE,
-                                shift_geo = TRUE) %>%
+                                geometry = TRUE) %>%
   select(-ends_with("M")) %>%
   rename(total_commuters = B08303_001E,
          num_under_05_mins = B08303_002E,
@@ -93,8 +92,7 @@ county_commute_times %>%
 
 state_borders <- get_acs(geography = "state",
                          variables = "B01001_001",
-                         geometry = TRUE,
-                         shift_geo = TRUE) %>%
+                         geometry = TRUE) %>%
   select(GEOID, NAME, geometry)
 
 state_borders %>%
