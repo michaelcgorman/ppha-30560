@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        .chart-container {
+            max-width: 1050px;
+            margin: 0 auto;
+            /* auto centers the div */
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        svg {
+            overflow: visible;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .pop-up {
+            position: absolute; 
+            border: 1px solid black;
+            border-radius: 1px;
+            line-height: 1.2;
+            width: 200px;
+            pointer-events: none;
+            background-color: white;
+            padding: 10px;
+            opacity: 0;
+        }
+
+     
+    </style>
+</head>
+
+<body>
+    <div class="chart-container">
+        <h1 class="headline">
+            Commute Times
+        </h1>
+
+        <svg width="1050px" height="500px"></svg>
+
+        <div class="pop-up"></div>
+    </div>
+</body>
+
+<!-- add your script blocks at the end -->
+<script src="https://d3js.org/d3.v6.min.js"></script>
+<!-- we're using d3 version 6 (the latest version) for all out work -->
+
+<!-- I used https://observablehq.com/@d3/spike-map?collection=@d3/d3-geo as a starting point. -->
+<script src="https://unpkg.com/topojson@3"></script>
+
+<script>
+    console.log({d3})
+    console.log({topojson})
+    let width = 1050;
+    let height = 500;
+
+    let sel_cols = [
+            "under 10 minutes",
+            "10 to 20 minutes",
+            "20 to 30 minutes",
+            "30 to 40 minutes",
+            "over 40 minutes"
+    ]
+            
+    let sel_colors = [
+        "#fef0d9", // "under 10 minutes",
+        "#fdcc8a", // "10 to 20 minutes",
+        "#fc8d59", // "20 to 30 minutes",
+        "#e34a33", // "30 to 40 minutes",
+        "#b30000"  // "over 40 minutes",
+    ]
+
+    let svg = d3.select("body").select("svg")
+
+    d3.json("topo_data.json").then(function (data) {
+        console.log({data})
+
+        let counties = topojson.feature(data, data.objects.county_commute_times)
+        let states = topojson.feature(data, data.objects.state_borders)
+
+        console.log({counties})
+        console.log({states})
+
+        let projection = d3.geoIdentity()
+            .fitSize([width, height], states)
+            .reflectY(true)
+
+        let path = d3.geoPath(projection)
+
+        let color = d3.scaleOrdinal()
+            .domain(sel_cols)
+            .range(sel_colors)
+
+        svg.append("g")
+            .attr("class", "states")
+            .selectAll("path")
+            .data(states.features)
+            .join("path")
+            .attr("d", path)
+            .attr("fill", "#ecedee")
+            .attr("stroke", "#000")
+
+        svg.append("g")
+            .attr("class", "counties")
+            .selectAll("path")
+            .data(counties.features.filter(d => d.geometry != null))
+            .join("path")
+            .attr("d", path)
+            .attr("fill", d => color(d.properties.median_length))
+            //.attr("fill", "#f2a83b")
+            //.attr("transform", d => `translate(${projection([d.geometry.coordinates[0], d.geometry.coordinates[1]])})`)
+            //.attr("r", d => Math.sqrt(d.properties.pop_18_in_poverty / 300))
+            
+
+        //let county_circles = d3.selectAll(".counties circle")
+        let popup = d3.select(".pop-up")
+        let comma_format = d3.format(",")
+
+        /* county_circles.on("mouseover", (event, d) => {
+            popup
+                .style("opacity", 1)
+                .style("left", (event.x + 10) + "px")
+                .style("top", (event.y - 15) + "px")
+                .html("<b>" + d.properties.Geo_QName + "</b><br />" + comma_format(d.properties.pop_18_in_poverty) + " children in poverty")
+        })
+
+        county_circles.on("mouseout", (event, d) => {
+            popup
+                .style("opacity", 0)
+        }) */
+
+    })
+
+</script>
