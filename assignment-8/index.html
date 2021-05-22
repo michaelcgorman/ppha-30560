@@ -68,7 +68,7 @@
                 This map shows the amount of time Americans spend commuting to work (one way) on a typical day.
             </p>
             <p>
-                Before choosing a specific color ramp, I played around with the data to get a sense of what it was telling me.
+                Before choosing a specific color ramp, I played around with the data (<a href="get_acs_data.R">R source code</a>) to get a sense of what it was telling me.
                 The original dataset places commuters into summary buckets. These buckets are generally five minutes wide, but they get wider at 45 minutes and above.
                 This works reasonably well for most counties, but it obscures a lot of potentially interesting variation in urban counties with lots of long commutes.
                 It also makes it difficult to understand the true granular distribution of the data and calculate accurate summary statistics.
@@ -122,18 +122,6 @@
                   </tr>
                 </tbody>
                 </table>
-<!--
-under 5 minutes            3
-5 to 10 minutes          170
-10 to 15 minutes         468
-15 to 20 minutes         967
-20 to 25 minutes         995
-25 to 30 minutes         320
-30 to 35 minutes         270
-35 to 40 minutes          12
-40 to 45 minutes          12
-45 to 60 minutes           3
--->
             <p>
                 I ended up choosing a color ramp that uses equal-interval bins of ten minutes each.
                 I played around with a number of bin sizes &mdash; including the original bins from the Census Bureau, a few quantile options, and some varied-size options &mdash;
