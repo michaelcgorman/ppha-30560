@@ -1,0 +1,12 @@
+---
+title: "Assignment 8"
+author: "Michael Gorman"
+date: "5/24/2021"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE, eval = FALSE)
+```
+
+My assignment, including both the graphic and the explanation, is available at https://michaelcgorman.github.io/ppha-30560/assignment-8/
