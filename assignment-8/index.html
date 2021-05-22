@@ -13,10 +13,26 @@
 
         svg {
             overflow: visible;
+            padding-top: 30px;
         }
 
         h1 {
             text-align: center;
+        }
+
+        table td + td {
+            padding-left: 3em;
+            text-align: right;
+        }
+
+        p.source {
+            font-size: 12px;
+            text-align: right;
+            color: #999;
+        }
+
+        p.source a {
+            color: inherit;
         }
 
         .pop-up {
@@ -24,11 +40,15 @@
             border: 1px solid black;
             border-radius: 1px;
             line-height: 1.2;
-            width: 200px;
+            width: 300px;
             pointer-events: none;
             background-color: white;
             padding: 10px;
             opacity: 0;
+        }
+
+        .pop-up .axis .tick {
+            color: #666;
         }
 
      
@@ -38,12 +58,101 @@
 <body>
     <div class="chart-container">
         <h1 class="headline">
-            Commute Times
+            People in Cities Spend a Lot of Time Getting to Work
         </h1>
 
-        <svg width="975px" height="610px"></svg>
+        <svg id="main-chart" width="975px" height="610px"></svg>
+        <p class="source">Source: U.S. Census Bureau, 2019 ACS 5-year estimates, <a href="https://data.census.gov/cedsci/table?tid=ACSDT5Y2019.B08303">B08303: Travel Time to Work</a></p>
+        <div class="explanation">
+            <p>
+                This map shows the amount of time Americans spend commuting to work (one way) on a typical day.
+            </p>
+            <p>
+                Before choosing a specific color ramp, I played around with the data to get a sense of what it was telling me.
+                The original dataset places commuters into summary buckets. These buckets are generally five minutes wide, but they get wider at 45 minutes and above.
+                This works reasonably well for most counties, but it obscures a lot of potentially interesting variation in urban counties with lots of long commutes.
+                It also makes it difficult to understand the true granular distribution of the data and calculate accurate summary statistics.
+            </p>
+            <p>
+                After considering color ramps based on individual buckets, playing around with per-capita calculations and a few ratios, I settled on the median commute as the best statistic to highlight.
+                In order to do this, I approximated the cumulative distribution of commuters and identified the bucket within which the median commuter falls for each county.
+                The overall distribution came out to:
+            </p>
+            <table>
+                <tbody>
+                  <tr>
+                    <td>under 5 minutes</td>
+                    <td>3 counties</td>
+                  </tr>
+                  <tr>
+                    <td>5 to 10 minutes</td>
+                    <td>170</td>
+                  </tr>
+                  <tr>
+                    <td>10 to 15 minutes</td>
+                    <td>468</td>
+                  </tr>
+                  <tr>
+                    <td>15 to 20 minutes</td>
+                    <td>967</td>
+                  </tr>
+                  <tr>
+                    <td>20 to 25 minutes</td>
+                    <td>995</td>
+                  </tr>
+                  <tr>
+                    <td>25 to 30 minutes</td>
+                    <td>320</td>
+                  </tr>
+                  <tr>
+                    <td>30 to 35 minutes</td>
+                    <td>270</td>
+                  </tr>
+                  <tr>
+                    <td>35 to 40 minutes</td>
+                    <td>12</td>
+                  </tr>
+                  <tr>
+                    <td>40 to 45 minutes</td>
+                    <td>12</td>
+                  </tr>
+                  <tr>
+                    <td>45 to 60 minutes</td>
+                    <td>3</td>
+                  </tr>
+                </tbody>
+                </table>
+<!--
+under 5 minutes            3
+5 to 10 minutes          170
+10 to 15 minutes         468
+15 to 20 minutes         967
+20 to 25 minutes         995
+25 to 30 minutes         320
+30 to 35 minutes         270
+35 to 40 minutes          12
+40 to 45 minutes          12
+45 to 60 minutes           3
+-->
+            <p>
+                I ended up choosing a color ramp that uses equal-interval bins of ten minutes each.
+                I played around with a number of bin sizes &mdash; including the original bins from the Census Bureau, a few quantile options, and some varied-size options &mdash;
+                and settled on this, feeling it does a good job of showing outliers while also highlighting a good amount of variation.
+                I also felt it would be very easy for a reader to understand, compared to numbers that aren't as round or evenly spaced.
+            </p>
+            <p>
+                I chose the orange/red scale from <a href="https://colorbrewer2.org/#type=sequential&scheme=OrRd&n=5">ColorBrewer</a> in order to convey an intuitive sense
+                that longer commutes are less preferable.
+            </p>
+            
 
-        <div class="pop-up"></div>
+        </div>
+
+        <div class="pop-up">
+            <b id="pop-up-name"></b>
+            <p id="pop-up-text"></p>
+            <svg id="pop-up-chart" width="300px" height="150px"></svg>
+        </div>
     </div>
 </body>
 
@@ -52,6 +161,8 @@
 <!-- we're using d3 version 6 (the latest version) for all out work -->
 
 <script src="https://unpkg.com/topojson@3"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-annotation/2.5.1/d3-annotation.min.js"></script>
 
 <!-- The following script is copied from https://observablehq.com/@d3/color-legend -->
 <script>
@@ -214,7 +325,7 @@
         "#b30000"  // "over 40 minutes",
     ]
 
-    let svg = d3.select("body").select("svg")
+    let svg = d3.select("#main-chart")
 
     d3.json("topo_data.json").then(function (data) {
         console.log({data})
@@ -252,7 +363,7 @@
 
         svg.append("g")
             .attr("class", "color_legend")
-            .attr("transform", "translate(650, 0)")
+            .attr("transform", "translate(525, 550)")
             .append(() => legend({
                 color: d3.scaleThreshold([10, 20, 30, 40], sel_colors),
                 title: "Median Commute (minutes)",
@@ -265,20 +376,149 @@
 
         let county_paths = d3.selectAll(".counties path")
         let popup = d3.select(".pop-up")
+        let popup_name = d3.select("#pop-up-name")
+        let popup_text = d3.select("#pop-up-text")
+        let popup_svg = d3.select("#pop-up-chart")
+        let popup_width = 300;
+        let popup_height = 150;
+        let popup_margin_bottom = 20;
 
-        county_paths.on("mouseover", (event, d) => {
+        county_paths.on("mouseover", (event, county_data) => {
             d3.select(event.srcElement)
                 .attr("stroke", "#666")
                 .attr("stroke-width", "1px")
+
+            popup_svg
+                .html("")
+
+            let county_commute_shares = [
+                {
+                    time: "under 5 minutes",
+                    low_end: 0,
+                    width: 5,
+                    share: county_data.properties.share_under_05_mins
+                },
+                {
+                    time: "5 to 10 minutes",
+                    low_end: 5,
+                    width: 5,
+                    share: county_data.properties.share_05_to_09_mins
+                },
+                {
+                    time: "10 to 15 minutes",
+                    low_end: 10,
+                    width: 5,
+                    share: county_data.properties.share_10_to_14_mins
+                },
+                {
+                    time: "15 to 20 minutes",
+                    low_end: 15,
+                    width: 5,
+                    share: county_data.properties.share_15_to_19_mins
+                },
+                {
+                    time: "20 to 25 minutes",
+                    low_end: 20,
+                    width: 5,
+                    share: county_data.properties.share_20_to_24_mins
+                },
+                {
+                    time: "25 to 30 minutes",
+                    low_end: 25,
+                    width: 5,
+                    share: county_data.properties.share_25_to_29_mins
+                },
+                {
+                    time: "30 to 35 minutes",
+                    low_end: 30,
+                    width: 5,
+                    share: county_data.properties.share_30_to_34_mins
+                },
+                {
+                    time: "35 to 40 minutes",
+                    low_end: 35,
+                    width: 5,
+                    share: county_data.properties.share_35_to_39_mins
+                },
+                {
+                    time: "40 to 45 minutes",
+                    low_end: 40,
+                    width: 5,
+                    share: county_data.properties.share_40_to_44_mins
+                },
+                {
+                    time: "45 to 60 minutes",
+                    low_end: 45,
+                    width: 15,
+                    share: county_data.properties.share_45_to_59_mins
+                },
+                {
+                    time: "60 to 90 minutes",
+                    low_end: 60,
+                    width: 30,
+                    share: county_data.properties.share_60_to_89_mins
+                },
+                {
+                    time: "over 90 minutes",
+                    low_end: 90,
+                    width: 30,
+                    share: county_data.properties.share_90_plus_mins
+                }
+            ]
+
+            let max_time = 90 + 30 // low_end + width of the last element in county_commute_shares
+
+            let popup_x = d3.scaleOrdinal()
+                .domain(county_commute_shares.map(d => d.low_end))
+                .range(county_commute_shares.map(d => (d.low_end / max_time) * popup_width))
+        
+            let popup_y = d3.scaleLinear()
+                .domain([0, d3.max(county_commute_shares.map(d => d.share / d.width * max_time))])
+                .range([popup_height, popup_margin_bottom])
+
+            let popup_xAxisSettings = d3.axisBottom(popup_x)
+                .tickSize(6)
+                .tickPadding(6)
+                .tickValues([5, 15, 30, 45, 60, 90])
+
+            let popup_xAxis = popup_svg.append("g")
+                .attr("class", "x axis")
+                .call(popup_xAxisSettings)
+                .call(g => g.selectAll(".domain").remove())
+                .attr("transform", `translate(0,${popup_height - popup_margin_bottom})`)
+
+            popup_xAxis.select(".tick:last-child text")
+                .html("90 minutes")
+                .attr("dx", "-5")
+                .attr("text-anchor", "start")
+
+            let popup_bars = popup_svg.append("g")
+                .attr("class", "bars")
+                .selectAll(".bar")
+                .data(county_commute_shares)
+                .join("rect")
+                .attr("class", "bar")
+                .attr("x", d => popup_x(d.low_end))
+                .attr("width", d => popup_x(d.width))
+                .attr("y", d => popup_y(d.share / d.width * max_time) - popup_margin_bottom)
+                .attr("height", d => (popup_height - popup_y(d.share / d.width * max_time)))
+                .attr("fill", d => (d.time == county_data.properties.median_length_detailed ? "#fc8d59" : "#fdcc8a"))
+
+        
+
+            popup_name
+                .html(county_data.properties.NAME)
+                
+            popup_text
+                .html("Median commute: " + county_data.properties.median_length_detailed)
 
             popup
                 .style("opacity", 1)
                 .style("left", (event.x + 10) + "px")
                 .style("top", (event.y - 15) + "px")
-                .html("<b>" + d.properties.NAME + "</b><br />Median commute: " + d.properties.median_length)
         })
 
-        county_paths.on("mouseout", (event, d) => {
+        county_paths.on("mouseout", (event, county_data) => {
             d3.select(event.srcElement)
                 .attr("stroke", "none")
                 .attr("stroke-width", "0px")
@@ -286,6 +526,58 @@
             popup
                 .style("opacity", 0)
         })
+
+        // use d3-annotation from https://d3-annotation.susielu.com/
+        const annotations = [
+            {
+                note: {
+                    label: "The median commuter in Wheatland County, Montana, travels under 5 minutes",
+                    align: "right"
+                },
+                x: 280,
+                y: 55,
+                dx: -300,
+                dy: -30,
+                type: d3.annotationLabel
+            },
+            {
+                note: {
+                    label: "The average commuter in the Bronx takes over 50 minutes to get to work",
+                    align: "left"
+                },
+                x: 887,
+                y: 156,
+                dx: 45,
+                dy: 30,
+                type: d3.annotationLabel
+            },
+            {
+                note: {
+                    label: "More than 180,000 people in Los Angeles County spend more 90 minutes each way",
+                    align: "right"
+                },
+                x: 75,
+                y: 315,
+                dx: -25,
+                dy: 20,
+                type: d3.annotationLabel
+            },
+            {
+                note: {
+                    label: "Residents of Cook County spend more than 1.4 million hours on their way to work every day",
+                    align: "left"
+                },
+                x: 640,
+                y: 174,
+                dx: 80,
+                dy: -80,
+                type: d3.annotationLabel
+            }
+        ]
+        
+        svg.append("g")
+            .attr("class", "annotation-group")
+            .call(d3.annotation().annotations(annotations))
 
     })
 

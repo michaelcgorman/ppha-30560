@@ -55,18 +55,18 @@ county_commute_times <- get_acs(geography = "county",
          total_under_60_mins = total_under_45_mins + num_45_to_59_mins,
          total_under_90_mins = total_under_60_mins + num_60_to_89_mins,
          median_commuter = total_commuters / 2,
-         # median_length_detailed = case_when(total_under_05_mins > median_commuter ~ "under 5 minutes",
-         #                                    total_under_10_mins > median_commuter ~ "5 to 10 minutes",
-         #                                    total_under_15_mins > median_commuter ~ "10 to 15 minutes",
-         #                                    total_under_20_mins > median_commuter ~ "15 to 20 minutes",
-         #                                    total_under_25_mins > median_commuter ~ "20 to 25 minutes",
-         #                                    total_under_30_mins > median_commuter ~ "25 to 30 minutes",
-         #                                    total_under_35_mins > median_commuter ~ "30 to 35 minutes",
-         #                                    total_under_40_mins > median_commuter ~ "35 to 40 minutes",
-         #                                    total_under_45_mins > median_commuter ~ "40 to 45 minutes",
-         #                                    total_under_60_mins > median_commuter ~ "45 to 60 minutes",
-         #                                    total_under_90_mins > median_commuter ~ "60 to 90 minutes",
-         #                                    TRUE ~ "over 90 minutes"),
+         median_length_detailed = case_when(total_under_05_mins > median_commuter ~ "under 5 minutes",
+                                            total_under_10_mins > median_commuter ~ "5 to 10 minutes",
+                                            total_under_15_mins > median_commuter ~ "10 to 15 minutes",
+                                            total_under_20_mins > median_commuter ~ "15 to 20 minutes",
+                                            total_under_25_mins > median_commuter ~ "20 to 25 minutes",
+                                            total_under_30_mins > median_commuter ~ "25 to 30 minutes",
+                                            total_under_35_mins > median_commuter ~ "30 to 35 minutes",
+                                            total_under_40_mins > median_commuter ~ "35 to 40 minutes",
+                                            total_under_45_mins > median_commuter ~ "40 to 45 minutes",
+                                            total_under_60_mins > median_commuter ~ "45 to 60 minutes",
+                                            total_under_90_mins > median_commuter ~ "60 to 90 minutes",
+                                            TRUE ~ "over 90 minutes"),
          median_length = case_when(total_under_10_mins > median_commuter ~ "under 10 minutes",
                                    total_under_20_mins > median_commuter ~ "10 to 20 minutes",
                                    total_under_30_mins > median_commuter ~ "20 to 30 minutes",
@@ -87,6 +87,7 @@ county_commute_times <- get_acs(geography = "county",
          mean_length = total_length / total_commuters)
 
 county_commute_times %>%
+  select(GEOID, NAME, median_length, median_length_detailed, starts_with("share"), geometry) %>%
   write_sf("county_commute_times.geojson")
 
 
