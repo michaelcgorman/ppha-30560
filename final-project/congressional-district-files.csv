@@ -1,0 +1,919 @@
+filename,state_name,from_election_year,to_election_year,census_year
+data/congressional-district-boundaries/Alabama_103_to_107.geojson,Alabama,1992,2000,1990
+data/congressional-district-boundaries/Alabama_108_to_112.geojson,Alabama,2002,2010,2000
+data/congressional-district-boundaries/Alabama_16_to_17.geojson,Alabama,1818,1820,1810
+data/congressional-district-boundaries/Alabama_18_to_22.geojson,Alabama,1822,1830,1820
+data/congressional-district-boundaries/Alabama_23_to_26.geojson,Alabama,1832,1838,1830
+data/congressional-district-boundaries/Alabama_27_to_27.geojson,Alabama,1840,1840,1840
+data/congressional-district-boundaries/Alabama_28_to_33.geojson,Alabama,1842,1852,1840
+data/congressional-district-boundaries/Alabama_34_to_36.geojson,Alabama,1854,1858,1850
+data/congressional-district-boundaries/Alabama_40_to_42.geojson,Alabama,1866,1870,1860
+data/congressional-district-boundaries/Alabama_43_to_44.geojson,Alabama,1872,1874,1870
+data/congressional-district-boundaries/Alabama_45_to_48.geojson,Alabama,1876,1882,1870
+data/congressional-district-boundaries/Alabama_49_to_52.geojson,Alabama,1884,1890,1880
+data/congressional-district-boundaries/Alabama_53_to_57.geojson,Alabama,1892,1900,1890
+data/congressional-district-boundaries/Alabama_58_to_62.geojson,Alabama,1902,1910,1900
+data/congressional-district-boundaries/Alabama_63_to_64.geojson,Alabama,1912,1914,1910
+data/congressional-district-boundaries/Alabama_65_to_72.geojson,Alabama,1916,1930,1910
+data/congressional-district-boundaries/Alabama_73_to_87.geojson,Alabama,1932,1960,1930
+data/congressional-district-boundaries/Alabama_88_to_88.geojson,Alabama,1962,1962,1960
+data/congressional-district-boundaries/Alabama_89_to_89.geojson,Alabama,1964,1964,1960
+data/congressional-district-boundaries/Alabama_90_to_92.geojson,Alabama,1966,1970,1960
+data/congressional-district-boundaries/Alabama_93_to_97.geojson,Alabama,1972,1980,1970
+data/congressional-district-boundaries/Alabama_98_to_102.geojson,Alabama,1982,1990,1980
+data/congressional-district-boundaries/Alaska_103_to_112.geojson,Alaska,1992,2010,1990
+data/congressional-district-boundaries/Alaska_86_to_102.geojson,Alaska,1958,1990,1950
+data/congressional-district-boundaries/Arizona_103_to_107.geojson,Arizona,1992,2000,1990
+data/congressional-district-boundaries/Arizona_108_to_108.geojson,Arizona,2002,2002,2000
+data/congressional-district-boundaries/Arizona_109_to_112.geojson,Arizona,2004,2010,2000
+data/congressional-district-boundaries/Arizona_62_to_77.geojson,Arizona,1910,1940,1910
+data/congressional-district-boundaries/Arizona_78_to_80.geojson,Arizona,1942,1946,1940
+data/congressional-district-boundaries/Arizona_81_to_87.geojson,Arizona,1948,1960,1940
+data/congressional-district-boundaries/Arizona_88_to_89.geojson,Arizona,1962,1964,1960
+data/congressional-district-boundaries/Arizona_90_to_91.geojson,Arizona,1966,1968,1960
+data/congressional-district-boundaries/Arizona_92_to_92.geojson,Arizona,1970,1970,1970
+data/congressional-district-boundaries/Arizona_93_to_97.geojson,Arizona,1972,1980,1970
+data/congressional-district-boundaries/Arizona_98_to_102.geojson,Arizona,1982,1990,1980
+data/congressional-district-boundaries/Arkansas_103_to_107.geojson,Arkansas,1992,2000,1990
+data/congressional-district-boundaries/Arkansas_108_to_112.geojson,Arkansas,2002,2010,2000
+data/congressional-district-boundaries/Arkansas_24_to_32.geojson,Arkansas,1834,1850,1830
+data/congressional-district-boundaries/Arkansas_33_to_36.geojson,Arkansas,1852,1858,1850
+data/congressional-district-boundaries/Arkansas_40_to_40.geojson,Arkansas,1866,1866,1860
+data/congressional-district-boundaries/Arkansas_41_to_42.geojson,Arkansas,1868,1870,1860
+data/congressional-district-boundaries/Arkansas_43_to_43.geojson,Arkansas,1872,1872,1870
+data/congressional-district-boundaries/Arkansas_44_to_44.geojson,Arkansas,1874,1874,1870
+data/congressional-district-boundaries/Arkansas_45_to_46.geojson,Arkansas,1876,1878,1870
+data/congressional-district-boundaries/Arkansas_47_to_47.geojson,Arkansas,1880,1880,1880
+data/congressional-district-boundaries/Arkansas_48_to_48.geojson,Arkansas,1882,1882,1880
+data/congressional-district-boundaries/Arkansas_49_to_52.geojson,Arkansas,1884,1890,1880
+data/congressional-district-boundaries/Arkansas_53_to_57.geojson,Arkansas,1892,1900,1890
+data/congressional-district-boundaries/Arkansas_58_to_82.geojson,Arkansas,1902,1950,1900
+data/congressional-district-boundaries/Arkansas_83_to_87.geojson,Arkansas,1952,1960,1950
+data/congressional-district-boundaries/Arkansas_88_to_89.geojson,Arkansas,1962,1964,1960
+data/congressional-district-boundaries/Arkansas_90_to_92.geojson,Arkansas,1966,1970,1960
+data/congressional-district-boundaries/Arkansas_93_to_97.geojson,Arkansas,1972,1980,1970
+data/congressional-district-boundaries/Arkansas_98_to_102.geojson,Arkansas,1982,1990,1980
+data/congressional-district-boundaries/California_103_to_107.geojson,California,1992,2000,1990
+data/congressional-district-boundaries/California_108_to_112.geojson,California,2002,2010,2000
+data/congressional-district-boundaries/California_31_to_36.geojson,California,1848,1858,1840
+data/congressional-district-boundaries/California_37_to_38.geojson,California,1860,1862,1860
+data/congressional-district-boundaries/California_39_to_39.geojson,California,1864,1864,1860
+data/congressional-district-boundaries/California_40_to_42.geojson,California,1866,1870,1860
+data/congressional-district-boundaries/California_43_to_47.geojson,California,1872,1880,1870
+data/congressional-district-boundaries/California_48_to_48.geojson,California,1882,1882,1880
+data/congressional-district-boundaries/California_49_to_52.geojson,California,1884,1890,1880
+data/congressional-district-boundaries/California_53_to_57.geojson,California,1892,1900,1890
+data/congressional-district-boundaries/California_58_to_62.geojson,California,1902,1910,1900
+data/congressional-district-boundaries/California_63_to_72.geojson,California,1912,1930,1910
+data/congressional-district-boundaries/California_73_to_77.geojson,California,1932,1940,1930
+data/congressional-district-boundaries/California_78_to_82.geojson,California,1942,1950,1940
+data/congressional-district-boundaries/California_83_to_87.geojson,California,1952,1960,1950
+data/congressional-district-boundaries/California_88_to_90.geojson,California,1962,1966,1960
+data/congressional-district-boundaries/California_91_to_92.geojson,California,1968,1970,1960
+data/congressional-district-boundaries/California_93_to_93.geojson,California,1972,1972,1970
+data/congressional-district-boundaries/California_94_to_97.geojson,California,1974,1980,1970
+data/congressional-district-boundaries/California_98_to_98.geojson,California,1982,1982,1980
+data/congressional-district-boundaries/California_99_to_102.geojson,California,1984,1990,1980
+data/congressional-district-boundaries/Colorado_103_to_107.geojson,Colorado,1992,2000,1990
+data/congressional-district-boundaries/Colorado_108_to_112.geojson,Colorado,2002,2010,2000
+data/congressional-district-boundaries/Colorado_44_to_52.geojson,Colorado,1874,1890,1870
+data/congressional-district-boundaries/Colorado_53_to_57.geojson,Colorado,1892,1900,1890
+data/congressional-district-boundaries/Colorado_58_to_62.geojson,Colorado,1902,1910,1900
+data/congressional-district-boundaries/Colorado_63_to_63.geojson,Colorado,1912,1912,1910
+data/congressional-district-boundaries/Colorado_64_to_67.geojson,Colorado,1914,1920,1910
+data/congressional-district-boundaries/Colorado_68_to_88.geojson,Colorado,1922,1962,1920
+data/congressional-district-boundaries/Colorado_89_to_92.geojson,Colorado,1964,1970,1960
+data/congressional-district-boundaries/Colorado_93_to_97.geojson,Colorado,1972,1980,1970
+data/congressional-district-boundaries/Colorado_98_to_102.geojson,Colorado,1982,1990,1980
+data/congressional-district-boundaries/Connecticut_1_to_2.geojson,Connecticut,1788,1790,NA
+data/congressional-district-boundaries/Connecticut_103_to_107.geojson,Connecticut,1992,2000,1990
+data/congressional-district-boundaries/Connecticut_108_to_112.geojson,Connecticut,2002,2010,2000
+data/congressional-district-boundaries/Connecticut_25_to_27.geojson,Connecticut,1836,1840,1830
+data/congressional-district-boundaries/Connecticut_28_to_57.geojson,Connecticut,1842,1900,1840
+data/congressional-district-boundaries/Connecticut_3_to_7.geojson,Connecticut,1792,1800,1790
+data/congressional-district-boundaries/Connecticut_58_to_62.geojson,Connecticut,1902,1910,1900
+data/congressional-district-boundaries/Connecticut_63_to_72.geojson,Connecticut,1912,1930,1910
+data/congressional-district-boundaries/Connecticut_73_to_88.geojson,Connecticut,1932,1962,1930
+data/congressional-district-boundaries/Connecticut_8_to_24.geojson,Connecticut,1802,1834,1800
+data/congressional-district-boundaries/Connecticut_89_to_92.geojson,Connecticut,1964,1970,1960
+data/congressional-district-boundaries/Connecticut_93_to_97.geojson,Connecticut,1972,1980,1970
+data/congressional-district-boundaries/Connecticut_98_to_102.geojson,Connecticut,1982,1990,1980
+data/congressional-district-boundaries/Delaware_1_to_12.geojson,Delaware,1788,1810,NA
+data/congressional-district-boundaries/Delaware_103_to_112.geojson,Delaware,1992,2010,1990
+data/congressional-district-boundaries/Delaware_13_to_17.geojson,Delaware,1812,1820,1810
+data/congressional-district-boundaries/Delaware_18_to_97.geojson,Delaware,1822,1980,1820
+data/congressional-district-boundaries/Delaware_98_to_102.geojson,Delaware,1982,1990,1980
+data/congressional-district-boundaries/District_Of_Columbia_98_to_102.geojson,District Of Columbia,1982,1990,1980
+data/congressional-district-boundaries/Florida_103_to_104.geojson,Florida,1992,1994,1990
+data/congressional-district-boundaries/Florida_105_to_107.geojson,Florida,1996,2000,1990
+data/congressional-district-boundaries/Florida_108_to_112.geojson,Florida,2002,2010,2000
+data/congressional-district-boundaries/Florida_29_to_36.geojson,Florida,1844,1858,1840
+data/congressional-district-boundaries/Florida_40_to_42.geojson,Florida,1866,1870,1860
+data/congressional-district-boundaries/Florida_43_to_43.geojson,Florida,1872,1872,1870
+data/congressional-district-boundaries/Florida_44_to_47.geojson,Florida,1874,1880,1870
+data/congressional-district-boundaries/Florida_48_to_57.geojson,Florida,1882,1900,1880
+data/congressional-district-boundaries/Florida_58_to_62.geojson,Florida,1902,1910,1900
+data/congressional-district-boundaries/Florida_63_to_63.geojson,Florida,1912,1912,1910
+data/congressional-district-boundaries/Florida_64_to_68.geojson,Florida,1914,1922,1910
+data/congressional-district-boundaries/Florida_69_to_72.geojson,Florida,1924,1930,1920
+data/congressional-district-boundaries/Florida_73_to_74.geojson,Florida,1932,1934,1930
+data/congressional-district-boundaries/Florida_75_to_77.geojson,Florida,1936,1940,1930
+data/congressional-district-boundaries/Florida_78_to_78.geojson,Florida,1942,1942,1940
+data/congressional-district-boundaries/Florida_79_to_82.geojson,Florida,1944,1950,1940
+data/congressional-district-boundaries/Florida_83_to_87.geojson,Florida,1952,1960,1950
+data/congressional-district-boundaries/Florida_88_to_89.geojson,Florida,1962,1964,1960
+data/congressional-district-boundaries/Florida_90_to_90.geojson,Florida,1966,1966,1960
+data/congressional-district-boundaries/Florida_91_to_92.geojson,Florida,1968,1970,1960
+data/congressional-district-boundaries/Florida_93_to_97.geojson,Florida,1972,1980,1970
+data/congressional-district-boundaries/Florida_98_to_102.geojson,Florida,1982,1990,1980
+data/congressional-district-boundaries/Georgia_1_to_1.geojson,Georgia,1788,1788,NA
+data/congressional-district-boundaries/Georgia_10_to_12.geojson,Georgia,1806,1810,1800
+data/congressional-district-boundaries/Georgia_103_to_103.geojson,Georgia,1992,1992,1990
+data/congressional-district-boundaries/Georgia_104_to_104.geojson,Georgia,1994,1994,1990
+data/congressional-district-boundaries/Georgia_105_to_107.geojson,Georgia,1996,2000,1990
+data/congressional-district-boundaries/Georgia_108_to_109.geojson,Georgia,2002,2004,2000
+data/congressional-district-boundaries/Georgia_110_to_112.geojson,Georgia,2006,2010,2000
+data/congressional-district-boundaries/Georgia_13_to_15.geojson,Georgia,1812,1816,1810
+data/congressional-district-boundaries/Georgia_16_to_17.geojson,Georgia,1818,1820,1810
+data/congressional-district-boundaries/Georgia_18_to_19.geojson,Georgia,1822,1824,1820
+data/congressional-district-boundaries/Georgia_2_to_2.geojson,Georgia,1790,1790,1790
+data/congressional-district-boundaries/Georgia_20_to_20.geojson,Georgia,1826,1826,1820
+data/congressional-district-boundaries/Georgia_21_to_22.geojson,Georgia,1828,1830,1820
+data/congressional-district-boundaries/Georgia_23_to_27.geojson,Georgia,1832,1840,1830
+data/congressional-district-boundaries/Georgia_28_to_28.geojson,Georgia,1842,1842,1840
+data/congressional-district-boundaries/Georgia_29_to_31.geojson,Georgia,1844,1848,1840
+data/congressional-district-boundaries/Georgia_3_to_7.geojson,Georgia,1792,1800,1790
+data/congressional-district-boundaries/Georgia_32_to_32.geojson,Georgia,1850,1850,1850
+data/congressional-district-boundaries/Georgia_33_to_33.geojson,Georgia,1852,1852,1850
+data/congressional-district-boundaries/Georgia_34_to_35.geojson,Georgia,1854,1856,1850
+data/congressional-district-boundaries/Georgia_36_to_36.geojson,Georgia,1858,1858,1850
+data/congressional-district-boundaries/Georgia_40_to_42.geojson,Georgia,1866,1870,1860
+data/congressional-district-boundaries/Georgia_43_to_47.geojson,Georgia,1872,1880,1870
+data/congressional-district-boundaries/Georgia_48_to_48.geojson,Georgia,1882,1882,1880
+data/congressional-district-boundaries/Georgia_49_to_52.geojson,Georgia,1884,1890,1880
+data/congressional-district-boundaries/Georgia_53_to_59.geojson,Georgia,1892,1904,1890
+data/congressional-district-boundaries/Georgia_60_to_60.geojson,Georgia,1906,1906,1900
+data/congressional-district-boundaries/Georgia_61_to_62.geojson,Georgia,1908,1910,1900
+data/congressional-district-boundaries/Georgia_63_to_64.geojson,Georgia,1912,1914,1910
+data/congressional-district-boundaries/Georgia_65_to_69.geojson,Georgia,1916,1924,1910
+data/congressional-district-boundaries/Georgia_70_to_72.geojson,Georgia,1926,1930,1920
+data/congressional-district-boundaries/Georgia_73_to_88.geojson,Georgia,1932,1962,1930
+data/congressional-district-boundaries/Georgia_8_to_8.geojson,Georgia,1802,1802,1800
+data/congressional-district-boundaries/Georgia_89_to_92.geojson,Georgia,1964,1970,1960
+data/congressional-district-boundaries/Georgia_9_to_9.geojson,Georgia,1804,1804,1800
+data/congressional-district-boundaries/Georgia_93_to_97.geojson,Georgia,1972,1980,1970
+data/congressional-district-boundaries/Georgia_98_to_102.geojson,Georgia,1982,1990,1980
+data/congressional-district-boundaries/Hawaii_103_to_107.geojson,Hawaii,1992,2000,1990
+data/congressional-district-boundaries/Hawaii_108_to_112.geojson,Hawaii,2002,2010,2000
+data/congressional-district-boundaries/Hawaii_86_to_91.geojson,Hawaii,1958,1968,1950
+data/congressional-district-boundaries/Hawaii_92_to_97.geojson,Hawaii,1970,1980,1970
+data/congressional-district-boundaries/Hawaii_98_to_98.geojson,Hawaii,1982,1982,1980
+data/congressional-district-boundaries/Hawaii_99_to_102.geojson,Hawaii,1984,1990,1980
+data/congressional-district-boundaries/Idaho_103_to_107.geojson,Idaho,1992,2000,1990
+data/congressional-district-boundaries/Idaho_108_to_112.geojson,Idaho,2002,2010,2000
+data/congressional-district-boundaries/Idaho_51_to_62.geojson,Idaho,1888,1910,1880
+data/congressional-district-boundaries/Idaho_63_to_65.geojson,Idaho,1912,1916,1910
+data/congressional-district-boundaries/Idaho_66_to_89.geojson,Idaho,1918,1964,1910
+data/congressional-district-boundaries/Idaho_90_to_92.geojson,Idaho,1966,1970,1960
+data/congressional-district-boundaries/Idaho_93_to_97.geojson,Idaho,1972,1980,1970
+data/congressional-district-boundaries/Idaho_98_to_102.geojson,Idaho,1982,1990,1980
+data/congressional-district-boundaries/Illinois_103_to_107.geojson,Illinois,1992,2000,1990
+data/congressional-district-boundaries/Illinois_108_to_112.geojson,Illinois,2002,2010,2000
+data/congressional-district-boundaries/Illinois_15_to_22.geojson,Illinois,1816,1830,1810
+data/congressional-district-boundaries/Illinois_23_to_27.geojson,Illinois,1832,1840,1830
+data/congressional-district-boundaries/Illinois_28_to_32.geojson,Illinois,1842,1850,1840
+data/congressional-district-boundaries/Illinois_33_to_37.geojson,Illinois,1852,1860,1850
+data/congressional-district-boundaries/Illinois_38_to_42.geojson,Illinois,1862,1870,1860
+data/congressional-district-boundaries/Illinois_43_to_47.geojson,Illinois,1872,1880,1870
+data/congressional-district-boundaries/Illinois_48_to_52.geojson,Illinois,1882,1890,1880
+data/congressional-district-boundaries/Illinois_53_to_53.geojson,Illinois,1892,1892,1890
+data/congressional-district-boundaries/Illinois_54_to_57.geojson,Illinois,1894,1900,1890
+data/congressional-district-boundaries/Illinois_58_to_62.geojson,Illinois,1902,1910,1900
+data/congressional-district-boundaries/Illinois_63_to_77.geojson,Illinois,1912,1940,1910
+data/congressional-district-boundaries/Illinois_78_to_80.geojson,Illinois,1942,1946,1940
+data/congressional-district-boundaries/Illinois_81_to_82.geojson,Illinois,1948,1950,1940
+data/congressional-district-boundaries/Illinois_83_to_87.geojson,Illinois,1952,1960,1950
+data/congressional-district-boundaries/Illinois_88_to_89.geojson,Illinois,1962,1964,1960
+data/congressional-district-boundaries/Illinois_90_to_92.geojson,Illinois,1966,1970,1960
+data/congressional-district-boundaries/Illinois_93_to_97.geojson,Illinois,1972,1980,1970
+data/congressional-district-boundaries/Illinois_98_to_102.geojson,Illinois,1982,1990,1980
+data/congressional-district-boundaries/Indiana_103_to_107.geojson,Indiana,1992,2000,1990
+data/congressional-district-boundaries/Indiana_108_to_112.geojson,Indiana,2002,2010,2000
+data/congressional-district-boundaries/Indiana_14_to_15.geojson,Indiana,1814,1816,1810
+data/congressional-district-boundaries/Indiana_16_to_16.geojson,Indiana,1818,1818,1810
+data/congressional-district-boundaries/Indiana_17_to_17.geojson,Indiana,1820,1820,1820
+data/congressional-district-boundaries/Indiana_18_to_18.geojson,Indiana,1822,1822,1820
+data/congressional-district-boundaries/Indiana_19_to_20.geojson,Indiana,1824,1826,1820
+data/congressional-district-boundaries/Indiana_21_to_22.geojson,Indiana,1828,1830,1820
+data/congressional-district-boundaries/Indiana_23_to_27.geojson,Indiana,1832,1840,1830
+data/congressional-district-boundaries/Indiana_28_to_32.geojson,Indiana,1842,1850,1840
+data/congressional-district-boundaries/Indiana_33_to_40.geojson,Indiana,1852,1866,1850
+data/congressional-district-boundaries/Indiana_41_to_42.geojson,Indiana,1868,1870,1860
+data/congressional-district-boundaries/Indiana_43_to_43.geojson,Indiana,1872,1872,1870
+data/congressional-district-boundaries/Indiana_44_to_46.geojson,Indiana,1874,1878,1870
+data/congressional-district-boundaries/Indiana_47_to_49.geojson,Indiana,1880,1884,1880
+data/congressional-district-boundaries/Indiana_50_to_52.geojson,Indiana,1886,1890,1880
+data/congressional-district-boundaries/Indiana_53_to_54.geojson,Indiana,1892,1894,1890
+data/congressional-district-boundaries/Indiana_55_to_57.geojson,Indiana,1896,1900,1890
+data/congressional-district-boundaries/Indiana_58_to_62.geojson,Indiana,1902,1910,1900
+data/congressional-district-boundaries/Indiana_63_to_72.geojson,Indiana,1912,1930,1910
+data/congressional-district-boundaries/Indiana_73_to_73.geojson,Indiana,1932,1932,1930
+data/congressional-district-boundaries/Indiana_74_to_74.geojson,Indiana,1934,1934,1930
+data/congressional-district-boundaries/Indiana_75_to_77.geojson,Indiana,1936,1940,1930
+data/congressional-district-boundaries/Indiana_78_to_89.geojson,Indiana,1942,1964,1940
+data/congressional-district-boundaries/Indiana_90_to_90.geojson,Indiana,1966,1966,1960
+data/congressional-district-boundaries/Indiana_91_to_92.geojson,Indiana,1968,1970,1960
+data/congressional-district-boundaries/Indiana_93_to_97.geojson,Indiana,1972,1980,1970
+data/congressional-district-boundaries/Indiana_98_to_102.geojson,Indiana,1982,1990,1980
+data/congressional-district-boundaries/Iowa_103_to_107.geojson,Iowa,1992,2000,1990
+data/congressional-district-boundaries/Iowa_108_to_112.geojson,Iowa,2002,2010,2000
+data/congressional-district-boundaries/Iowa_29_to_29.geojson,Iowa,1844,1844,1840
+data/congressional-district-boundaries/Iowa_30_to_30.geojson,Iowa,1846,1846,1840
+data/congressional-district-boundaries/Iowa_31_to_35.geojson,Iowa,1848,1856,1840
+data/congressional-district-boundaries/Iowa_36_to_37.geojson,Iowa,1858,1860,1850
+data/congressional-district-boundaries/Iowa_38_to_42.geojson,Iowa,1862,1870,1860
+data/congressional-district-boundaries/Iowa_43_to_47.geojson,Iowa,1872,1880,1870
+data/congressional-district-boundaries/Iowa_48_to_49.geojson,Iowa,1882,1884,1880
+data/congressional-district-boundaries/Iowa_50_to_72.geojson,Iowa,1886,1930,1880
+data/congressional-district-boundaries/Iowa_73_to_77.geojson,Iowa,1932,1940,1930
+data/congressional-district-boundaries/Iowa_78_to_87.geojson,Iowa,1942,1960,1940
+data/congressional-district-boundaries/Iowa_88_to_92.geojson,Iowa,1962,1970,1960
+data/congressional-district-boundaries/Iowa_93_to_97.geojson,Iowa,1972,1980,1970
+data/congressional-district-boundaries/Iowa_98_to_102.geojson,Iowa,1982,1990,1980
+data/congressional-district-boundaries/Kansas_103_to_107.geojson,Kansas,1992,2000,1990
+data/congressional-district-boundaries/Kansas_108_to_112.geojson,Kansas,2002,2010,2000
+data/congressional-district-boundaries/Kansas_36_to_42.geojson,Kansas,1858,1870,1850
+data/congressional-district-boundaries/Kansas_43_to_43.geojson,Kansas,1872,1872,1870
+data/congressional-district-boundaries/Kansas_44_to_47.geojson,Kansas,1874,1880,1870
+data/congressional-district-boundaries/Kansas_48_to_48.geojson,Kansas,1882,1882,1880
+data/congressional-district-boundaries/Kansas_49_to_52.geojson,Kansas,1884,1890,1880
+data/congressional-district-boundaries/Kansas_53_to_55.geojson,Kansas,1892,1896,1890
+data/congressional-district-boundaries/Kansas_56_to_59.geojson,Kansas,1898,1904,1890
+data/congressional-district-boundaries/Kansas_60_to_72.geojson,Kansas,1906,1930,1900
+data/congressional-district-boundaries/Kansas_73_to_77.geojson,Kansas,1932,1940,1930
+data/congressional-district-boundaries/Kansas_78_to_87.geojson,Kansas,1942,1960,1940
+data/congressional-district-boundaries/Kansas_88_to_89.geojson,Kansas,1962,1964,1960
+data/congressional-district-boundaries/Kansas_90_to_92.geojson,Kansas,1966,1970,1960
+data/congressional-district-boundaries/Kansas_93_to_97.geojson,Kansas,1972,1980,1970
+data/congressional-district-boundaries/Kansas_98_to_102.geojson,Kansas,1982,1990,1980
+data/congressional-district-boundaries/Kentucky_103_to_104.geojson,Kentucky,1992,1994,1990
+data/congressional-district-boundaries/Kentucky_105_to_107.geojson,Kentucky,1996,2000,1990
+data/congressional-district-boundaries/Kentucky_108_to_112.geojson,Kentucky,2002,2010,2000
+data/congressional-district-boundaries/Kentucky_13_to_17.geojson,Kentucky,1812,1820,1810
+data/congressional-district-boundaries/Kentucky_18_to_22.geojson,Kentucky,1822,1830,1820
+data/congressional-district-boundaries/Kentucky_2_to_6.geojson,Kentucky,1790,1798,1790
+data/congressional-district-boundaries/Kentucky_23_to_27.geojson,Kentucky,1832,1840,1830
+data/congressional-district-boundaries/Kentucky_28_to_33.geojson,Kentucky,1842,1852,1840
+data/congressional-district-boundaries/Kentucky_34_to_37.geojson,Kentucky,1854,1860,1850
+data/congressional-district-boundaries/Kentucky_38_to_42.geojson,Kentucky,1862,1870,1860
+data/congressional-district-boundaries/Kentucky_43_to_47.geojson,Kentucky,1872,1880,1870
+data/congressional-district-boundaries/Kentucky_48_to_51.geojson,Kentucky,1882,1888,1880
+data/congressional-district-boundaries/Kentucky_52_to_55.geojson,Kentucky,1890,1896,1890
+data/congressional-district-boundaries/Kentucky_56_to_62.geojson,Kentucky,1898,1910,1890
+data/congressional-district-boundaries/Kentucky_63_to_72.geojson,Kentucky,1912,1930,1910
+data/congressional-district-boundaries/Kentucky_7_to_7.geojson,Kentucky,1800,1800,1800
+data/congressional-district-boundaries/Kentucky_73_to_73.geojson,Kentucky,1932,1932,1930
+data/congressional-district-boundaries/Kentucky_74_to_82.geojson,Kentucky,1934,1950,1930
+data/congressional-district-boundaries/Kentucky_8_to_12.geojson,Kentucky,1802,1810,1800
+data/congressional-district-boundaries/Kentucky_83_to_84.geojson,Kentucky,1952,1954,1950
+data/congressional-district-boundaries/Kentucky_85_to_87.geojson,Kentucky,1956,1960,1950
+data/congressional-district-boundaries/Kentucky_88_to_89.geojson,Kentucky,1962,1964,1960
+data/congressional-district-boundaries/Kentucky_90_to_92.geojson,Kentucky,1966,1970,1960
+data/congressional-district-boundaries/Kentucky_93_to_97.geojson,Kentucky,1972,1980,1970
+data/congressional-district-boundaries/Kentucky_98_to_102.geojson,Kentucky,1982,1990,1980
+data/congressional-district-boundaries/Louisiana_103_to_103.geojson,Louisiana,1992,1992,1990
+data/congressional-district-boundaries/Louisiana_104_to_104.geojson,Louisiana,1994,1994,1990
+data/congressional-district-boundaries/Louisiana_105_to_107.geojson,Louisiana,1996,2000,1990
+data/congressional-district-boundaries/Louisiana_108_to_112.geojson,Louisiana,2002,2010,2000
+data/congressional-district-boundaries/Louisiana_12_to_17.geojson,Louisiana,1810,1820,1810
+data/congressional-district-boundaries/Louisiana_18_to_27.geojson,Louisiana,1822,1840,1820
+data/congressional-district-boundaries/Louisiana_28_to_32.geojson,Louisiana,1842,1850,1840
+data/congressional-district-boundaries/Louisiana_33_to_36.geojson,Louisiana,1852,1858,1850
+data/congressional-district-boundaries/Louisiana_37_to_37.geojson,Louisiana,1860,1860,1860
+data/congressional-district-boundaries/Louisiana_40_to_40.geojson,Louisiana,1866,1866,1860
+data/congressional-district-boundaries/Louisiana_41_to_42.geojson,Louisiana,1868,1870,1860
+data/congressional-district-boundaries/Louisiana_43_to_43.geojson,Louisiana,1872,1872,1870
+data/congressional-district-boundaries/Louisiana_44_to_57.geojson,Louisiana,1874,1900,1870
+data/congressional-district-boundaries/Louisiana_58_to_62.geojson,Louisiana,1902,1910,1900
+data/congressional-district-boundaries/Louisiana_63_to_90.geojson,Louisiana,1912,1966,1910
+data/congressional-district-boundaries/Louisiana_91_to_91.geojson,Louisiana,1968,1968,1960
+data/congressional-district-boundaries/Louisiana_92_to_92.geojson,Louisiana,1970,1970,1970
+data/congressional-district-boundaries/Louisiana_93_to_97.geojson,Louisiana,1972,1980,1970
+data/congressional-district-boundaries/Louisiana_98_to_98.geojson,Louisiana,1982,1982,1980
+data/congressional-district-boundaries/Louisiana_99_to_102.geojson,Louisiana,1984,1990,1980
+data/congressional-district-boundaries/Maine_103_to_103.geojson,Maine,1992,1992,1990
+data/congressional-district-boundaries/Maine_104_to_107.geojson,Maine,1994,2000,1990
+data/congressional-district-boundaries/Maine_108_to_108.geojson,Maine,2002,2002,2000
+data/congressional-district-boundaries/Maine_109_to_112.geojson,Maine,2004,2010,2000
+data/congressional-district-boundaries/Maine_17_to_17.geojson,Maine,1820,1820,1820
+data/congressional-district-boundaries/Maine_18_to_22.geojson,Maine,1822,1830,1820
+data/congressional-district-boundaries/Maine_23_to_27.geojson,Maine,1832,1840,1830
+data/congressional-district-boundaries/Maine_28_to_28.geojson,Maine,1842,1842,1840
+data/congressional-district-boundaries/Maine_29_to_32.geojson,Maine,1844,1850,1840
+data/congressional-district-boundaries/Maine_33_to_37.geojson,Maine,1852,1860,1850
+data/congressional-district-boundaries/Maine_38_to_47.geojson,Maine,1862,1880,1860
+data/congressional-district-boundaries/Maine_48_to_48.geojson,Maine,1882,1882,1880
+data/congressional-district-boundaries/Maine_49_to_62.geojson,Maine,1884,1910,1880
+data/congressional-district-boundaries/Maine_63_to_72.geojson,Maine,1912,1930,1910
+data/congressional-district-boundaries/Maine_73_to_87.geojson,Maine,1932,1960,1930
+data/congressional-district-boundaries/Maine_88_to_97.geojson,Maine,1962,1980,1960
+data/congressional-district-boundaries/Maine_98_to_102.geojson,Maine,1982,1990,1980
+data/congressional-district-boundaries/Maryland_1_to_2.geojson,Maryland,1788,1790,NA
+data/congressional-district-boundaries/Maryland_103_to_107.geojson,Maryland,1992,2000,1990
+data/congressional-district-boundaries/Maryland_108_to_112.geojson,Maryland,2002,2010,2000
+data/congressional-district-boundaries/Maryland_23_to_23.geojson,Maryland,1832,1832,1830
+data/congressional-district-boundaries/Maryland_24_to_27.geojson,Maryland,1834,1840,1830
+data/congressional-district-boundaries/Maryland_28_to_28.geojson,Maryland,1842,1842,1840
+data/congressional-district-boundaries/Maryland_29_to_32.geojson,Maryland,1844,1850,1840
+data/congressional-district-boundaries/Maryland_3_to_7.geojson,Maryland,1792,1800,1790
+data/congressional-district-boundaries/Maryland_33_to_37.geojson,Maryland,1852,1860,1850
+data/congressional-district-boundaries/Maryland_38_to_42.geojson,Maryland,1862,1870,1860
+data/congressional-district-boundaries/Maryland_43_to_51.geojson,Maryland,1872,1888,1870
+data/congressional-district-boundaries/Maryland_52_to_54.geojson,Maryland,1890,1894,1890
+data/congressional-district-boundaries/Maryland_55_to_55.geojson,Maryland,1896,1896,1890
+data/congressional-district-boundaries/Maryland_56_to_57.geojson,Maryland,1898,1900,1890
+data/congressional-district-boundaries/Maryland_58_to_67.geojson,Maryland,1902,1920,1900
+data/congressional-district-boundaries/Maryland_68_to_79.geojson,Maryland,1922,1944,1920
+data/congressional-district-boundaries/Maryland_8_to_22.geojson,Maryland,1802,1830,1800
+data/congressional-district-boundaries/Maryland_80_to_82.geojson,Maryland,1946,1950,1940
+data/congressional-district-boundaries/Maryland_83_to_87.geojson,Maryland,1952,1960,1950
+data/congressional-district-boundaries/Maryland_88_to_89.geojson,Maryland,1962,1964,1960
+data/congressional-district-boundaries/Maryland_90_to_92.geojson,Maryland,1966,1970,1960
+data/congressional-district-boundaries/Maryland_93_to_97.geojson,Maryland,1972,1980,1970
+data/congressional-district-boundaries/Maryland_98_to_102.geojson,Maryland,1982,1990,1980
+data/congressional-district-boundaries/Massachusetts_1_to_1.geojson,Massachusetts,1788,1788,NA
+data/congressional-district-boundaries/Massachusetts_103_to_107.geojson,Massachusetts,1992,2000,1990
+data/congressional-district-boundaries/Massachusetts_108_to_112.geojson,Massachusetts,2002,2010,2000
+data/congressional-district-boundaries/Massachusetts_13_to_13.geojson,Massachusetts,1812,1812,1810
+data/congressional-district-boundaries/Massachusetts_14_to_14.geojson,Massachusetts,1814,1814,1810
+data/congressional-district-boundaries/Massachusetts_15_to_16.geojson,Massachusetts,1816,1818,1810
+data/congressional-district-boundaries/Massachusetts_17_to_17.geojson,Massachusetts,1820,1820,1820
+data/congressional-district-boundaries/Massachusetts_18_to_22.geojson,Massachusetts,1822,1830,1820
+data/congressional-district-boundaries/Massachusetts_2_to_2.geojson,Massachusetts,1790,1790,1790
+data/congressional-district-boundaries/Massachusetts_23_to_27.geojson,Massachusetts,1832,1840,1830
+data/congressional-district-boundaries/Massachusetts_28_to_32.geojson,Massachusetts,1842,1850,1840
+data/congressional-district-boundaries/Massachusetts_3_to_3.geojson,Massachusetts,1792,1792,1790
+data/congressional-district-boundaries/Massachusetts_33_to_37.geojson,Massachusetts,1852,1860,1850
+data/congressional-district-boundaries/Massachusetts_38_to_39.geojson,Massachusetts,1862,1864,1860
+data/congressional-district-boundaries/Massachusetts_4_to_7.geojson,Massachusetts,1794,1800,1790
+data/congressional-district-boundaries/Massachusetts_40_to_42.geojson,Massachusetts,1866,1870,1860
+data/congressional-district-boundaries/Massachusetts_43_to_44.geojson,Massachusetts,1872,1874,1870
+data/congressional-district-boundaries/Massachusetts_45_to_47.geojson,Massachusetts,1876,1880,1870
+data/congressional-district-boundaries/Massachusetts_48_to_52.geojson,Massachusetts,1882,1890,1880
+data/congressional-district-boundaries/Massachusetts_53_to_54.geojson,Massachusetts,1892,1894,1890
+data/congressional-district-boundaries/Massachusetts_55_to_57.geojson,Massachusetts,1896,1900,1890
+data/congressional-district-boundaries/Massachusetts_58_to_62.geojson,Massachusetts,1902,1910,1900
+data/congressional-district-boundaries/Massachusetts_63_to_64.geojson,Massachusetts,1912,1914,1910
+data/congressional-district-boundaries/Massachusetts_65_to_69.geojson,Massachusetts,1916,1924,1910
+data/congressional-district-boundaries/Massachusetts_70_to_72.geojson,Massachusetts,1926,1930,1920
+data/congressional-district-boundaries/Massachusetts_73_to_77.geojson,Massachusetts,1932,1940,1930
+data/congressional-district-boundaries/Massachusetts_78_to_87.geojson,Massachusetts,1942,1960,1940
+data/congressional-district-boundaries/Massachusetts_8_to_12.geojson,Massachusetts,1802,1810,1800
+data/congressional-district-boundaries/Massachusetts_88_to_90.geojson,Massachusetts,1962,1966,1960
+data/congressional-district-boundaries/Massachusetts_91_to_92.geojson,Massachusetts,1968,1970,1960
+data/congressional-district-boundaries/Massachusetts_93_to_97.geojson,Massachusetts,1972,1980,1970
+data/congressional-district-boundaries/Massachusetts_98_to_102.geojson,Massachusetts,1982,1990,1980
+data/congressional-district-boundaries/Michigan_103_to_107.geojson,Michigan,1992,2000,1990
+data/congressional-district-boundaries/Michigan_108_to_112.geojson,Michigan,2002,2010,2000
+data/congressional-district-boundaries/Michigan_24_to_27.geojson,Michigan,1834,1840,1830
+data/congressional-district-boundaries/Michigan_28_to_32.geojson,Michigan,1842,1850,1840
+data/congressional-district-boundaries/Michigan_33_to_37.geojson,Michigan,1852,1860,1850
+data/congressional-district-boundaries/Michigan_38_to_41.geojson,Michigan,1862,1868,1860
+data/congressional-district-boundaries/Michigan_42_to_42.geojson,Michigan,1870,1870,1870
+data/congressional-district-boundaries/Michigan_43_to_47.geojson,Michigan,1872,1880,1870
+data/congressional-district-boundaries/Michigan_48_to_52.geojson,Michigan,1882,1890,1880
+data/congressional-district-boundaries/Michigan_53_to_62.geojson,Michigan,1892,1910,1890
+data/congressional-district-boundaries/Michigan_63_to_63.geojson,Michigan,1912,1912,1910
+data/congressional-district-boundaries/Michigan_64_to_72.geojson,Michigan,1914,1930,1910
+data/congressional-district-boundaries/Michigan_73_to_82.geojson,Michigan,1932,1950,1930
+data/congressional-district-boundaries/Michigan_83_to_87.geojson,Michigan,1952,1960,1950
+data/congressional-district-boundaries/Michigan_88_to_88.geojson,Michigan,1962,1962,1960
+data/congressional-district-boundaries/Michigan_89_to_92.geojson,Michigan,1964,1970,1960
+data/congressional-district-boundaries/Michigan_93_to_97.geojson,Michigan,1972,1980,1970
+data/congressional-district-boundaries/Michigan_98_to_102.geojson,Michigan,1982,1990,1980
+data/congressional-district-boundaries/Minnesota_103_to_103.geojson,Minnesota,1992,1992,1990
+data/congressional-district-boundaries/Minnesota_104_to_107.geojson,Minnesota,1994,2000,1990
+data/congressional-district-boundaries/Minnesota_108_to_112.geojson,Minnesota,2002,2010,2000
+data/congressional-district-boundaries/Minnesota_35_to_37.geojson,Minnesota,1856,1860,1850
+data/congressional-district-boundaries/Minnesota_38_to_42.geojson,Minnesota,1862,1870,1860
+data/congressional-district-boundaries/Minnesota_43_to_47.geojson,Minnesota,1872,1880,1870
+data/congressional-district-boundaries/Minnesota_48_to_52.geojson,Minnesota,1882,1890,1880
+data/congressional-district-boundaries/Minnesota_53_to_57.geojson,Minnesota,1892,1900,1890
+data/congressional-district-boundaries/Minnesota_58_to_62.geojson,Minnesota,1902,1910,1900
+data/congressional-district-boundaries/Minnesota_63_to_63.geojson,Minnesota,1912,1912,1910
+data/congressional-district-boundaries/Minnesota_64_to_71.geojson,Minnesota,1914,1928,1910
+data/congressional-district-boundaries/Minnesota_72_to_72.geojson,Minnesota,1930,1930,1930
+data/congressional-district-boundaries/Minnesota_73_to_73.geojson,Minnesota,1932,1932,1930
+data/congressional-district-boundaries/Minnesota_74_to_87.geojson,Minnesota,1934,1960,1930
+data/congressional-district-boundaries/Minnesota_88_to_92.geojson,Minnesota,1962,1970,1960
+data/congressional-district-boundaries/Minnesota_93_to_97.geojson,Minnesota,1972,1980,1970
+data/congressional-district-boundaries/Minnesota_98_to_102.geojson,Minnesota,1982,1990,1980
+data/congressional-district-boundaries/Mississippi_103_to_107.geojson,Mississippi,1992,2000,1990
+data/congressional-district-boundaries/Mississippi_108_to_112.geojson,Mississippi,2002,2010,2000
+data/congressional-district-boundaries/Mississippi_15_to_22.geojson,Mississippi,1816,1830,1810
+data/congressional-district-boundaries/Mississippi_23_to_27.geojson,Mississippi,1832,1840,1830
+data/congressional-district-boundaries/Mississippi_28_to_29.geojson,Mississippi,1842,1844,1840
+data/congressional-district-boundaries/Mississippi_30_to_32.geojson,Mississippi,1846,1850,1840
+data/congressional-district-boundaries/Mississippi_33_to_33.geojson,Mississippi,1852,1852,1850
+data/congressional-district-boundaries/Mississippi_34_to_34.geojson,Mississippi,1854,1854,1850
+data/congressional-district-boundaries/Mississippi_35_to_36.geojson,Mississippi,1856,1858,1850
+data/congressional-district-boundaries/Mississippi_41_to_42.geojson,Mississippi,1868,1870,1860
+data/congressional-district-boundaries/Mississippi_43_to_44.geojson,Mississippi,1872,1874,1870
+data/congressional-district-boundaries/Mississippi_45_to_45.geojson,Mississippi,1876,1876,1870
+data/congressional-district-boundaries/Mississippi_46_to_47.geojson,Mississippi,1878,1880,1870
+data/congressional-district-boundaries/Mississippi_48_to_57.geojson,Mississippi,1882,1900,1880
+data/congressional-district-boundaries/Mississippi_58_to_61.geojson,Mississippi,1902,1908,1900
+data/congressional-district-boundaries/Mississippi_62_to_65.geojson,Mississippi,1910,1916,1910
+data/congressional-district-boundaries/Mississippi_66_to_72.geojson,Mississippi,1918,1930,1910
+data/congressional-district-boundaries/Mississippi_73_to_82.geojson,Mississippi,1932,1950,1930
+data/congressional-district-boundaries/Mississippi_83_to_84.geojson,Mississippi,1952,1954,1950
+data/congressional-district-boundaries/Mississippi_85_to_87.geojson,Mississippi,1956,1960,1950
+data/congressional-district-boundaries/Mississippi_88_to_89.geojson,Mississippi,1962,1964,1960
+data/congressional-district-boundaries/Mississippi_90_to_92.geojson,Mississippi,1966,1970,1960
+data/congressional-district-boundaries/Mississippi_93_to_97.geojson,Mississippi,1972,1980,1970
+data/congressional-district-boundaries/Mississippi_98_to_98.geojson,Mississippi,1982,1982,1980
+data/congressional-district-boundaries/Mississippi_99_to_102.geojson,Mississippi,1984,1990,1980
+data/congressional-district-boundaries/Missouri_103_to_107.geojson,Missouri,1992,2000,1990
+data/congressional-district-boundaries/Missouri_108_to_112.geojson,Missouri,2002,2010,2000
+data/congressional-district-boundaries/Missouri_17_to_21.geojson,Missouri,1820,1828,1820
+data/congressional-district-boundaries/Missouri_22_to_22.geojson,Missouri,1830,1830,1830
+data/congressional-district-boundaries/Missouri_23_to_27.geojson,Missouri,1832,1840,1830
+data/congressional-district-boundaries/Missouri_28_to_29.geojson,Missouri,1842,1844,1840
+data/congressional-district-boundaries/Missouri_30_to_32.geojson,Missouri,1846,1850,1840
+data/congressional-district-boundaries/Missouri_33_to_33.geojson,Missouri,1852,1852,1850
+data/congressional-district-boundaries/Missouri_34_to_37.geojson,Missouri,1854,1860,1850
+data/congressional-district-boundaries/Missouri_38_to_42.geojson,Missouri,1862,1870,1860
+data/congressional-district-boundaries/Missouri_43_to_45.geojson,Missouri,1872,1876,1870
+data/congressional-district-boundaries/Missouri_46_to_47.geojson,Missouri,1878,1880,1870
+data/congressional-district-boundaries/Missouri_48_to_49.geojson,Missouri,1882,1884,1880
+data/congressional-district-boundaries/Missouri_50_to_52.geojson,Missouri,1886,1890,1880
+data/congressional-district-boundaries/Missouri_53_to_57.geojson,Missouri,1892,1900,1890
+data/congressional-district-boundaries/Missouri_58_to_72.geojson,Missouri,1902,1930,1900
+data/congressional-district-boundaries/Missouri_73_to_73.geojson,Missouri,1932,1932,1930
+data/congressional-district-boundaries/Missouri_74_to_82.geojson,Missouri,1934,1950,1930
+data/congressional-district-boundaries/Missouri_83_to_87.geojson,Missouri,1952,1960,1950
+data/congressional-district-boundaries/Missouri_88_to_89.geojson,Missouri,1962,1964,1960
+data/congressional-district-boundaries/Missouri_90_to_90.geojson,Missouri,1966,1966,1960
+data/congressional-district-boundaries/Missouri_91_to_91.geojson,Missouri,1968,1968,1960
+data/congressional-district-boundaries/Missouri_92_to_92.geojson,Missouri,1970,1970,1970
+data/congressional-district-boundaries/Missouri_93_to_97.geojson,Missouri,1972,1980,1970
+data/congressional-district-boundaries/Missouri_98_to_102.geojson,Missouri,1982,1990,1980
+data/congressional-district-boundaries/Montana_103_to_112.geojson,Montana,1992,2010,1990
+data/congressional-district-boundaries/Montana_51_to_62.geojson,Montana,1888,1910,1880
+data/congressional-district-boundaries/Montana_63_to_65.geojson,Montana,1912,1916,1910
+data/congressional-district-boundaries/Montana_66_to_89.geojson,Montana,1918,1964,1910
+data/congressional-district-boundaries/Montana_90_to_92.geojson,Montana,1966,1970,1960
+data/congressional-district-boundaries/Montana_93_to_97.geojson,Montana,1972,1980,1970
+data/congressional-district-boundaries/Montana_98_to_98.geojson,Montana,1982,1982,1980
+data/congressional-district-boundaries/Montana_99_to_102.geojson,Montana,1984,1990,1980
+data/congressional-district-boundaries/Nebraska_103_to_107.geojson,Nebraska,1992,2000,1990
+data/congressional-district-boundaries/Nebraska_108_to_112.geojson,Nebraska,2002,2010,2000
+data/congressional-district-boundaries/Nebraska_39_to_46.geojson,Nebraska,1864,1878,1860
+data/congressional-district-boundaries/Nebraska_47_to_47.geojson,Nebraska,1880,1880,1880
+data/congressional-district-boundaries/Nebraska_48_to_52.geojson,Nebraska,1882,1890,1880
+data/congressional-district-boundaries/Nebraska_53_to_72.geojson,Nebraska,1892,1930,1890
+data/congressional-district-boundaries/Nebraska_73_to_77.geojson,Nebraska,1932,1940,1930
+data/congressional-district-boundaries/Nebraska_78_to_87.geojson,Nebraska,1942,1960,1940
+data/congressional-district-boundaries/Nebraska_88_to_90.geojson,Nebraska,1962,1966,1960
+data/congressional-district-boundaries/Nebraska_91_to_97.geojson,Nebraska,1968,1980,1960
+data/congressional-district-boundaries/Nebraska_98_to_102.geojson,Nebraska,1982,1990,1980
+data/congressional-district-boundaries/Nevada_103_to_107.geojson,Nevada,1992,2000,1990
+data/congressional-district-boundaries/Nevada_108_to_112.geojson,Nevada,2002,2010,2000
+data/congressional-district-boundaries/Nevada_38_to_41.geojson,Nevada,1862,1868,1860
+data/congressional-district-boundaries/Nevada_42_to_97.geojson,Nevada,1870,1980,1870
+data/congressional-district-boundaries/Nevada_98_to_102.geojson,Nevada,1982,1990,1980
+data/congressional-district-boundaries/New_Hampshire_1_to_2.geojson,New Hampshire,1788,1790,NA
+data/congressional-district-boundaries/New_Hampshire_103_to_107.geojson,New Hampshire,1992,2000,1990
+data/congressional-district-boundaries/New_Hampshire_108_to_112.geojson,New Hampshire,2002,2010,2000
+data/congressional-district-boundaries/New_Hampshire_13_to_22.geojson,New Hampshire,1812,1830,1810
+data/congressional-district-boundaries/New_Hampshire_23_to_27.geojson,New Hampshire,1832,1840,1830
+data/congressional-district-boundaries/New_Hampshire_28_to_29.geojson,New Hampshire,1842,1844,1840
+data/congressional-district-boundaries/New_Hampshire_3_to_7.geojson,New Hampshire,1792,1800,1790
+data/congressional-district-boundaries/New_Hampshire_30_to_31.geojson,New Hampshire,1846,1848,1840
+data/congressional-district-boundaries/New_Hampshire_32_to_32.geojson,New Hampshire,1850,1850,1850
+data/congressional-district-boundaries/New_Hampshire_33_to_47.geojson,New Hampshire,1852,1880,1850
+data/congressional-district-boundaries/New_Hampshire_48_to_91.geojson,New Hampshire,1882,1968,1880
+data/congressional-district-boundaries/New_Hampshire_8_to_12.geojson,New Hampshire,1802,1810,1800
+data/congressional-district-boundaries/New_Hampshire_92_to_92.geojson,New Hampshire,1970,1970,1970
+data/congressional-district-boundaries/New_Hampshire_93_to_97.geojson,New Hampshire,1972,1980,1970
+data/congressional-district-boundaries/New_Hampshire_98_to_102.geojson,New Hampshire,1982,1990,1980
+data/congressional-district-boundaries/New_Jersey_1_to_2.geojson,New Jersey,1788,1790,NA
+data/congressional-district-boundaries/New_Jersey_103_to_105.geojson,New Jersey,1992,1996,1990
+data/congressional-district-boundaries/New_Jersey_106_to_107.geojson,New Jersey,1998,2000,1990
+data/congressional-district-boundaries/New_Jersey_108_to_112.geojson,New Jersey,2002,2010,2000
+data/congressional-district-boundaries/New_Jersey_13_to_13.geojson,New Jersey,1812,1812,1810
+data/congressional-district-boundaries/New_Jersey_14_to_27.geojson,New Jersey,1814,1840,1810
+data/congressional-district-boundaries/New_Jersey_28_to_28.geojson,New Jersey,1842,1842,1840
+data/congressional-district-boundaries/New_Jersey_29_to_29.geojson,New Jersey,1844,1844,1840
+data/congressional-district-boundaries/New_Jersey_3_to_5.geojson,New Jersey,1792,1796,1790
+data/congressional-district-boundaries/New_Jersey_30_to_32.geojson,New Jersey,1846,1850,1840
+data/congressional-district-boundaries/New_Jersey_33_to_37.geojson,New Jersey,1852,1860,1850
+data/congressional-district-boundaries/New_Jersey_38_to_42.geojson,New Jersey,1862,1870,1860
+data/congressional-district-boundaries/New_Jersey_43_to_52.geojson,New Jersey,1872,1890,1870
+data/congressional-district-boundaries/New_Jersey_53_to_53.geojson,New Jersey,1892,1892,1890
+data/congressional-district-boundaries/New_Jersey_54_to_57.geojson,New Jersey,1894,1900,1890
+data/congressional-district-boundaries/New_Jersey_58_to_62.geojson,New Jersey,1902,1910,1900
+data/congressional-district-boundaries/New_Jersey_6_to_6.geojson,New Jersey,1798,1798,1790
+data/congressional-district-boundaries/New_Jersey_63_to_72.geojson,New Jersey,1912,1930,1910
+data/congressional-district-boundaries/New_Jersey_7_to_7.geojson,New Jersey,1800,1800,1800
+data/congressional-district-boundaries/New_Jersey_73_to_87.geojson,New Jersey,1932,1960,1930
+data/congressional-district-boundaries/New_Jersey_8_to_12.geojson,New Jersey,1802,1810,1800
+data/congressional-district-boundaries/New_Jersey_88_to_89.geojson,New Jersey,1962,1964,1960
+data/congressional-district-boundaries/New_Jersey_90_to_90.geojson,New Jersey,1966,1966,1960
+data/congressional-district-boundaries/New_Jersey_91_to_92.geojson,New Jersey,1968,1970,1960
+data/congressional-district-boundaries/New_Jersey_93_to_97.geojson,New Jersey,1972,1980,1970
+data/congressional-district-boundaries/New_Jersey_98_to_98.geojson,New Jersey,1982,1982,1980
+data/congressional-district-boundaries/New_Jersey_99_to_102.geojson,New Jersey,1984,1990,1980
+data/congressional-district-boundaries/New_Mexico_103_to_107.geojson,New Mexico,1992,2000,1990
+data/congressional-district-boundaries/New_Mexico_108_to_112.geojson,New Mexico,2002,2010,2000
+data/congressional-district-boundaries/New_Mexico_62_to_62.geojson,New Mexico,1910,1910,1910
+data/congressional-district-boundaries/New_Mexico_63_to_77.geojson,New Mexico,1912,1940,1910
+data/congressional-district-boundaries/New_Mexico_78_to_90.geojson,New Mexico,1942,1966,1940
+data/congressional-district-boundaries/New_Mexico_91_to_97.geojson,New Mexico,1968,1980,1960
+data/congressional-district-boundaries/New_Mexico_98_to_102.geojson,New Mexico,1982,1990,1980
+data/congressional-district-boundaries/New_York_1_to_2.geojson,New York,1788,1790,NA
+data/congressional-district-boundaries/New_York_103_to_105.geojson,New York,1992,1996,1990
+data/congressional-district-boundaries/New_York_106_to_107.geojson,New York,1998,2000,1990
+data/congressional-district-boundaries/New_York_108_to_112.geojson,New York,2002,2010,2000
+data/congressional-district-boundaries/New_York_11_to_12.geojson,New York,1808,1810,1800
+data/congressional-district-boundaries/New_York_13_to_16.geojson,New York,1812,1818,1810
+data/congressional-district-boundaries/New_York_17_to_17.geojson,New York,1820,1820,1820
+data/congressional-district-boundaries/New_York_18_to_22.geojson,New York,1822,1830,1820
+data/congressional-district-boundaries/New_York_23_to_27.geojson,New York,1832,1840,1830
+data/congressional-district-boundaries/New_York_28_to_32.geojson,New York,1842,1850,1840
+data/congressional-district-boundaries/New_York_3_to_5.geojson,New York,1792,1796,1790
+data/congressional-district-boundaries/New_York_33_to_33.geojson,New York,1852,1852,1850
+data/congressional-district-boundaries/New_York_34_to_37.geojson,New York,1854,1860,1850
+data/congressional-district-boundaries/New_York_38_to_42.geojson,New York,1862,1870,1860
+data/congressional-district-boundaries/New_York_43_to_43.geojson,New York,1872,1872,1870
+data/congressional-district-boundaries/New_York_44_to_47.geojson,New York,1874,1880,1870
+data/congressional-district-boundaries/New_York_48_to_48.geojson,New York,1882,1882,1880
+data/congressional-district-boundaries/New_York_49_to_52.geojson,New York,1884,1890,1880
+data/congressional-district-boundaries/New_York_53_to_57.geojson,New York,1892,1900,1890
+data/congressional-district-boundaries/New_York_58_to_62.geojson,New York,1902,1910,1900
+data/congressional-district-boundaries/New_York_6_to_7.geojson,New York,1798,1800,1790
+data/congressional-district-boundaries/New_York_63_to_64.geojson,New York,1912,1914,1910
+data/congressional-district-boundaries/New_York_65_to_65.geojson,New York,1916,1916,1910
+data/congressional-district-boundaries/New_York_66_to_67.geojson,New York,1918,1920,1910
+data/congressional-district-boundaries/New_York_68_to_72.geojson,New York,1922,1930,1920
+data/congressional-district-boundaries/New_York_73_to_78.geojson,New York,1932,1942,1930
+data/congressional-district-boundaries/New_York_79_to_82.geojson,New York,1944,1950,1940
+data/congressional-district-boundaries/New_York_8_to_8.geojson,New York,1802,1802,1800
+data/congressional-district-boundaries/New_York_83_to_87.geojson,New York,1952,1960,1950
+data/congressional-district-boundaries/New_York_88_to_90.geojson,New York,1962,1966,1960
+data/congressional-district-boundaries/New_York_9_to_10.geojson,New York,1804,1806,1800
+data/congressional-district-boundaries/New_York_91_to_91.geojson,New York,1968,1968,1960
+data/congressional-district-boundaries/New_York_92_to_92.geojson,New York,1970,1970,1970
+data/congressional-district-boundaries/New_York_93_to_93.geojson,New York,1972,1972,1970
+data/congressional-district-boundaries/New_York_94_to_97.geojson,New York,1974,1980,1970
+data/congressional-district-boundaries/New_York_98_to_102.geojson,New York,1982,1990,1980
+data/congressional-district-boundaries/New_York_98_to_98.geojson,New York,1982,1982,1980
+data/congressional-district-boundaries/New_York_99_to_102.geojson,New York,1984,1990,1980
+data/congressional-district-boundaries/North_Carolina_1_to_1.geojson,North Carolina,1788,1788,NA
+data/congressional-district-boundaries/North_Carolina_103_to_105.geojson,North Carolina,1992,1996,1990
+data/congressional-district-boundaries/North_Carolina_106_to_106.geojson,North Carolina,1998,1998,1990
+data/congressional-district-boundaries/North_Carolina_107_to_107.geojson,North Carolina,2000,2000,2000
+data/congressional-district-boundaries/North_Carolina_108_to_112.geojson,North Carolina,2002,2010,2000
+data/congressional-district-boundaries/North_Carolina_13_to_27.geojson,North Carolina,1812,1840,1810
+data/congressional-district-boundaries/North_Carolina_2_to_2.geojson,North Carolina,1790,1790,1790
+data/congressional-district-boundaries/North_Carolina_28_to_29.geojson,North Carolina,1842,1844,1840
+data/congressional-district-boundaries/North_Carolina_3_to_7.geojson,North Carolina,1792,1800,1790
+data/congressional-district-boundaries/North_Carolina_30_to_32.geojson,North Carolina,1846,1850,1840
+data/congressional-district-boundaries/North_Carolina_33_to_36.geojson,North Carolina,1852,1858,1850
+data/congressional-district-boundaries/North_Carolina_40_to_42.geojson,North Carolina,1866,1870,1860
+data/congressional-district-boundaries/North_Carolina_43_to_47.geojson,North Carolina,1872,1880,1870
+data/congressional-district-boundaries/North_Carolina_48_to_48.geojson,North Carolina,1882,1882,1880
+data/congressional-district-boundaries/North_Carolina_49_to_52.geojson,North Carolina,1884,1890,1880
+data/congressional-district-boundaries/North_Carolina_53_to_54.geojson,North Carolina,1892,1894,1890
+data/congressional-district-boundaries/North_Carolina_55_to_55.geojson,North Carolina,1896,1896,1890
+data/congressional-district-boundaries/North_Carolina_56_to_56.geojson,North Carolina,1898,1898,1890
+data/congressional-district-boundaries/North_Carolina_57_to_57.geojson,North Carolina,1900,1900,1900
+data/congressional-district-boundaries/North_Carolina_58_to_60.geojson,North Carolina,1902,1906,1900
+data/congressional-district-boundaries/North_Carolina_61_to_62.geojson,North Carolina,1908,1910,1900
+data/congressional-district-boundaries/North_Carolina_63_to_72.geojson,North Carolina,1912,1930,1910
+data/congressional-district-boundaries/North_Carolina_73_to_77.geojson,North Carolina,1932,1940,1930
+data/congressional-district-boundaries/North_Carolina_78_to_87.geojson,North Carolina,1942,1960,1940
+data/congressional-district-boundaries/North_Carolina_8_to_12.geojson,North Carolina,1802,1810,1800
+data/congressional-district-boundaries/North_Carolina_88_to_89.geojson,North Carolina,1962,1964,1960
+data/congressional-district-boundaries/North_Carolina_90_to_90.geojson,North Carolina,1966,1966,1960
+data/congressional-district-boundaries/North_Carolina_91_to_92.geojson,North Carolina,1968,1970,1960
+data/congressional-district-boundaries/North_Carolina_93_to_97.geojson,North Carolina,1972,1980,1970
+data/congressional-district-boundaries/North_Carolina_98_to_102.geojson,North Carolina,1982,1990,1980
+data/congressional-district-boundaries/North_Dakota_103_to_112.geojson,North Dakota,1992,2010,1990
+data/congressional-district-boundaries/North_Dakota_51_to_57.geojson,North Dakota,1888,1900,1880
+data/congressional-district-boundaries/North_Dakota_58_to_62.geojson,North Dakota,1902,1910,1900
+data/congressional-district-boundaries/North_Dakota_63_to_72.geojson,North Dakota,1912,1930,1910
+data/congressional-district-boundaries/North_Dakota_73_to_87.geojson,North Dakota,1932,1960,1930
+data/congressional-district-boundaries/North_Dakota_88_to_92.geojson,North Dakota,1962,1970,1960
+data/congressional-district-boundaries/North_Dakota_93_to_97.geojson,North Dakota,1972,1980,1970
+data/congressional-district-boundaries/North_Dakota_98_to_102.geojson,North Dakota,1982,1990,1980
+data/congressional-district-boundaries/Ohio_100_to_102.geojson,Ohio,1986,1990,1980
+data/congressional-district-boundaries/Ohio_103_to_104.geojson,Ohio,1992,1994,1990
+data/congressional-district-boundaries/Ohio_105_to_107.geojson,Ohio,1996,2000,1990
+data/congressional-district-boundaries/Ohio_108_to_112.geojson,Ohio,2002,2010,2000
+data/congressional-district-boundaries/Ohio_13_to_17.geojson,Ohio,1812,1820,1810
+data/congressional-district-boundaries/Ohio_18_to_21.geojson,Ohio,1822,1828,1820
+data/congressional-district-boundaries/Ohio_22_to_22.geojson,Ohio,1830,1830,1830
+data/congressional-district-boundaries/Ohio_23_to_27.geojson,Ohio,1832,1840,1830
+data/congressional-district-boundaries/Ohio_28_to_29.geojson,Ohio,1842,1844,1840
+data/congressional-district-boundaries/Ohio_30_to_32.geojson,Ohio,1846,1850,1840
+data/congressional-district-boundaries/Ohio_33_to_37.geojson,Ohio,1852,1860,1850
+data/congressional-district-boundaries/Ohio_38_to_42.geojson,Ohio,1862,1870,1860
+data/congressional-district-boundaries/Ohio_43_to_45.geojson,Ohio,1872,1876,1870
+data/congressional-district-boundaries/Ohio_46_to_46.geojson,Ohio,1878,1878,1870
+data/congressional-district-boundaries/Ohio_47_to_47.geojson,Ohio,1880,1880,1880
+data/congressional-district-boundaries/Ohio_48_to_48.geojson,Ohio,1882,1882,1880
+data/congressional-district-boundaries/Ohio_49_to_49.geojson,Ohio,1884,1884,1880
+data/congressional-district-boundaries/Ohio_50_to_51.geojson,Ohio,1886,1888,1880
+data/congressional-district-boundaries/Ohio_52_to_52.geojson,Ohio,1890,1890,1890
+data/congressional-district-boundaries/Ohio_53_to_57.geojson,Ohio,1892,1900,1890
+data/congressional-district-boundaries/Ohio_58_to_62.geojson,Ohio,1902,1910,1900
+data/congressional-district-boundaries/Ohio_63_to_63.geojson,Ohio,1912,1912,1910
+data/congressional-district-boundaries/Ohio_64_to_72.geojson,Ohio,1914,1930,1910
+data/congressional-district-boundaries/Ohio_7_to_8.geojson,Ohio,1800,1802,1800
+data/congressional-district-boundaries/Ohio_73_to_77.geojson,Ohio,1932,1940,1930
+data/congressional-district-boundaries/Ohio_78_to_82.geojson,Ohio,1942,1950,1940
+data/congressional-district-boundaries/Ohio_83_to_87.geojson,Ohio,1952,1960,1950
+data/congressional-district-boundaries/Ohio_88_to_89.geojson,Ohio,1962,1964,1960
+data/congressional-district-boundaries/Ohio_9_to_12.geojson,Ohio,1804,1810,1800
+data/congressional-district-boundaries/Ohio_90_to_90.geojson,Ohio,1966,1966,1960
+data/congressional-district-boundaries/Ohio_91_to_92.geojson,Ohio,1968,1970,1960
+data/congressional-district-boundaries/Ohio_93_to_97.geojson,Ohio,1972,1980,1970
+data/congressional-district-boundaries/Ohio_98_to_99.geojson,Ohio,1982,1984,1980
+data/congressional-district-boundaries/Oklahoma_103_to_107.geojson,Oklahoma,1992,2000,1990
+data/congressional-district-boundaries/Oklahoma_108_to_112.geojson,Oklahoma,2002,2010,2000
+data/congressional-district-boundaries/Oklahoma_60_to_62.geojson,Oklahoma,1906,1910,1900
+data/congressional-district-boundaries/Oklahoma_63_to_63.geojson,Oklahoma,1912,1912,1910
+data/congressional-district-boundaries/Oklahoma_64_to_72.geojson,Oklahoma,1914,1930,1910
+data/congressional-district-boundaries/Oklahoma_73_to_77.geojson,Oklahoma,1932,1940,1930
+data/congressional-district-boundaries/Oklahoma_78_to_82.geojson,Oklahoma,1942,1950,1940
+data/congressional-district-boundaries/Oklahoma_83_to_90.geojson,Oklahoma,1952,1966,1950
+data/congressional-district-boundaries/Oklahoma_91_to_92.geojson,Oklahoma,1968,1970,1960
+data/congressional-district-boundaries/Oklahoma_93_to_97.geojson,Oklahoma,1972,1980,1970
+data/congressional-district-boundaries/Oklahoma_98_to_102.geojson,Oklahoma,1982,1990,1980
+data/congressional-district-boundaries/Oregon_103_to_107.geojson,Oregon,1992,2000,1990
+data/congressional-district-boundaries/Oregon_108_to_112.geojson,Oregon,2002,2010,2000
+data/congressional-district-boundaries/Oregon_35_to_52.geojson,Oregon,1856,1890,1850
+data/congressional-district-boundaries/Oregon_53_to_62.geojson,Oregon,1892,1910,1890
+data/congressional-district-boundaries/Oregon_63_to_77.geojson,Oregon,1912,1940,1910
+data/congressional-district-boundaries/Oregon_78_to_89.geojson,Oregon,1942,1964,1940
+data/congressional-district-boundaries/Oregon_90_to_92.geojson,Oregon,1966,1970,1960
+data/congressional-district-boundaries/Oregon_93_to_97.geojson,Oregon,1972,1980,1970
+data/congressional-district-boundaries/Oregon_98_to_102.geojson,Oregon,1982,1990,1980
+data/congressional-district-boundaries/Pennsylvania_1_to_1.geojson,Pennsylvania,1788,1788,NA
+data/congressional-district-boundaries/Pennsylvania_103_to_107.geojson,Pennsylvania,1992,2000,1990
+data/congressional-district-boundaries/Pennsylvania_108_to_108.geojson,Pennsylvania,2002,2002,2000
+data/congressional-district-boundaries/Pennsylvania_109_to_112.geojson,Pennsylvania,2004,2010,2000
+data/congressional-district-boundaries/Pennsylvania_13_to_17.geojson,Pennsylvania,1812,1820,1810
+data/congressional-district-boundaries/Pennsylvania_18_to_22.geojson,Pennsylvania,1822,1830,1820
+data/congressional-district-boundaries/Pennsylvania_2_to_2.geojson,Pennsylvania,1790,1790,1790
+data/congressional-district-boundaries/Pennsylvania_23_to_26.geojson,Pennsylvania,1832,1838,1830
+data/congressional-district-boundaries/Pennsylvania_27_to_27.geojson,Pennsylvania,1840,1840,1840
+data/congressional-district-boundaries/Pennsylvania_28_to_29.geojson,Pennsylvania,1842,1844,1840
+data/congressional-district-boundaries/Pennsylvania_3_to_3.geojson,Pennsylvania,1792,1792,1790
+data/congressional-district-boundaries/Pennsylvania_30_to_32.geojson,Pennsylvania,1846,1850,1840
+data/congressional-district-boundaries/Pennsylvania_33_to_37.geojson,Pennsylvania,1852,1860,1850
+data/congressional-district-boundaries/Pennsylvania_38_to_42.geojson,Pennsylvania,1862,1870,1860
+data/congressional-district-boundaries/Pennsylvania_4_to_6.geojson,Pennsylvania,1794,1798,1790
+data/congressional-district-boundaries/Pennsylvania_43_to_43.geojson,Pennsylvania,1872,1872,1870
+data/congressional-district-boundaries/Pennsylvania_44_to_44.geojson,Pennsylvania,1874,1874,1870
+data/congressional-district-boundaries/Pennsylvania_45_to_47.geojson,Pennsylvania,1876,1880,1870
+data/congressional-district-boundaries/Pennsylvania_48_to_50.geojson,Pennsylvania,1882,1886,1880
+data/congressional-district-boundaries/Pennsylvania_51_to_52.geojson,Pennsylvania,1888,1890,1880
+data/congressional-district-boundaries/Pennsylvania_53_to_57.geojson,Pennsylvania,1892,1900,1890
+data/congressional-district-boundaries/Pennsylvania_58_to_61.geojson,Pennsylvania,1902,1908,1900
+data/congressional-district-boundaries/Pennsylvania_62_to_62.geojson,Pennsylvania,1910,1910,1910
+data/congressional-district-boundaries/Pennsylvania_63_to_67.geojson,Pennsylvania,1912,1920,1910
+data/congressional-district-boundaries/Pennsylvania_68_to_72.geojson,Pennsylvania,1922,1930,1920
+data/congressional-district-boundaries/Pennsylvania_7_to_7.geojson,Pennsylvania,1800,1800,1800
+data/congressional-district-boundaries/Pennsylvania_73_to_77.geojson,Pennsylvania,1932,1940,1930
+data/congressional-district-boundaries/Pennsylvania_78_to_78.geojson,Pennsylvania,1942,1942,1940
+data/congressional-district-boundaries/Pennsylvania_79_to_82.geojson,Pennsylvania,1944,1950,1940
+data/congressional-district-boundaries/Pennsylvania_8_to_12.geojson,Pennsylvania,1802,1810,1800
+data/congressional-district-boundaries/Pennsylvania_83_to_83.geojson,Pennsylvania,1952,1952,1950
+data/congressional-district-boundaries/Pennsylvania_84_to_87.geojson,Pennsylvania,1954,1960,1950
+data/congressional-district-boundaries/Pennsylvania_88_to_89.geojson,Pennsylvania,1962,1964,1960
+data/congressional-district-boundaries/Pennsylvania_90_to_92.geojson,Pennsylvania,1966,1970,1960
+data/congressional-district-boundaries/Pennsylvania_93_to_97.geojson,Pennsylvania,1972,1980,1970
+data/congressional-district-boundaries/Pennsylvania_98_to_102.geojson,Pennsylvania,1982,1990,1980
+data/congressional-district-boundaries/Rhode_Island_1_to_2.geojson,Rhode Island,1788,1790,NA
+data/congressional-district-boundaries/Rhode_Island_103_to_107.geojson,Rhode Island,1992,2000,1990
+data/congressional-district-boundaries/Rhode_Island_108_to_112.geojson,Rhode Island,2002,2010,2000
+data/congressional-district-boundaries/Rhode_Island_28_to_42.geojson,Rhode Island,1842,1870,1840
+data/congressional-district-boundaries/Rhode_Island_3_to_27.geojson,Rhode Island,1792,1840,1790
+data/congressional-district-boundaries/Rhode_Island_43_to_47.geojson,Rhode Island,1872,1880,1870
+data/congressional-district-boundaries/Rhode_Island_48_to_62.geojson,Rhode Island,1882,1910,1880
+data/congressional-district-boundaries/Rhode_Island_63_to_71.geojson,Rhode Island,1912,1928,1910
+data/congressional-district-boundaries/Rhode_Island_72_to_72.geojson,Rhode Island,1930,1930,1930
+data/congressional-district-boundaries/Rhode_Island_73_to_88.geojson,Rhode Island,1932,1962,1930
+data/congressional-district-boundaries/Rhode_Island_89_to_92.geojson,Rhode Island,1964,1970,1960
+data/congressional-district-boundaries/Rhode_Island_93_to_97.geojson,Rhode Island,1972,1980,1970
+data/congressional-district-boundaries/Rhode_Island_98_to_102.geojson,Rhode Island,1982,1990,1980
+data/congressional-district-boundaries/South_Carolina_1_to_2.geojson,South Carolina,1788,1790,NA
+data/congressional-district-boundaries/South_Carolina_103_to_103.geojson,South Carolina,1992,1992,1990
+data/congressional-district-boundaries/South_Carolina_104_to_107.geojson,South Carolina,1994,2000,1990
+data/congressional-district-boundaries/South_Carolina_108_to_112.geojson,South Carolina,2002,2010,2000
+data/congressional-district-boundaries/South_Carolina_13_to_14.geojson,South Carolina,1812,1814,1810
+data/congressional-district-boundaries/South_Carolina_15_to_17.geojson,South Carolina,1816,1820,1810
+data/congressional-district-boundaries/South_Carolina_18_to_27.geojson,South Carolina,1822,1840,1820
+data/congressional-district-boundaries/South_Carolina_28_to_32.geojson,South Carolina,1842,1850,1840
+data/congressional-district-boundaries/South_Carolina_3_to_7.geojson,South Carolina,1792,1800,1790
+data/congressional-district-boundaries/South_Carolina_33_to_36.geojson,South Carolina,1852,1858,1850
+data/congressional-district-boundaries/South_Carolina_40_to_42.geojson,South Carolina,1866,1870,1860
+data/congressional-district-boundaries/South_Carolina_43_to_43.geojson,South Carolina,1872,1872,1870
+data/congressional-district-boundaries/South_Carolina_44_to_44.geojson,South Carolina,1874,1874,1870
+data/congressional-district-boundaries/South_Carolina_45_to_47.geojson,South Carolina,1876,1880,1870
+data/congressional-district-boundaries/South_Carolina_48_to_53.geojson,South Carolina,1882,1892,1880
+data/congressional-district-boundaries/South_Carolina_54_to_55.geojson,South Carolina,1894,1896,1890
+data/congressional-district-boundaries/South_Carolina_56_to_57.geojson,South Carolina,1898,1900,1890
+data/congressional-district-boundaries/South_Carolina_58_to_64.geojson,South Carolina,1902,1914,1900
+data/congressional-district-boundaries/South_Carolina_65_to_72.geojson,South Carolina,1916,1930,1910
+data/congressional-district-boundaries/South_Carolina_73_to_88.geojson,South Carolina,1932,1962,1930
+data/congressional-district-boundaries/South_Carolina_8_to_12.geojson,South Carolina,1802,1810,1800
+data/congressional-district-boundaries/South_Carolina_89_to_89.geojson,South Carolina,1964,1964,1960
+data/congressional-district-boundaries/South_Carolina_90_to_92.geojson,South Carolina,1966,1970,1960
+data/congressional-district-boundaries/South_Carolina_93_to_97.geojson,South Carolina,1972,1980,1970
+data/congressional-district-boundaries/South_Carolina_98_to_102.geojson,South Carolina,1982,1990,1980
+data/congressional-district-boundaries/South_Dakota_103_to_107.geojson,South Dakota,1992,2000,1990
+data/congressional-district-boundaries/South_Dakota_108_to_112.geojson,South Dakota,2002,2010,2000
+data/congressional-district-boundaries/South_Dakota_51_to_62.geojson,South Dakota,1888,1910,1880
+data/congressional-district-boundaries/South_Dakota_63_to_72.geojson,South Dakota,1912,1930,1910
+data/congressional-district-boundaries/South_Dakota_73_to_89.geojson,South Dakota,1932,1964,1930
+data/congressional-district-boundaries/South_Dakota_90_to_92.geojson,South Dakota,1966,1970,1960
+data/congressional-district-boundaries/South_Dakota_93_to_97.geojson,South Dakota,1972,1980,1970
+data/congressional-district-boundaries/South_Dakota_98_to_102.geojson,South Dakota,1982,1990,1980
+data/congressional-district-boundaries/Tennessee_10_to_10.geojson,Tennessee,1806,1806,1800
+data/congressional-district-boundaries/Tennessee_103_to_107.geojson,Tennessee,1992,2000,1990
+data/congressional-district-boundaries/Tennessee_108_to_112.geojson,Tennessee,2002,2010,2000
+data/congressional-district-boundaries/Tennessee_11_to_11.geojson,Tennessee,1808,1808,1800
+data/congressional-district-boundaries/Tennessee_12_to_12.geojson,Tennessee,1810,1810,1810
+data/congressional-district-boundaries/Tennessee_13_to_17.geojson,Tennessee,1812,1820,1810
+data/congressional-district-boundaries/Tennessee_18_to_22.geojson,Tennessee,1822,1830,1820
+data/congressional-district-boundaries/Tennessee_23_to_27.geojson,Tennessee,1832,1840,1830
+data/congressional-district-boundaries/Tennessee_28_to_32.geojson,Tennessee,1842,1850,1840
+data/congressional-district-boundaries/Tennessee_33_to_36.geojson,Tennessee,1852,1858,1850
+data/congressional-district-boundaries/Tennessee_37_to_37.geojson,Tennessee,1860,1860,1860
+data/congressional-district-boundaries/Tennessee_39_to_42.geojson,Tennessee,1864,1870,1860
+data/congressional-district-boundaries/Tennessee_4_to_5.geojson,Tennessee,1794,1796,1790
+data/congressional-district-boundaries/Tennessee_43_to_43.geojson,Tennessee,1872,1872,1870
+data/congressional-district-boundaries/Tennessee_44_to_47.geojson,Tennessee,1874,1880,1870
+data/congressional-district-boundaries/Tennessee_48_to_51.geojson,Tennessee,1882,1888,1880
+data/congressional-district-boundaries/Tennessee_52_to_57.geojson,Tennessee,1890,1900,1890
+data/congressional-district-boundaries/Tennessee_58_to_67.geojson,Tennessee,1902,1920,1900
+data/congressional-district-boundaries/Tennessee_6_to_7.geojson,Tennessee,1798,1800,1790
+data/congressional-district-boundaries/Tennessee_68_to_69.geojson,Tennessee,1922,1924,1920
+data/congressional-district-boundaries/Tennessee_70_to_72.geojson,Tennessee,1926,1930,1920
+data/congressional-district-boundaries/Tennessee_73_to_73.geojson,Tennessee,1932,1932,1930
+data/congressional-district-boundaries/Tennessee_74_to_77.geojson,Tennessee,1934,1940,1930
+data/congressional-district-boundaries/Tennessee_78_to_79.geojson,Tennessee,1942,1944,1940
+data/congressional-district-boundaries/Tennessee_8_to_8.geojson,Tennessee,1802,1802,1800
+data/congressional-district-boundaries/Tennessee_80_to_82.geojson,Tennessee,1946,1950,1940
+data/congressional-district-boundaries/Tennessee_83_to_89.geojson,Tennessee,1952,1964,1950
+data/congressional-district-boundaries/Tennessee_9_to_9.geojson,Tennessee,1804,1804,1800
+data/congressional-district-boundaries/Tennessee_90_to_90.geojson,Tennessee,1966,1966,1960
+data/congressional-district-boundaries/Tennessee_91_to_92.geojson,Tennessee,1968,1970,1960
+data/congressional-district-boundaries/Tennessee_93_to_94.geojson,Tennessee,1972,1974,1970
+data/congressional-district-boundaries/Tennessee_95_to_97.geojson,Tennessee,1976,1980,1970
+data/congressional-district-boundaries/Tennessee_98_to_102.geojson,Tennessee,1982,1990,1980
+data/congressional-district-boundaries/Texas_103_to_104.geojson,Texas,1992,1994,1990
+data/congressional-district-boundaries/Texas_105_to_106.geojson,Texas,1996,1998,1990
+data/congressional-district-boundaries/Texas_107_to_107.geojson,Texas,2000,2000,2000
+data/congressional-district-boundaries/Texas_108_to_108.geojson,Texas,2002,2002,2000
+data/congressional-district-boundaries/Texas_109_to_109.geojson,Texas,2004,2004,2000
+data/congressional-district-boundaries/Texas_110_to_112.geojson,Texas,2006,2010,2000
+data/congressional-district-boundaries/Texas_28_to_31.geojson,Texas,1842,1848,1840
+data/congressional-district-boundaries/Texas_29_to_31.geojson,Texas,1844,1848,1840
+data/congressional-district-boundaries/Texas_32_to_36.geojson,Texas,1850,1858,1850
+data/congressional-district-boundaries/Texas_41_to_42.geojson,Texas,1868,1870,1860
+data/congressional-district-boundaries/Texas_43_to_43.geojson,Texas,1872,1872,1870
+data/congressional-district-boundaries/Texas_44_to_46.geojson,Texas,1874,1878,1870
+data/congressional-district-boundaries/Texas_47_to_47.geojson,Texas,1880,1880,1880
+data/congressional-district-boundaries/Texas_48_to_49.geojson,Texas,1882,1884,1880
+data/congressional-district-boundaries/Texas_50_to_50.geojson,Texas,1886,1886,1880
+data/congressional-district-boundaries/Texas_51_to_52.geojson,Texas,1888,1890,1880
+data/congressional-district-boundaries/Texas_53_to_54.geojson,Texas,1892,1894,1890
+data/congressional-district-boundaries/Texas_55_to_57.geojson,Texas,1896,1900,1890
+data/congressional-district-boundaries/Texas_58_to_61.geojson,Texas,1902,1908,1900
+data/congressional-district-boundaries/Texas_62_to_62.geojson,Texas,1910,1910,1910
+data/congressional-district-boundaries/Texas_63_to_63.geojson,Texas,1912,1912,1910
+data/congressional-district-boundaries/Texas_64_to_65.geojson,Texas,1914,1916,1910
+data/congressional-district-boundaries/Texas_66_to_72.geojson,Texas,1918,1930,1910
+data/congressional-district-boundaries/Texas_73_to_73.geojson,Texas,1932,1932,1930
+data/congressional-district-boundaries/Texas_74_to_82.geojson,Texas,1934,1950,1930
+data/congressional-district-boundaries/Texas_83_to_85.geojson,Texas,1952,1956,1950
+data/congressional-district-boundaries/Texas_86_to_87.geojson,Texas,1958,1960,1950
+data/congressional-district-boundaries/Texas_88_to_89.geojson,Texas,1962,1964,1960
+data/congressional-district-boundaries/Texas_90_to_90.geojson,Texas,1966,1966,1960
+data/congressional-district-boundaries/Texas_91_to_92.geojson,Texas,1968,1970,1960
+data/congressional-district-boundaries/Texas_93_to_93.geojson,Texas,1972,1972,1970
+data/congressional-district-boundaries/Texas_94_to_97.geojson,Texas,1974,1980,1970
+data/congressional-district-boundaries/Texas_98_to_98.geojson,Texas,1982,1982,1980
+data/congressional-district-boundaries/Texas_99_to_102.geojson,Texas,1984,1990,1980
+data/congressional-district-boundaries/Utah_103_to_107.geojson,Utah,1992,2000,1990
+data/congressional-district-boundaries/Utah_108_to_112.geojson,Utah,2002,2010,2000
+data/congressional-district-boundaries/Utah_54_to_62.geojson,Utah,1894,1910,1890
+data/congressional-district-boundaries/Utah_63_to_63.geojson,Utah,1912,1912,1910
+data/congressional-district-boundaries/Utah_64_to_89.geojson,Utah,1914,1964,1910
+data/congressional-district-boundaries/Utah_90_to_92.geojson,Utah,1966,1970,1960
+data/congressional-district-boundaries/Utah_93_to_97.geojson,Utah,1972,1980,1970
+data/congressional-district-boundaries/Utah_98_to_102.geojson,Utah,1982,1990,1980
+data/congressional-district-boundaries/Vermont_103_to_112.geojson,Vermont,1992,2010,1990
+data/congressional-district-boundaries/Vermont_13_to_16.geojson,Vermont,1812,1818,1810
+data/congressional-district-boundaries/Vermont_17_to_17.geojson,Vermont,1820,1820,1820
+data/congressional-district-boundaries/Vermont_18_to_18.geojson,Vermont,1822,1822,1820
+data/congressional-district-boundaries/Vermont_19_to_21.geojson,Vermont,1824,1828,1820
+data/congressional-district-boundaries/Vermont_2_to_6.geojson,Vermont,1790,1798,1790
+data/congressional-district-boundaries/Vermont_22_to_22.geojson,Vermont,1830,1830,1830
+data/congressional-district-boundaries/Vermont_23_to_27.geojson,Vermont,1832,1840,1830
+data/congressional-district-boundaries/Vermont_28_to_32.geojson,Vermont,1842,1850,1840
+data/congressional-district-boundaries/Vermont_33_to_47.geojson,Vermont,1852,1880,1850
+data/congressional-district-boundaries/Vermont_48_to_72.geojson,Vermont,1882,1930,1880
+data/congressional-district-boundaries/Vermont_7_to_7.geojson,Vermont,1800,1800,1800
+data/congressional-district-boundaries/Vermont_73_to_97.geojson,Vermont,1932,1980,1930
+data/congressional-district-boundaries/Vermont_8_to_12.geojson,Vermont,1802,1810,1800
+data/congressional-district-boundaries/Vermont_98_to_102.geojson,Vermont,1982,1990,1980
+data/congressional-district-boundaries/Virginia_1_to_2.geojson,Virginia,1788,1790,NA
+data/congressional-district-boundaries/Virginia_10_to_12.geojson,Virginia,1806,1810,1800
+data/congressional-district-boundaries/Virginia_103_to_103.geojson,Virginia,1992,1992,1990
+data/congressional-district-boundaries/Virginia_104_to_105.geojson,Virginia,1994,1996,1990
+data/congressional-district-boundaries/Virginia_106_to_107.geojson,Virginia,1998,2000,1990
+data/congressional-district-boundaries/Virginia_108_to_112.geojson,Virginia,2002,2010,2000
+data/congressional-district-boundaries/Virginia_13_to_17.geojson,Virginia,1812,1820,1810
+data/congressional-district-boundaries/Virginia_18_to_18.geojson,Virginia,1822,1822,1820
+data/congressional-district-boundaries/Virginia_19_to_22.geojson,Virginia,1824,1830,1820
+data/congressional-district-boundaries/Virginia_23_to_24.geojson,Virginia,1832,1834,1830
+data/congressional-district-boundaries/Virginia_25_to_25.geojson,Virginia,1836,1836,1830
+data/congressional-district-boundaries/Virginia_26_to_27.geojson,Virginia,1838,1840,1830
+data/congressional-district-boundaries/Virginia_28_to_29.geojson,Virginia,1842,1844,1840
+data/congressional-district-boundaries/Virginia_3_to_7.geojson,Virginia,1792,1800,1790
+data/congressional-district-boundaries/Virginia_30_to_31.geojson,Virginia,1846,1848,1840
+data/congressional-district-boundaries/Virginia_32_to_32.geojson,Virginia,1850,1850,1850
+data/congressional-district-boundaries/Virginia_33_to_35.geojson,Virginia,1852,1856,1850
+data/congressional-district-boundaries/Virginia_36_to_36.geojson,Virginia,1858,1858,1850
+data/congressional-district-boundaries/Virginia_37_to_37.geojson,Virginia,1860,1860,1860
+data/congressional-district-boundaries/Virginia_41_to_42.geojson,Virginia,1868,1870,1860
+data/congressional-district-boundaries/Virginia_43_to_47.geojson,Virginia,1872,1880,1870
+data/congressional-district-boundaries/Virginia_48_to_48.geojson,Virginia,1882,1882,1880
+data/congressional-district-boundaries/Virginia_49_to_52.geojson,Virginia,1884,1890,1880
+data/congressional-district-boundaries/Virginia_53_to_60.geojson,Virginia,1892,1906,1890
+data/congressional-district-boundaries/Virginia_61_to_62.geojson,Virginia,1908,1910,1900
+data/congressional-district-boundaries/Virginia_63_to_72.geojson,Virginia,1912,1930,1910
+data/congressional-district-boundaries/Virginia_73_to_73.geojson,Virginia,1932,1932,1930
+data/congressional-district-boundaries/Virginia_74_to_82.geojson,Virginia,1934,1950,1930
+data/congressional-district-boundaries/Virginia_8_to_9.geojson,Virginia,1802,1804,1800
+data/congressional-district-boundaries/Virginia_83_to_89.geojson,Virginia,1952,1964,1950
+data/congressional-district-boundaries/Virginia_90_to_92.geojson,Virginia,1966,1970,1960
+data/congressional-district-boundaries/Virginia_93_to_97.geojson,Virginia,1972,1980,1970
+data/congressional-district-boundaries/Virginia_98_to_102.geojson,Virginia,1982,1990,1980
+data/congressional-district-boundaries/Washington_103_to_107.geojson,Washington,1992,2000,1990
+data/congressional-district-boundaries/Washington_108_to_112.geojson,Washington,2002,2010,2000
+data/congressional-district-boundaries/Washington_51_to_52.geojson,Washington,1888,1890,1880
+data/congressional-district-boundaries/Washington_53_to_57.geojson,Washington,1892,1900,1890
+data/congressional-district-boundaries/Washington_58_to_60.geojson,Washington,1902,1906,1900
+data/congressional-district-boundaries/Washington_61_to_62.geojson,Washington,1908,1910,1900
+data/congressional-district-boundaries/Washington_63_to_63.geojson,Washington,1912,1912,1910
+data/congressional-district-boundaries/Washington_64_to_72.geojson,Washington,1914,1930,1910
+data/congressional-district-boundaries/Washington_73_to_82.geojson,Washington,1932,1950,1930
+data/congressional-district-boundaries/Washington_83_to_85.geojson,Washington,1952,1956,1950
+data/congressional-district-boundaries/Washington_86_to_86.geojson,Washington,1958,1958,1950
+data/congressional-district-boundaries/Washington_87_to_90.geojson,Washington,1960,1966,1960
+data/congressional-district-boundaries/Washington_91_to_92.geojson,Washington,1968,1970,1960
+data/congressional-district-boundaries/Washington_93_to_97.geojson,Washington,1972,1980,1970
+data/congressional-district-boundaries/Washington_98_to_98.geojson,Washington,1982,1982,1980
+data/congressional-district-boundaries/Washington_99_to_102.geojson,Washington,1984,1990,1980
+data/congressional-district-boundaries/West_Virginia_103_to_107.geojson,West Virginia,1992,2000,1990
+data/congressional-district-boundaries/West_Virginia_108_to_112.geojson,West Virginia,2002,2010,2000
+data/congressional-district-boundaries/West_Virginia_38_to_47.geojson,West Virginia,1862,1880,1860
+data/congressional-district-boundaries/West_Virginia_48_to_57.geojson,West Virginia,1882,1900,1880
+data/congressional-district-boundaries/West_Virginia_58_to_62.geojson,West Virginia,1902,1910,1900
+data/congressional-district-boundaries/West_Virginia_63_to_64.geojson,West Virginia,1912,1914,1910
+data/congressional-district-boundaries/West_Virginia_65_to_71.geojson,West Virginia,1916,1928,1910
+data/congressional-district-boundaries/West_Virginia_72_to_73.geojson,West Virginia,1930,1932,1930
+data/congressional-district-boundaries/West_Virginia_74_to_82.geojson,West Virginia,1934,1950,1930
+data/congressional-district-boundaries/West_Virginia_83_to_87.geojson,West Virginia,1952,1960,1950
+data/congressional-district-boundaries/West_Virginia_88_to_90.geojson,West Virginia,1962,1966,1960
+data/congressional-district-boundaries/West_Virginia_91_to_92.geojson,West Virginia,1968,1970,1960
+data/congressional-district-boundaries/West_Virginia_93_to_97.geojson,West Virginia,1972,1980,1970
+data/congressional-district-boundaries/West_Virginia_98_to_102.geojson,West Virginia,1982,1990,1980
+data/congressional-district-boundaries/Wisconsin_103_to_107.geojson,Wisconsin,1992,2000,1990
+data/congressional-district-boundaries/Wisconsin_108_to_112.geojson,Wisconsin,2002,2010,2000
+data/congressional-district-boundaries/Wisconsin_30_to_30.geojson,Wisconsin,1846,1846,1840
+data/congressional-district-boundaries/Wisconsin_31_to_37.geojson,Wisconsin,1848,1860,1840
+data/congressional-district-boundaries/Wisconsin_38_to_42.geojson,Wisconsin,1862,1870,1860
+data/congressional-district-boundaries/Wisconsin_43_to_44.geojson,Wisconsin,1872,1874,1870
+data/congressional-district-boundaries/Wisconsin_45_to_47.geojson,Wisconsin,1876,1880,1870
+data/congressional-district-boundaries/Wisconsin_48_to_52.geojson,Wisconsin,1882,1890,1880
+data/congressional-district-boundaries/Wisconsin_53_to_57.geojson,Wisconsin,1892,1900,1890
+data/congressional-district-boundaries/Wisconsin_58_to_62.geojson,Wisconsin,1902,1910,1900
+data/congressional-district-boundaries/Wisconsin_63_to_72.geojson,Wisconsin,1912,1930,1910
+data/congressional-district-boundaries/Wisconsin_73_to_88.geojson,Wisconsin,1932,1962,1930
+data/congressional-district-boundaries/Wisconsin_89_to_92.geojson,Wisconsin,1964,1970,1960
+data/congressional-district-boundaries/Wisconsin_93_to_97.geojson,Wisconsin,1972,1980,1970
+data/congressional-district-boundaries/Wisconsin_98_to_102.geojson,Wisconsin,1982,1990,1980
+data/congressional-district-boundaries/Wyoming_103_to_112.geojson,Wyoming,1992,2010,1990
+data/congressional-district-boundaries/Wyoming_51_to_97.geojson,Wyoming,1888,1980,1880
+data/congressional-district-boundaries/Wyoming_98_to_102.geojson,Wyoming,1982,1990,1980
+data/congressional-district-boundaries/tl_2013_us_cd113.shp,NA,2012,2012,2010
+data/congressional-district-boundaries/tl_2014_us_cd114.shp,NA,2014,2014,2010
+data/congressional-district-boundaries/tl_2016_us_cd115.shp,NA,2016,2016,2010
+data/congressional-district-boundaries/tl_2018_us_cd116.shp,NA,2018,2018,2010
