@@ -62,7 +62,7 @@
         }
 
         #scrolly-overlay .scrolly article .step {
-            min-height: 50vh;
+            min-height: 75vh;
             margin-bottom: 1rem;
         }
 
@@ -159,31 +159,18 @@
 
             <!--  step text   -->
             <article>
-                <div class='step' data-route-highlight="134"></div>
-                <div class='step' data-route-highlight="111A"></div>
+                <div class='step' data-route-highlight="nothing"></div>
+                <div class='step' data-route-highlight="route-134"></div>
+                <div class='step' data-route-highlight="route-111A"></div>
                 <div class='step' data-route-highlight="northwest"></div>
                 <div class='step' data-route-highlight="southwest"></div>
                 <div class='step' data-route-highlight="hydepark"></div>
+                <div class='step' data-route-highlight="nothing"></div>
             </article>
 
         </div>
 
     </section>
-
-    <!-- <section class='filler'>
-        <h2>End. Keep scrolling!</h2>
- 
-        <div class="spacer"></div>
-        <p>See? The article continued as normal.</p>
-        <p>
-            So basically the "sticky" positioned element is the figure. Article is relatively position element. When you scroll the through the article element, then the figure "element" unsticks.
-        </p>
-        <p>
-            This is all handled by CSS. The only Javascript is in checking which of the slides are in the viewport and then triggering a function when it is in view.
-        </p>
-        </br>
-        </br>
-    </section> -->
 </body>
 
 <!-- add your script blocks at the end -->
@@ -433,11 +420,11 @@
             .attr("stroke-width", "0.5px")
 
         function update(route_highlight) {
-            if(route_highlight == "134") {
+            if(route_highlight == "route-134") {
                 let annotations = [
                     {
                         note: {
-                            label: "The #134, which connects a high-income neighborhood with downtown, lost 98.5% of its passengers",
+                            label: "Bus #134, which connects a high-income neighborhood with downtown, lost 98.5% of its passengers",
                             //align: "right"
                         },
                         x: 675,
@@ -452,7 +439,7 @@
                     .attr("class", "annotation-group")
                     .selectAll("g")
                     .call(d3.annotation().annotations(annotations))
-            } else if(route_highlight == "111A") {
+            } else if(route_highlight == "route-111A") {
                 let annotations = [
                     {
                         note: {
@@ -475,7 +462,7 @@
                 let annotations = [
                     {
                         note: {
-                            label: "Most routes on the north side lost 75 to 90% of their passengers",
+                            label: "Most routes on the majority-white north side lost 75 to 90% of their passengers",
                             //align: "right"
                         },
                         x: 225,
@@ -494,13 +481,13 @@
                 let annotations = [
                     {
                         note: {
-                            label: "Buses serving the south side often maintained 40 to 60% of their normal ridership",
+                            label: "Buses serving the majority-Black south side often maintained 40 to 60% of their normal ridership",
                             //align: "right"
                         },
-                        x: 325,
+                        x: 350,
                         y: 700,
-                        dx: -175,
-                        dy: -50,
+                        dx: -225,
+                        dy: -25,
                         type: d3.annotationLabel
                     }
                 ]
@@ -529,7 +516,6 @@
                     .selectAll("g")
                     .call(d3.annotation().annotations(annotations))
             }
-            
         }
 
         // use d3-annotation from https://d3-annotation.susielu.com/
@@ -558,7 +544,7 @@
 
             enterView({ //our main view function
                 selector: stepSel.nodes(),
-                offset: 0.5, //when the slide is 50% away then trigger your chart
+                offset: 0.25, //when the slide is 50% away then trigger your chart
                 enter: el => { //what's supposed to happen when the slide enters?
                     update(d3.select(el).attr('data-route-highlight'))
                 },
