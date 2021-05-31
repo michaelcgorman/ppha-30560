@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        .chart-container {
+            max-width: 1050px;
+            margin: 0 auto;
+            /* auto centers the div */
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        .source {
+            margin: 2em auto;
+            color: #999;
+        }
+
+        svg {
+            /* overflow: visible; */
+        }
+
+
+        .filler {
+            height: 20rem;
+            text-align: center;
+        }
+
+        .filler h2 {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 54px;
+        }
+
+
+        .filler p {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 24px;
+            text-align: left;
+            margin: 20px auto;
+            line-height: 1.2;
+            max-width: 600px
+            
+        }
+
+        #scrolly-overlay .scrolly {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 24px;
+            max-width: 60rem;
+            margin: 3rem auto;
+            padding: 1rem;
+            position: relative;
+
+        }
+
+        #scrolly-overlay .scrolly article {
+            padding: 0;
+            max-width: 30rem;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        #scrolly-overlay .scrolly article .step {
+            min-height: 25vh;
+            margin-bottom: 1rem;
+        }
+
+        #scrolly-overlay .scrolly article .step:last-of-type {
+            margin-bottom: 0;
+        }
+
+        #scrolly-overlay .scrolly article .step.is-active p {
+            background-color: #008080;
+        }
+
+        #scrolly-overlay .scrolly article .step p {
+            margin: 0;
+            padding: 1rem;
+            text-align: center;
+            font-weight: 400;
+            transition: background-color 250ms ease-in-out;
+            color: #f4f4f4;
+        }
+
+        #scrolly-overlay .scrolly figure.sticky {
+            /* this is the key style for the chart */
+            position: sticky;
+            width: 100%;
+            height: 50vh;
+            /* vh is the unit that divdes the viewport in units of 1/100 */
+            /* height is 50 vh = half the height of the viewport */
+            margin: 0;
+            top: 25vh;
+            /* this is how high it should be from top */
+
+            left: 0;
+        }
+
+        #scrolly-overlay .scrolly figure.sticky .bar-outer {
+            position: absolute;
+            top: 50%;
+            left: 5%;
+            transform: translateY(-50%);
+            width: 90%;
+            height: 4rem;
+            background-color: #fff;
+        }
+
+        #scrolly-overlay .scrolly figure.sticky .bar-inner {
+            width: 10%;
+            height: 100%;
+            transition: width 1s ease-in-out;
+            background-color: #daa520;
+        }
+
+        .spacer {
+            height: 1500px;
+        }
+    </style>
+</head>
+
+<body>
+    <section class='filler'>
+
+        <h2>Start Scrolling!</h2>
+
+    </section>
+
+    <section id='scrolly-overlay'>
+
+        <div class='scrolly'>
+
+            <!--  sticky graphic   -->
+            <figure class='sticky'>
+                <!-- put your chart stuff here -->
+                <div class="chart-container">
+                    <h1 class="headline">
+                        Change in CTA Bus Ridership as of <span class='highlight'>January 2020</span>
+                    </h1>
+            
+                    <svg width="100vw" height="100vh">
+                    </svg>
+                <p class="source">Source: City of Chicago</p>
+                <!-- <div class='bar-outer'>
+                    <div class='bar-inner'></div>
+                </div> -->
+            </figure>
+
+            <!--  step text   -->
+            <article>
+                <div class='step' data-quarter="2020Q1" data-month="January 2020">
+                    <p>Bar is 10%</p>
+                </div>
+                <div class='step' data-quarter="2020Q2" data-month="April 2020">
+                    <p>Bar is 90%</p>
+                </div>
+                <div class='step' data-quarter="2020Q3" data-month="July 2020">
+                    <p>Bar is 50%</p>
+                </div>
+                <div class='step' data-quarter="2020Q4" data-month="October 2020">
+                    <p>Bar is 50%</p>
+                </div>
+                <div class='step' data-quarter="2021Q1" data-month="January 2021">
+                    <p>Bar is 50%</p>
+                </div>
+            </article>
+
+        </div>
+
+    </section>
+
+    <section class='filler'>
+        <h2>End. Keep scrolling!</h2>
+ 
+        <div class="spacer"></div>
+        <p>See? The article continued as normal.</p>
+        <p>
+            So basically the "sticky" positioned element is the figure. Article is relatively position element. When you scroll the through the article element, then the figure "element" unsticks.
+        </p>
+        <p>
+            This is all handled by CSS. The only Javascript is in checking which of the slides are in the viewport and then triggering a function when it is in view.
+        </p>
+        </br>
+        </br>
+    </section>
+</body>
+
+<!-- add your script blocks at the end -->
+<script src="https://d3js.org/d3.v6.min.js"></script>
+<script src="https://unpkg.com/enter-view@1.0.0/enter-view.min.js"></script>
+<script src="https://unpkg.com/topojson@3"></script>
+<!-- https://github.com/russellgoldenberg/enter-view -->
+
+
+<script>
+    
+</script>
+
+<!-- add your script blocks at the end -->
+
+<script>
+    console.log({d3})
+    console.log({topojson})
+    /* let width = 1000;
+    let height = 750; */
+
+    let sel_cols = [
+            1,
+            2,
+            3,
+            4,
+            5
+    ]
+            
+    let sel_colors = [
+        "#FFFFB2",
+        "#FECC5C",
+        "#FD8D3C",
+        "#F03B20",
+        "#BD0026"
+    ]
+
+    let svg = d3.select("svg")
+    console.log({svg})
+    /* let width = +svg.attr("width").match(/\d+/)[0]
+    let height = +svg.attr("height").match(/\d+/)[0] */
+    let width = svg.node().getBoundingClientRect().width
+    let height = svg.node().getBoundingClientRect().height
+    
+
+    d3.json("output.json").then(function (data) {
+        console.log({data})
+
+        let routes = topojson.feature(data, data.objects["cta_routes"])
+        let city = topojson.feature(data, data.objects["city_boundaries"])
+        let towns = topojson.feature(data, data.objects["nearby_municipalities"])
+        let water = topojson.feature(data, data.objects["water"])
+
+        console.log({routes})
+        console.log({city})
+        console.log({towns})
+        console.log({water})
+
+        let projection = d3.geoIdentity()
+            .reflectY(true)
+            .fitSize([width, height], routes)
+            
+
+        let path = d3.geoPath(projection)
+
+        let color = d3.scaleOrdinal()
+            .domain(sel_cols)
+            .range(sel_colors)
+
+        svg.append("path")
+            .datum(topojson.mesh(data, data.objects["nearby_municipalities"]))
+            .attr("class", "town_borders")
+            .attr("d", path)
+            .attr("fill", "none")
+            .attr("stroke", "#ccc")
+        
+        svg.append("path")
+            .datum(topojson.mesh(data, data.objects["water"]))
+            .attr("class", "water")
+            .attr("d", path)
+            .attr("fill", "#BDD7E7")
+            .attr("stroke", "none")
+
+        svg.append("path")
+            .datum(topojson.mesh(data, data.objects["city_boundaries"]))
+            .attr("class", "city_borders")
+            .attr("d", path)
+            .attr("fill", "none")
+            .attr("stroke", "#999")
+        
+        let route_paths = svg.append("g")
+            .attr("class", "routes")
+            .selectAll("path")
+            .data(routes.features)
+            .join("path")
+            .attr("d", path)
+            .attr("class", d => "route_" + d.properties.route_number)
+            .attr("fill", "none")
+            .attr("stroke", d => color(d.properties.rank_group_2020Q1))
+            .attr("stroke-width", d => d.properties.current_ridership_rank_2020Q1 + "px")
+
+        
+
+        
+
+        function update(quarter) {
+            console.log(quarter)
+            route_paths
+                .data(routes.features)
+                .join("path")
+                .attr("d", path)
+                .attr("class", d => "route_" + d.properties.route_number)
+                .attr("fill", "none")
+                .attr("stroke", d => color(d.properties["rank_group_" + quarter]))
+                .attr("stroke-width", d => d.properties["current_ridership_rank_" + quarter] + "px")
+        }
+
+        const container = d3.select('#scrolly-overlay');
+        const stepSel = container.selectAll('.step');
+
+        function init() {
+
+            enterView({ //our main view function
+                selector: stepSel.nodes(),
+                offset: 0.5, //when the slide is 50% away then trigger your chart
+                enter: el => { //what's supposed to happen when the slide enters?
+                    d3.select(".highlight").html(d3.select(el).attr('data-month'))
+                    update(d3.select(el).attr('data-quarter'))
+                },
+                exit: el => { //what's supposed to happen when the slide exits?
+                    d3.select(".highlight").html(d3.select(el).attr('data-month'))
+                    update(d3.select(el).attr('data-quarter'))
+                }
+            });
+
+        }
+
+        init();
+        
+    })
+    
+
+</script>

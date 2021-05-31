@@ -34,14 +34,15 @@ recent_trends <- ridership_by_route %>%
          month_start_date %in% c(ymd("2020-01-01", "2020-04-01", "2020-07-01", "2020-10-01", "2021-01-01"))) %>%
   rename(monthly_ridership = ridership,
          rank_group = rank) %>%
-  mutate(quarter = case_when(month_start_date == ymd("2020-01-01") ~ "rank_2020Q1",
-                             month_start_date == ymd("2020-04-01") ~ "rank_2020Q2",
-                             month_start_date == ymd("2020-07-01") ~ "rank_2020Q3",
-                             month_start_date == ymd("2020-10-01") ~ "rank_2020Q4",
-                             month_start_date == ymd("2021-01-01") ~ "rank_2021Q1")) %>%
-  select(route, quarter, rank_group) %>%
+  mutate(quarter = case_when(month_start_date == ymd("2020-01-01") ~ "2020Q1",
+                             month_start_date == ymd("2020-04-01") ~ "2020Q2",
+                             month_start_date == ymd("2020-07-01") ~ "2020Q3",
+                             month_start_date == ymd("2020-10-01") ~ "2020Q4",
+                             month_start_date == ymd("2021-01-01") ~ "2021Q1"),
+         current_ridership_rank = ntile(monthly_ridership, 5)) %>%
+  select(route, quarter, rank_group, current_ridership_rank) %>%
   pivot_wider(names_from = quarter,
-              values_from = rank_group) %>%
+              values_from = c(rank_group, current_ridership_rank)) %>%
   drop_na()
 
 # recent_trends %>%
