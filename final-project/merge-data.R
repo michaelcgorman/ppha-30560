@@ -9,7 +9,7 @@ routes <- read_sf("data/CTA_BusRoutes/CTA_BusRoutes.shp") %>%
 
 merged <- routes %>%
   left_join(ridership, by = c("ROUTE" = "route")) %>%
-  select(ROUTE, NAME, starts_with("rank_"), starts_with("current_"), geometry) %>%
+  select(ROUTE, NAME, starts_with("ridership_"), geometry) %>%
   rename(route_number = ROUTE,
          route_name = NAME)
 
