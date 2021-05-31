@@ -1,0 +1,12 @@
+---
+title: "Final Project"
+author: "Michael Gorman"
+date: "5/31/2021"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE, eval = FALSE)
+```
+
+My final project is available at https://michaelcgorman.github.io/ppha-30560/final-project/
